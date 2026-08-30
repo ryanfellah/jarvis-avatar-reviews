@@ -1,0 +1,13 @@
+{
+  "commit": "bf3eb1e",
+  "families": {
+    "combat_anticipation": 5,
+    "charging_buildup": 5,
+    "heavy_transformation_peak": 6,
+    "calm_divine_settle": 5,
+    "return_to_idle": 5
+  },
+  "gif_frames": 12,
+  "fps": 12,
+  "note": "heavy_transformation_peak carried two stale frames of a rejected wide stance at this commit; preserved deliberately"
+}
