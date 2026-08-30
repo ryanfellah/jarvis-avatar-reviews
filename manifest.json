@@ -1,42 +1,51 @@
 {
   "date": "2026-08-30",
+  "review": "25-frame transformation, BEFORE vs AFTER",
   "source_branch": "feature/avatar-v3-old-model-pose-fix",
-  "source_sha": "bf3eb1e0fd8e8e8fa0ba92c7e5bfb47eccb12246",
-  "candidate_sha": "c94d55094d5488fa4c5410d76c9518246d175a6a",
-  "pixellab_generations_used": 5,
+  "source_sha": "ab1d1d20acd1be889daf4c24b8d0292d269b963d",
+  "candidate_sha": "",
+  "before_sha": "bf3eb1e0fd8e8e8fa0ba92c7e5bfb47eccb12246",
+  "pixellab_generations_used": 6,
   "pixellab_generation_budget": 12,
   "tests": {
-    "passed": 67,
-    "total": 67,
-    "suite": "pixellab-feasibility/tests/test_system.py"
+    "cinematic": {
+      "passed": 26,
+      "total": 26,
+      "suite": "pixellab-feasibility/tests/test_cinematic.py"
+    },
+    "system": {
+      "passed": 67,
+      "total": 67,
+      "suite": "pixellab-feasibility/tests/test_system.py"
+    }
   },
-  "bases": [
-    "straight_on",
-    "shallow_near_front",
-    "right_three_quarter",
-    "left_three_quarter"
-  ],
-  "poses": [
-    "saiyan_combat_guard",
-    "charging",
-    "heavy_power",
-    "calm_divine"
-  ],
-  "animation_families": {
-    "combat_anticipation": 0.67,
-    "charging_buildup": 0.83,
-    "heavy_transformation_peak": 0.67,
-    "calm_divine_settle": 0.83,
-    "return_to_idle": 0.75
-  },
-  "transformation_previews": 9,
-  "canvas": {
-    "size": [
-      36,
-      80
+  "cinematic": {
+    "frames": 25,
+    "fps": 12,
+    "canvas": [
+      104,
+      92
     ],
-    "ground_row": 78,
-    "fps": 12
+    "safe_margin": 6,
+    "registration": {
+      "dx": -9,
+      "dy": 6,
+      "note": "one constant transform for the whole clip"
+    },
+    "badge_locked_pixels": 31,
+    "destination_hair_from_frame": 8,
+    "impact_frames": [
+      6,
+      7
+    ]
   },
-  "gif_fps_actual": 12.5
+  "gif_fps_actual": 12.5,
+  "files": {
+    "latest.png": "25-frame contact sheet, native/8x, endpoints, logo strip, crop overlay",
+    "latest.gif": "the 25-frame transformation at 12 fps",
+    "index.html": "self-contained frame-stepping player",
+    "before/": "the preserved bf3eb1e result",
+    "transformation/": "per-check sheets and the BEFORE/AFTER side-by-side GIF",
+    "poses/": "the previous pose review, preserved"
+  }
 }
