@@ -1,0 +1,42 @@
+{
+  "date": "2026-08-30",
+  "source_branch": "feature/avatar-v3-old-model-pose-fix",
+  "source_sha": "bf3eb1e0fd8e8e8fa0ba92c7e5bfb47eccb12246",
+  "candidate_sha": "c94d55094d5488fa4c5410d76c9518246d175a6a",
+  "pixellab_generations_used": 5,
+  "pixellab_generation_budget": 12,
+  "tests": {
+    "passed": 67,
+    "total": 67,
+    "suite": "pixellab-feasibility/tests/test_system.py"
+  },
+  "bases": [
+    "straight_on",
+    "shallow_near_front",
+    "right_three_quarter",
+    "left_three_quarter"
+  ],
+  "poses": [
+    "saiyan_combat_guard",
+    "charging",
+    "heavy_power",
+    "calm_divine"
+  ],
+  "animation_families": {
+    "combat_anticipation": 0.67,
+    "charging_buildup": 0.83,
+    "heavy_transformation_peak": 0.67,
+    "calm_divine_settle": 0.83,
+    "return_to_idle": 0.75
+  },
+  "transformation_previews": 9,
+  "canvas": {
+    "size": [
+      36,
+      80
+    ],
+    "ground_row": 78,
+    "fps": 12
+  },
+  "gif_fps_actual": 12.5
+}
