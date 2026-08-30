@@ -1,13 +1,25 @@
 {
   "date": "2026-08-30",
-  "review": "25-frame transformation, BEFORE vs AFTER",
+  "review": "nine form transitions composed on the frozen 25-frame body cinematic",
   "source_branch": "feature/avatar-v3-old-model-pose-fix",
-  "source_sha": "ab1d1d20acd1be889daf4c24b8d0292d269b963d",
-  "candidate_sha": "",
-  "before_sha": "bf3eb1e0fd8e8e8fa0ba92c7e5bfb47eccb12246",
+  "source_sha": "c06d8f6bf334e13e1953fa771c3cbe5d3ebf68fd",
+  "candidate_sha": "c06d8f6bf334e13e1953fa771c3cbe5d3ebf68fd",
+  "body_cinematic": {
+    "tag": "cinematic-body-approved",
+    "frozen_commit": "79b1029fe87e01dd4e668780e4acc33ae2e09bfb",
+    "frames": 25,
+    "digest_of_digests": "cd2e5a3fadc7d10c48f04ebc0508e5e3f49c0c91c77b6cf3f75c1bbf017f8522",
+    "rule": "approved and byte-locked; forms compose on top, never over"
+  },
   "pixellab_generations_used": 6,
   "pixellab_generation_budget": 12,
+  "pixellab_called_for_this_animation": false,
   "tests": {
+    "forms": {
+      "passed": 17,
+      "total": 17,
+      "suite": "pixellab-feasibility/tests/test_forms.py"
+    },
     "cinematic": {
       "passed": 26,
       "total": 26,
@@ -19,33 +31,188 @@
       "suite": "pixellab-feasibility/tests/test_system.py"
     }
   },
-  "cinematic": {
-    "frames": 25,
-    "fps": 12,
-    "canvas": [
-      104,
-      92
-    ],
-    "safe_margin": 6,
-    "registration": {
-      "dx": -9,
-      "dy": 6,
-      "note": "one constant transform for the whole clip"
+  "transitions": [
+    {
+      "name": "normal__to__superSaiyan",
+      "source": "normal",
+      "destination": "superSaiyan",
+      "lightning_px": 0,
+      "frame24_is_destination_idle": true
     },
-    "badge_locked_pixels": 31,
-    "destination_hair_from_frame": 8,
-    "impact_frames": [
-      6,
-      7
+    {
+      "name": "superSaiyan__to__superSaiyan2",
+      "source": "superSaiyan",
+      "destination": "superSaiyan2",
+      "lightning_px": 135,
+      "frame24_is_destination_idle": true
+    },
+    {
+      "name": "superSaiyan2__to__superSaiyan3",
+      "source": "superSaiyan2",
+      "destination": "superSaiyan3",
+      "lightning_px": 172,
+      "frame24_is_destination_idle": true
+    },
+    {
+      "name": "superSaiyan3__to__superSaiyan4",
+      "source": "superSaiyan3",
+      "destination": "superSaiyan4",
+      "lightning_px": 91,
+      "frame24_is_destination_idle": true
+    },
+    {
+      "name": "superSaiyan4__to__god",
+      "source": "superSaiyan4",
+      "destination": "god",
+      "lightning_px": 0,
+      "frame24_is_destination_idle": true
+    },
+    {
+      "name": "god__to__blue",
+      "source": "god",
+      "destination": "blue",
+      "lightning_px": 135,
+      "frame24_is_destination_idle": true
+    },
+    {
+      "name": "blue__to__blueEvolved",
+      "source": "blue",
+      "destination": "blueEvolved",
+      "lightning_px": 91,
+      "frame24_is_destination_idle": true
+    },
+    {
+      "name": "blueEvolved__to__ultraInstinctSign",
+      "source": "blueEvolved",
+      "destination": "ultraInstinctSign",
+      "lightning_px": 0,
+      "frame24_is_destination_idle": true
+    },
+    {
+      "name": "ultraInstinctSign__to__masteredUltraInstinct",
+      "source": "ultraInstinctSign",
+      "destination": "masteredUltraInstinct",
+      "lightning_px": 0,
+      "frame24_is_destination_idle": true
+    }
+  ],
+  "canvas": [
+    104,
+    92
+  ],
+  "fps": 12,
+  "frames": 25,
+  "head_offsets": {
+    "0": [
+      -4,
+      -71
+    ],
+    "1": [
+      -4,
+      -71
+    ],
+    "2": [
+      -4,
+      -73
+    ],
+    "3": [
+      -4,
+      -73
+    ],
+    "4": [
+      -4,
+      -71
+    ],
+    "5": [
+      -4,
+      -67
+    ],
+    "6": [
+      -4,
+      -67
+    ],
+    "7": [
+      -4,
+      -67
+    ],
+    "8": [
+      -4,
+      -67
+    ],
+    "9": [
+      -4,
+      -67
+    ],
+    "10": [
+      -4,
+      -67
+    ],
+    "11": [
+      -4,
+      -67
+    ],
+    "12": [
+      -4,
+      -67
+    ],
+    "13": [
+      -4,
+      -67
+    ],
+    "14": [
+      -4,
+      -67
+    ],
+    "15": [
+      -4,
+      -67
+    ],
+    "16": [
+      -4,
+      -67
+    ],
+    "17": [
+      -4,
+      -67
+    ],
+    "18": [
+      -4,
+      -67
+    ],
+    "19": [
+      -4,
+      -67
+    ],
+    "20": [
+      -4,
+      -67
+    ],
+    "21": [
+      -4,
+      -67
+    ],
+    "22": [
+      -4,
+      -67
+    ],
+    "23": [
+      -4,
+      -67
+    ],
+    "24": [
+      -4,
+      -67
     ]
   },
   "gif_fps_actual": 12.5,
+  "known_limitation": "the form auras are authored for a 128x160 production canvas; the cinematic canvas is frozen at 104x92, so up to 19% of an aura is clipped by the frame edge. Bounded and tested, not hidden.",
   "files": {
-    "latest.png": "25-frame contact sheet, native/8x, endpoints, logo strip, crop overlay",
-    "latest.gif": "the 25-frame transformation at 12 fps",
-    "index.html": "self-contained frame-stepping player",
+    "latest.png": "contact sheet of all nine transitions, gallery, close-ups, layer views, endpoints",
+    "latest.gif": "Normal to SSJ1 at 12 fps",
+    "index.html": "self-contained player: transition selector, frame stepping, nine GIFs",
+    "forms/": "per-sheet PNGs and the nine transition GIFs and stepping strips",
     "before/": "the preserved bf3eb1e result",
-    "transformation/": "per-check sheets and the BEFORE/AFTER side-by-side GIF",
-    "poses/": "the previous pose review, preserved"
+    "transformation/": "the body-only cinematic review",
+    "poses/": "the multi-angle pose review"
   }
 }
