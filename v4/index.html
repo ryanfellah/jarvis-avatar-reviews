@@ -36,7 +36,7 @@ code{background:var(--panel);border:1px solid var(--line);border-radius:4px;padd
 ul{max-width:90ch}li{margin:4px 0}
 </style>
 <h1>Avatar V4 — Ryan, rebuilt from photographs</h1>
-<p style="margin:0 0 10px"><a href="#eyes-aura-rebuild">Jump to the eyes and aura rebuild</a> · <a href="#final">earlier tuning pass</a></p>
+<p style="margin:0 0 10px"><a href="#motion-aura-reference">Jump to the animation and aura</a> · <a href="#eyes-aura-rebuild">eyes rebuild</a> · <a href="#final">earlier tuning pass</a></p>
 <p class="lede">The previous set was rejected for not resembling Ryan, for SSJ1 facing away, and for the forms looking past the viewer. This one is built from his own photographs, and <b>every state faces the viewer</b>: each is the south rotation of a character state, so a forward gaze is a property of the render rather than something hoped for.</p>
 <p class="note">One internal identity was built first, deliberately with a buzz cut so no curls can survive under gold hair. Normal, SSJ1, SSJ2 and SSJ3 are each a state <i>of that identity</i> — none is chained off another, so a defect in one cannot travel into the next. The rejected set is kept at <a href="rejected-0887f3f/">rejected-0887f3f/</a> and is not shown here as a current result.</p>
 <h2>Ryan — the identity references</h2><div class="rule"></div>
@@ -260,6 +260,91 @@ ul{max-width:90ch}li{margin:4px 0}
 <tr><th>aura px</th><td>5314</td></tr>
 <tr><th>lightning px</th><td>467</td></tr>
 </table></div></div>
+<h2 id="motion-aura-reference">Character motion and reference-derived aura</h2><div class="rule"></div>
+<p class="lede">Two rejections fixed. The loops were a frozen PNG with a moving aura — Ryan now genuinely animates, articulated slot by slot. And the aura is no longer approximated with random strokes: the reference GIF's own frames are extracted and used directly.</p>
+<p class="note">Zero PixelLab generations. Frame 0 of every loop is the approved body byte-for-byte; frames 1–7 move owned slots — legs, hips, torso, arms, fists, head, hair — by one or two pixels. Feet never move: <b>0 sock or shoe pixels change in any frame of any form</b>, so the character compresses against a fixed ground contact instead of floating.</p>
+<h3>Aura: rejected versus corrected</h3>
+<p class="note">The reference was round-tripped through candidate grids to recover its authored resolution — 119×147 — then its colours snapped to the four measured steps, scaled nearest-neighbour and seated behind Ryan with a one-pixel gap. Nothing is added: no extra spikes, rays or particles.</p><div class="row">
+<figure><img src="motion/aura_reference.gif" width="210" alt="The supplied reference GIF"><figcaption>The supplied reference GIF</figcaption></figure>
+<figure><img src="motion/ssj1_aura_before_after.png" alt="ssj1: rejected stroke aura vs reference-derived"><figcaption>ssj1: rejected stroke aura vs reference-derived</figcaption></figure>
+<figure><img src="motion/ssj2_aura_before_after.png" alt="ssj2: rejected stroke aura vs reference-derived"><figcaption>ssj2: rejected stroke aura vs reference-derived</figcaption></figure>
+<figure><img src="motion/ssj3_aura_before_after.png" alt="ssj3: rejected stroke aura vs reference-derived"><figcaption>ssj3: rejected stroke aura vs reference-derived</figcaption></figure>
+</div>
+<h3>Animated loops — 8 frames, 10 fps</h3>
+<p class="note">These are the GIF files themselves, not first-frame stills.</p>
+<h4 class="note">ssj1</h4><div class="row">
+<figure><img src="motion/ssj1_composite.gif" width="256" alt="ssj1 composite — native 256×288"><figcaption>ssj1 composite — native 256×288</figcaption></figure>
+<figure><img src="motion/ssj1_composite_4x.gif" alt="ssj1 composite — 2×"><figcaption>ssj1 composite — 2×</figcaption></figure>
+<figure><img src="motion/ssj1_body_only_4x.gif" alt="ssj1 body only — 4×, watch the shoulders, fists and hair"><figcaption>ssj1 body only — 4×, watch the shoulders, fists and hair</figcaption></figure>
+</div><div class="row">
+<figure><img src="motion/ssj1_aura_only.gif" width="200" alt="ssj1 aura only"><figcaption>ssj1 aura only</figcaption></figure>
+<figure><img src="motion/ssj1_lightning_only.gif" width="200" alt="ssj1 lightning only — empty by design"><figcaption>ssj1 lightning only — empty by design</figcaption></figure>
+</div><div class="row">
+<figure><img src="motion/ssj1_body_strip.png" alt="ssj1 — eight body frames"><figcaption>ssj1 — eight body frames</figcaption></figure>
+</div><div class="row">
+<figure><img src="motion/ssj1_changed_overlay.png" alt="ssj1 — changed pixels in magenta, feet in green. The green never changes."><figcaption>ssj1 — changed pixels in magenta, feet in green. The green never changes.</figcaption></figure>
+</div><div class="row">
+<figure><img src="motion/ssj1_composite_strip.png" alt="ssj1 — eight composite frames"><figcaption>ssj1 — eight composite frames</figcaption></figure>
+</div>
+<div class="scroll"><table><tr><th>frame</th><th>body sha</th><th>composite sha</th><th>px moved</th><th>regions moved</th><th>aura px</th><th>bolts</th><th>sole row</th><th>margin</th></tr>
+<tr><th>0</th><td>55cfda8eb5</td><td>dea9477e5b</td><td>0</td><td>0</td><td>9796</td><td>0</td><td class="n">215</td><td>46</td></tr>
+<tr><th>1</th><td>0c0c909db7</td><td>9c432d1a27</td><td>1428</td><td>5</td><td>9762</td><td>0</td><td class="n">215</td><td>46</td></tr>
+<tr><th>2</th><td>f664909bf3</td><td>9bf357b0eb</td><td>1378</td><td>6</td><td>8559</td><td>0</td><td class="n">215</td><td>42</td></tr>
+<tr><th>3</th><td>fa1a88ce8e</td><td>3da1776dcd</td><td>1989</td><td>7</td><td>8576</td><td>0</td><td class="n">215</td><td>42</td></tr>
+<tr><th>4</th><td>ff91cc26f0</td><td>e1e6ac6134</td><td>1392</td><td>7</td><td>8935</td><td>0</td><td class="n">215</td><td>43</td></tr>
+<tr><th>5</th><td>ec8c5af1f7</td><td>ba2333afa1</td><td>1579</td><td>7</td><td>8916</td><td>0</td><td class="n">215</td><td>43</td></tr>
+<tr><th>6</th><td>d43b42e00e</td><td>1a817eb09f</td><td>1173</td><td>5</td><td>8496</td><td>0</td><td class="n">215</td><td>42</td></tr>
+<tr><th>7</th><td>918ea0121a</td><td>bc3977d3d1</td><td>948</td><td>3</td><td>9798</td><td>0</td><td class="n">215</td><td>46</td></tr>
+</table></div><p class="note">Unique body frames <b>8/8</b>, unique composites <b>8/8</b>, aura frame map [0, 0, 1, 1, 2, 2, 1, 0] (all three reference frames used, none held for more than three beats).</p>
+<h4 class="note">ssj2</h4><div class="row">
+<figure><img src="motion/ssj2_composite.gif" width="256" alt="ssj2 composite — native 256×288"><figcaption>ssj2 composite — native 256×288</figcaption></figure>
+<figure><img src="motion/ssj2_composite_4x.gif" alt="ssj2 composite — 2×"><figcaption>ssj2 composite — 2×</figcaption></figure>
+<figure><img src="motion/ssj2_body_only_4x.gif" alt="ssj2 body only — 4×, watch the shoulders, fists and hair"><figcaption>ssj2 body only — 4×, watch the shoulders, fists and hair</figcaption></figure>
+</div><div class="row">
+<figure><img src="motion/ssj2_aura_only.gif" width="200" alt="ssj2 aura only"><figcaption>ssj2 aura only</figcaption></figure>
+<figure><img src="motion/ssj2_lightning_only.gif" width="200" alt="ssj2 lightning only"><figcaption>ssj2 lightning only</figcaption></figure>
+</div><div class="row">
+<figure><img src="motion/ssj2_body_strip.png" alt="ssj2 — eight body frames"><figcaption>ssj2 — eight body frames</figcaption></figure>
+</div><div class="row">
+<figure><img src="motion/ssj2_changed_overlay.png" alt="ssj2 — changed pixels in magenta, feet in green. The green never changes."><figcaption>ssj2 — changed pixels in magenta, feet in green. The green never changes.</figcaption></figure>
+</div><div class="row">
+<figure><img src="motion/ssj2_composite_strip.png" alt="ssj2 — eight composite frames"><figcaption>ssj2 — eight composite frames</figcaption></figure>
+</div>
+<div class="scroll"><table><tr><th>frame</th><th>body sha</th><th>composite sha</th><th>px moved</th><th>regions moved</th><th>aura px</th><th>bolts</th><th>sole row</th><th>margin</th></tr>
+<tr><th>0</th><td>9ddf5b9873</td><td>24c293f991</td><td>0</td><td>0</td><td>12840</td><td>0</td><td class="n">215</td><td>31</td></tr>
+<tr><th>1</th><td>e3fdbd4585</td><td>144f360fee</td><td>1621</td><td>5</td><td>12792</td><td>0</td><td class="n">215</td><td>31</td></tr>
+<tr><th>2</th><td>a56071665c</td><td>489d6b3175</td><td>1666</td><td>6</td><td>11358</td><td>15</td><td class="n">215</td><td>27</td></tr>
+<tr><th>3</th><td>6bddcdab4e</td><td>22ff0d6856</td><td>2281</td><td>7</td><td>11372</td><td>0</td><td class="n">215</td><td>27</td></tr>
+<tr><th>4</th><td>0280e212be</td><td>6d4ecb878d</td><td>1697</td><td>7</td><td>11899</td><td>0</td><td class="n">215</td><td>28</td></tr>
+<tr><th>5</th><td>77e2aa7a55</td><td>d60e5ea0ba</td><td>1730</td><td>7</td><td>11845</td><td>26</td><td class="n">215</td><td>28</td></tr>
+<tr><th>6</th><td>7ec2d2f3ef</td><td>77a3c5be6f</td><td>1342</td><td>6</td><td>11257</td><td>0</td><td class="n">215</td><td>27</td></tr>
+<tr><th>7</th><td>be104bacc2</td><td>2f36a011af</td><td>1122</td><td>4</td><td>12824</td><td>0</td><td class="n">215</td><td>31</td></tr>
+</table></div><p class="note">Unique body frames <b>8/8</b>, unique composites <b>8/8</b>, aura frame map [0, 0, 1, 1, 2, 2, 1, 0] (all three reference frames used, none held for more than three beats).</p>
+<h4 class="note">ssj3</h4><div class="row">
+<figure><img src="motion/ssj3_composite.gif" width="256" alt="ssj3 composite — native 256×288"><figcaption>ssj3 composite — native 256×288</figcaption></figure>
+<figure><img src="motion/ssj3_composite_4x.gif" alt="ssj3 composite — 2×"><figcaption>ssj3 composite — 2×</figcaption></figure>
+<figure><img src="motion/ssj3_body_only_4x.gif" alt="ssj3 body only — 4×, watch the shoulders, fists and hair"><figcaption>ssj3 body only — 4×, watch the shoulders, fists and hair</figcaption></figure>
+</div><div class="row">
+<figure><img src="motion/ssj3_aura_only.gif" width="200" alt="ssj3 aura only"><figcaption>ssj3 aura only</figcaption></figure>
+<figure><img src="motion/ssj3_lightning_only.gif" width="200" alt="ssj3 lightning only"><figcaption>ssj3 lightning only</figcaption></figure>
+</div><div class="row">
+<figure><img src="motion/ssj3_body_strip.png" alt="ssj3 — eight body frames"><figcaption>ssj3 — eight body frames</figcaption></figure>
+</div><div class="row">
+<figure><img src="motion/ssj3_changed_overlay.png" alt="ssj3 — changed pixels in magenta, feet in green. The green never changes."><figcaption>ssj3 — changed pixels in magenta, feet in green. The green never changes.</figcaption></figure>
+</div><div class="row">
+<figure><img src="motion/ssj3_composite_strip.png" alt="ssj3 — eight composite frames"><figcaption>ssj3 — eight composite frames</figcaption></figure>
+</div>
+<div class="scroll"><table><tr><th>frame</th><th>body sha</th><th>composite sha</th><th>px moved</th><th>regions moved</th><th>aura px</th><th>bolts</th><th>sole row</th><th>margin</th></tr>
+<tr><th>0</th><td>3cb6bd40ea</td><td>1baa5f4c0f</td><td>0</td><td>0</td><td>13154</td><td>0</td><td class="n">207</td><td>8</td></tr>
+<tr><th>1</th><td>34f89d63df</td><td>f0fdc91be9</td><td>4041</td><td>5</td><td>13130</td><td>100</td><td class="n">207</td><td>8</td></tr>
+<tr><th>2</th><td>c9c48df164</td><td>69f11e20cd</td><td>4171</td><td>6</td><td>11222</td><td>0</td><td class="n">207</td><td>8</td></tr>
+<tr><th>3</th><td>e9747e020e</td><td>ecfa31eaf5</td><td>5483</td><td>7</td><td>11270</td><td>73</td><td class="n">207</td><td>8</td></tr>
+<tr><th>4</th><td>c3e9db424c</td><td>cf7e3f46a1</td><td>4207</td><td>7</td><td>11763</td><td>0</td><td class="n">207</td><td>8</td></tr>
+<tr><th>5</th><td>679d500215</td><td>8bb301204c</td><td>4236</td><td>7</td><td>11738</td><td>0</td><td class="n">207</td><td>8</td></tr>
+<tr><th>6</th><td>5f5581cfeb</td><td>7ffd3b4f24</td><td>3603</td><td>6</td><td>11187</td><td>99</td><td class="n">207</td><td>8</td></tr>
+<tr><th>7</th><td>d2c8d8f761</td><td>ea3c8c599a</td><td>3501</td><td>5</td><td>13130</td><td>0</td><td class="n">207</td><td>8</td></tr>
+</table></div><p class="note">Unique body frames <b>8/8</b>, unique composites <b>8/8</b>, aura frame map [0, 0, 1, 1, 2, 2, 1, 0] (all three reference frames used, none held for more than three beats).</p>
+<p class="note">Tests: <b>103/103</b> animation checks — every GIF decoded off disk, with a positive control that builds a loop from eight copies of one PNG and requires the audit to reject it. Plus 120 rebuild, 71 tuning and 86 structural: <b>380 in total</b>.</p>
 <h2 id="eyes-aura-rebuild">Eyes and aura rebuild</h2><div class="rule"></div>
 <p class="lede">Zero PixelLab generations. Every character is the locked artwork; the eyes were redrawn pixel by pixel inside published boxes and the aura renderer was replaced outright.</p>
 <p class="note">The old eyes were recoloured rather than drawn, which put teal in the lash row and left a white rectangle with a one-pixel vertical pupil. These are authored instead: a dark lash, white sclera, and a three-pixel iris block with a centred pupil. Because teal is only ever <i>written</i> into iris_mask, the teal rule holds by construction.</p>
