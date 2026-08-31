@@ -2,20 +2,20 @@
 
 Exported review media for the Ryan pixel avatar.
 
-## Current status: FIRST REVIEW GATE — awaiting visual approval
+## Review-site rule
 
-The prior animation (`5bcd74f`) is the baseline: its choreography, timing, poses and
-newer form hair are kept unchanged. Only fitting and construction are corrected.
-Two transitions only — Normal to SSJ1 and SSJ3 to SSJ4 — as the gate asks.
+**The published page shows only the current review candidate.**
 
-| File | What it is |
-|---|---|
-| `latest.png` | Prior vs corrected: full sprites at native and 8x, face, hairline/roots, arms/shoulders, shirt/logo, silhouettes, SSJ4 full body |
-| `latest.gif` | SSJ3 to SSJ4, corrected, 12 fps |
-| `index.html` | Looping previews (prior and corrected, both transitions) plus the comparison sheet |
-| `manifest.json` | What was kept, what was corrected, and the per-pose hair offsets |
-| `gate-1/` | The four looping previews and the comparison sheet |
-| `forms-rejected-*/` | Earlier rejected compositions, kept as evidence |
+When a new visual candidate is published it REPLACES the previous user-facing review
+content. Review attempts are never accumulated on the page: no old/new comparisons, no
+rejected sections, no superseded diagnostics, no historical timeline. Old assets may
+stay in the repository for internal debugging, but they are not linked from the page
+unless a comparison is explicitly requested.
+
+## Current review
+
+`index.html` — SSJ2 frame-by-frame charging idle. Eight complete cel frames, the sprite
+sheets, the 16x detail sheet, and the body-only and composite loops at two speeds.
 
 **Media only.** No source code, credentials, logs, local paths, build files or
 private information.

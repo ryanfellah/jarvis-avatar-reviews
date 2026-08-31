@@ -1,391 +1,56 @@
-<title>Gate 1 — Normal to SSJ1</title>
+<title>SSJ2 Charging Idle</title>
 <style>
- :root{--bg:#16161b;--panel:#20202a;--sunk:#191922;--ink:#eef0f6;--dim:#969aa8;
-  --accent:#f2c14e;--bad:#ff4fd8;--good:#5fd08a;--line:#34343f;}
- *{box-sizing:border-box}
- body{background:var(--bg);color:var(--ink);margin:0;padding:32px 28px 64px;
-  font:14px/1.6 ui-sans-serif,system-ui,-apple-system,sans-serif;}
- h1{color:var(--accent);font-size:24px;margin:0 0 4px;letter-spacing:-.01em}
- h2{color:var(--accent);font-size:15px;margin:34px 0 4px;
-  text-transform:uppercase;letter-spacing:.08em}
- h3{font-size:13px;margin:0 0 10px;color:var(--dim);font-weight:600}
- p{max-width:86ch}
- p.note{color:var(--dim)}
- .lede{font-size:15px;color:var(--ink);max-width:86ch}
- a{color:var(--accent)}
- .rule{height:1px;background:var(--line);margin:8px 0 0}
- .row{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start}
- figure{margin:0;background:var(--panel);border:1px solid var(--line);
-  border-radius:10px;padding:10px}
- figure.wide{flex:1 1 260px}
- figcaption{color:var(--dim);font-size:12px;margin-top:8px;line-height:1.4}
- img{image-rendering:pixelated;display:block;border-radius:5px;
-  background:var(--sunk);max-width:100%}
- .frame{background:var(--sunk);border:1px solid var(--line);border-radius:12px;
-  padding:16px;margin:14px 0}
- .frame > header{display:flex;align-items:baseline;gap:14px;margin-bottom:12px;
-  flex-wrap:wrap}
- .fid{font-size:17px;font-weight:700;color:var(--accent)}
- .tag{font-size:11px;letter-spacing:.06em;text-transform:uppercase;
-  border:1px solid var(--line);border-radius:99px;padding:2px 9px;color:var(--dim)}
- .zero{color:var(--good);border-color:#2f5d43}
- .expect{color:var(--accent);border-color:#5d4d21}
- table{border-collapse:collapse;font-variant-numeric:tabular-nums;margin-top:6px}
- th,td{border:1px solid var(--line);padding:6px 12px;text-align:right;font-size:13px}
- th{color:var(--dim);font-weight:600;text-align:left}
- td.n{color:var(--good)}
- td.b{color:var(--accent)}
- code{background:var(--panel);border:1px solid var(--line);border-radius:4px;
-  padding:1px 5px;font-size:12.5px}
- ul{max-width:86ch}
- li{margin:4px 0}
- .scroll{overflow-x:auto}
+:root{color-scheme:dark light;--bg:#101014;--panel:#1a1a21;--line:#2c2c36;
+ --ink:#eef0f6;--dim:#9aa0ad;--gold:#e8b544}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);margin:0;padding:44px 30px 90px;
+ font:14px/1.65 ui-sans-serif,system-ui,-apple-system,sans-serif}
+h1{color:var(--gold);font-size:30px;line-height:1.2;margin:0 0 8px;
+ letter-spacing:-.015em;text-wrap:balance}
+h2{font-size:12px;color:var(--dim);margin:44px 0 12px;text-transform:uppercase;
+ letter-spacing:.11em;font-weight:600}
+.sha{color:var(--dim);font-size:13px;margin:0 0 4px;
+ font-variant-numeric:tabular-nums}
+code{background:var(--panel);border:1px solid var(--line);border-radius:4px;
+ padding:1px 6px;font-size:12.5px}
+.row{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start}
+figure{margin:0;background:var(--panel);border:1px solid var(--line);
+ border-radius:10px;padding:10px}
+figcaption{color:var(--dim);font-size:11.5px;margin-top:8px;
+ font-variant-numeric:tabular-nums}
+img{image-rendering:pixelated;display:block;border-radius:4px;max-width:100%;height:auto}
+.scroll{overflow-x:auto;padding-bottom:6px}
+.scroll figure{display:inline-block}
+.scroll img{max-width:none}
 </style>
+<h1>Current Review — SSJ2 Frame-by-Frame Charging Idle</h1>
+<p class="sha">Commit <code>751f948</code></p>
 
-<div style="background:#20202a;border:1px solid #34343f;border-left:4px solid #e8b544;
- border-radius:9px;padding:14px 18px;margin:0 0 22px;max-width:88ch">
- <div style="font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:#969aa8">Latest</div>
- <div style="font-size:17px;margin:4px 0 2px"><a href="v4/" style="color:#e8b544">Avatar V4 — Ryan SSJ1, SSJ2, SSJ3</a></div>
- <div style="color:#969aa8;font-size:13px">A clean PixelLab rebuild: one canonical identity,
- three forms each generated as a state of it. Static artwork, awaiting visual selection.</div>
-</div>
-<h1>Gate 1 — Normal → SSJ1</h1>
-<p class="lede">The brown at the roots was never Ryan's hair. Removing Normal's hairstyle
-left a five-hundred-pixel hole where his scalp had been, and the aura sits <em>behind</em>
-the figure — so it shone through the gaps between the gold spikes and read as dark curls.
-That is why every earlier test could truthfully report “zero Normal-hair pixels” while the
-picture stayed wrong. A second fault sat on top of it: the gold fringe was being clipped to
-the shape of Normal's <em>old</em> hairline, which left a band of bare forehead with the
-fringe's dark outline stranded around it.</p>
-<p class="note">Both are fixed by construction, not by covering: the transformed head is
-built from the approved <code>head_skin</code> layer with no hair on it at all, and the
-fringe is allowed to reach the forehead — down to just above Ryan's eyebrows, which stay
-his. Nothing was added to the SSJ1 hairstyle: it is 986 opaque pixels in five shades, all
-from the approved gold ramp, at an identical bounding box.</p>
+<h2>Eight frames, native resolution</h2>
+<div class="row"><figure><img src="v4/cel8/ssj2_f0_1x.png" width="128" height="192" alt="frame 0"><figcaption>00</figcaption></figure><figure><img src="v4/cel8/ssj2_f1_1x.png" width="128" height="192" alt="frame 1"><figcaption>01</figcaption></figure><figure><img src="v4/cel8/ssj2_f2_1x.png" width="128" height="192" alt="frame 2"><figcaption>02</figcaption></figure><figure><img src="v4/cel8/ssj2_f3_1x.png" width="128" height="192" alt="frame 3"><figcaption>03</figcaption></figure><figure><img src="v4/cel8/ssj2_f4_1x.png" width="128" height="192" alt="frame 4"><figcaption>04</figcaption></figure><figure><img src="v4/cel8/ssj2_f5_1x.png" width="128" height="192" alt="frame 5"><figcaption>05</figcaption></figure><figure><img src="v4/cel8/ssj2_f6_1x.png" width="128" height="192" alt="frame 6"><figcaption>06</figcaption></figure><figure><img src="v4/cel8/ssj2_f7_1x.png" width="128" height="192" alt="frame 7"><figcaption>07</figcaption></figure></div>
 
-<h2>Corrected transformation</h2>
-<div class="rule"></div>
+<h2>Sprite sheet</h2>
+<div class="row scroll"><figure><img src="v4/cel8/ssj2_sheet_1x.png" alt="sprite sheet native">
+<figcaption>Native</figcaption></figure></div>
+<div class="row scroll"><figure><img src="v4/cel8/ssj2_sheet_8x.png" alt="sprite sheet 8x">
+<figcaption>8&times;</figcaption></figure></div>
+
+<h2>Detail and joints, 16&times;</h2>
+<div class="row scroll"><figure><img src="v4/cel8/ssj2_joints_16x.png" alt="joint detail sheet 16x">
+<figcaption>Neck, shoulders, sleeves, arms and fists</figcaption></figure></div>
+
+<h2>Body only</h2>
 <div class="row">
- <figure>
-  <img src="gate1-corrected/corrected_slow.gif" width="576" alt="corrected transformation">
-  <figcaption>All 25 frames, 4×, slowed to 220 ms. Read back from the exported PNGs.</figcaption>
- </figure>
- <figure class="wide">
-  <h3>Forbidden-brown audit — read from the final exported frames</h3>
-  <div class="scroll"><table>
-   <tr><th>Frame</th><th>Normal-hair brown</th><th>Aura through the scalp</th></tr>
-   <tr><th>0 · before the turn</th><td class="b">377 (expected)</td><td class="n">0</td></tr>
-   <tr><th>8</th><td class="n">0</td><td class="n">0</td></tr>
-   <tr><th>12</th><td class="n">0</td><td class="n">0</td></tr>
-   <tr><th>13</th><td class="n">0</td><td class="n">0</td></tr>
-   <tr><th>18</th><td class="n">0</td><td class="n">0</td></tr>
-   <tr><th>21</th><td class="n">0</td><td class="n">0</td></tr>
-   <tr><th>24</th><td class="n">0</td><td class="n">0</td></tr>
-  </table></div>
-  <figcaption>Frame 0 is Normal Ryan, so his brown hair belongs there — 377 px is the
-  proof the hairstyle is still rendered before the turn, not evidence of a leak.
-  Every transformed frame is zero on both detectors, measured on the flattened PNG.</figcaption>
- </figure>
+<figure><img src="v4/cel8/ssj2_body_4x.gif" width="256" alt="body only normal speed">
+<figcaption>Normal speed</figcaption></figure>
+<figure><img src="v4/cel8/ssj2_body_slow_4x.gif" width="256" alt="body only slow">
+<figcaption>Slow</figcaption></figure>
 </div>
 
-<h2>Frame by frame</h2>
-<div class="rule"></div>
-
-<div class="frame">
- <header><span class="fid">Frame 0</span>
-  <span class="tag">before the turn — Normal Ryan</span><span class="tag expect">377 brown px — expected here</span></header>
- <div class="row">
-  <figure><img src="gate1-corrected/before_00.png" width="144" alt="rejected, frame 0">
-   <figcaption>Rejected — 405af70<br>native 144×176</figcaption></figure>
-  <figure><img src="gate1-corrected/after_00.png" width="144" alt="corrected, frame 0">
-   <figcaption>Corrected<br>native 144×176</figcaption></figure>
-  <figure><img src="gate1-corrected/before_head8_00.png" alt="rejected head, frame 0">
-   <figcaption>Rejected — head at 8×</figcaption></figure>
-  <figure><img src="gate1-corrected/after_head8_00.png" alt="corrected head, frame 0">
-   <figcaption>Corrected — head at 8×</figcaption></figure>
- </div>
- <div class="row" style="margin-top:14px">
-  <figure><img src="gate1-corrected/after_head16_00.png" alt="corrected head 16x, frame 0">
-   <figcaption>Corrected — head at 16×, the forehead and roots</figcaption></figure>
-  <figure><img src="gate1-corrected/skull8_00.png" alt="hairless head, frame 0">
-   <figcaption>Hairless head only — skin, ears,<br>face shading. No hair of any kind.</figcaption></figure>
-  <figure><img src="gate1-corrected/normalhair8_00.png" alt="normal hair layer, frame 0">
-   <figcaption>Normal hair only — the removable<br>layer, drawn nowhere after frame 7.</figcaption></figure>
-  <figure><img src="gate1-corrected/ssjhair8_00.png" alt="ssj1 hair layer, frame 0">
-   <figcaption>SSJ1 hair only — 986 px,<br>five shades, all approved gold.</figcaption></figure>
- </div>
- <div class="row" style="margin-top:14px">
-  <figure><img src="gate1-corrected/overlay_before8_00.png" alt="rejected overlay, frame 0">
-   <figcaption>Rejected — detection overlay</figcaption></figure>
-  <figure><img src="gate1-corrected/overlay8_00.png" alt="corrected overlay, frame 0">
-   <figcaption>Corrected — detection overlay</figcaption></figure>
-  <figure class="wide"><h3>Detection overlay</h3>
-   <p class="note" style="font-size:12.5px;margin:0">Magenta marks Normal-brown pixels. Frame 0 lights up because this is Ryan before the turn: his hair is still his.</p>
-   <figcaption>Counted on the flattened PNG, not on the layers that made it.
-   Normal-brown: <b>377</b> · aura through the scalp: <b>0</b></figcaption>
-  </figure>
- </div>
+<h2>Final composite</h2>
+<div class="row">
+<figure><img src="v4/cel8/ssj2_composite_4x.gif" width="256" alt="composite normal speed">
+<figcaption>Normal speed</figcaption></figure>
+<figure><img src="v4/cel8/ssj2_composite_slow_4x.gif" width="256" alt="composite slow">
+<figcaption>Slow</figcaption></figure>
 </div>
-<div class="frame">
- <header><span class="fid">Frame 8</span>
-  <span class="tag">the turn</span><span class="tag zero">0 Normal-brown px</span><span class="tag zero">0 aura through the scalp</span></header>
- <div class="row">
-  <figure><img src="gate1-corrected/before_08.png" width="144" alt="rejected, frame 8">
-   <figcaption>Rejected — 405af70<br>native 144×176</figcaption></figure>
-  <figure><img src="gate1-corrected/after_08.png" width="144" alt="corrected, frame 8">
-   <figcaption>Corrected<br>native 144×176</figcaption></figure>
-  <figure><img src="gate1-corrected/before_head8_08.png" alt="rejected head, frame 8">
-   <figcaption>Rejected — head at 8×</figcaption></figure>
-  <figure><img src="gate1-corrected/after_head8_08.png" alt="corrected head, frame 8">
-   <figcaption>Corrected — head at 8×</figcaption></figure>
- </div>
- <div class="row" style="margin-top:14px">
-  <figure><img src="gate1-corrected/after_head16_08.png" alt="corrected head 16x, frame 8">
-   <figcaption>Corrected — head at 16×, the forehead and roots</figcaption></figure>
-  <figure><img src="gate1-corrected/skull8_08.png" alt="hairless head, frame 8">
-   <figcaption>Hairless head only — skin, ears,<br>face shading. No hair of any kind.</figcaption></figure>
-  <figure><img src="gate1-corrected/normalhair8_08.png" alt="normal hair layer, frame 8">
-   <figcaption>Normal hair only — the removable<br>layer, drawn nowhere after frame 7.</figcaption></figure>
-  <figure><img src="gate1-corrected/ssjhair8_08.png" alt="ssj1 hair layer, frame 8">
-   <figcaption>SSJ1 hair only — 986 px,<br>five shades, all approved gold.</figcaption></figure>
- </div>
- <div class="row" style="margin-top:14px">
-  <figure><img src="gate1-corrected/overlay_before8_08.png" alt="rejected overlay, frame 8">
-   <figcaption>Rejected — detection overlay</figcaption></figure>
-  <figure><img src="gate1-corrected/overlay8_08.png" alt="corrected overlay, frame 8">
-   <figcaption>Corrected — detection overlay</figcaption></figure>
-  <figure class="wide"><h3>Detection overlay</h3>
-   <p class="note" style="font-size:12.5px;margin:0">Magenta marks any Normal-brown pixel or aura shining through the scalp, inside the head, skull and hairstyle region. Empty.</p>
-   <figcaption>Counted on the flattened PNG, not on the layers that made it.
-   Normal-brown: <b>0</b> · aura through the scalp: <b>0</b></figcaption>
-  </figure>
- </div>
-</div>
-<div class="frame">
- <header><span class="fid">Frame 12</span>
-  <span class="tag">mid-transformation</span><span class="tag zero">0 Normal-brown px</span><span class="tag zero">0 aura through the scalp</span></header>
- <div class="row">
-  <figure><img src="gate1-corrected/before_12.png" width="144" alt="rejected, frame 12">
-   <figcaption>Rejected — 405af70<br>native 144×176</figcaption></figure>
-  <figure><img src="gate1-corrected/after_12.png" width="144" alt="corrected, frame 12">
-   <figcaption>Corrected<br>native 144×176</figcaption></figure>
-  <figure><img src="gate1-corrected/before_head8_12.png" alt="rejected head, frame 12">
-   <figcaption>Rejected — head at 8×</figcaption></figure>
-  <figure><img src="gate1-corrected/after_head8_12.png" alt="corrected head, frame 12">
-   <figcaption>Corrected — head at 8×</figcaption></figure>
- </div>
- <div class="row" style="margin-top:14px">
-  <figure><img src="gate1-corrected/after_head16_12.png" alt="corrected head 16x, frame 12">
-   <figcaption>Corrected — head at 16×, the forehead and roots</figcaption></figure>
-  <figure><img src="gate1-corrected/skull8_12.png" alt="hairless head, frame 12">
-   <figcaption>Hairless head only — skin, ears,<br>face shading. No hair of any kind.</figcaption></figure>
-  <figure><img src="gate1-corrected/normalhair8_12.png" alt="normal hair layer, frame 12">
-   <figcaption>Normal hair only — the removable<br>layer, drawn nowhere after frame 7.</figcaption></figure>
-  <figure><img src="gate1-corrected/ssjhair8_12.png" alt="ssj1 hair layer, frame 12">
-   <figcaption>SSJ1 hair only — 986 px,<br>five shades, all approved gold.</figcaption></figure>
- </div>
- <div class="row" style="margin-top:14px">
-  <figure><img src="gate1-corrected/overlay_before8_12.png" alt="rejected overlay, frame 12">
-   <figcaption>Rejected — detection overlay</figcaption></figure>
-  <figure><img src="gate1-corrected/overlay8_12.png" alt="corrected overlay, frame 12">
-   <figcaption>Corrected — detection overlay</figcaption></figure>
-  <figure class="wide"><h3>Detection overlay</h3>
-   <p class="note" style="font-size:12.5px;margin:0">Magenta marks any Normal-brown pixel or aura shining through the scalp, inside the head, skull and hairstyle region. Empty.</p>
-   <figcaption>Counted on the flattened PNG, not on the layers that made it.
-   Normal-brown: <b>0</b> · aura through the scalp: <b>0</b></figcaption>
-  </figure>
- </div>
-</div>
-<div class="frame">
- <header><span class="fid">Frame 13</span>
-  <span class="tag">mid-transformation</span><span class="tag zero">0 Normal-brown px</span><span class="tag zero">0 aura through the scalp</span></header>
- <div class="row">
-  <figure><img src="gate1-corrected/before_13.png" width="144" alt="rejected, frame 13">
-   <figcaption>Rejected — 405af70<br>native 144×176</figcaption></figure>
-  <figure><img src="gate1-corrected/after_13.png" width="144" alt="corrected, frame 13">
-   <figcaption>Corrected<br>native 144×176</figcaption></figure>
-  <figure><img src="gate1-corrected/before_head8_13.png" alt="rejected head, frame 13">
-   <figcaption>Rejected — head at 8×</figcaption></figure>
-  <figure><img src="gate1-corrected/after_head8_13.png" alt="corrected head, frame 13">
-   <figcaption>Corrected — head at 8×</figcaption></figure>
- </div>
- <div class="row" style="margin-top:14px">
-  <figure><img src="gate1-corrected/after_head16_13.png" alt="corrected head 16x, frame 13">
-   <figcaption>Corrected — head at 16×, the forehead and roots</figcaption></figure>
-  <figure><img src="gate1-corrected/skull8_13.png" alt="hairless head, frame 13">
-   <figcaption>Hairless head only — skin, ears,<br>face shading. No hair of any kind.</figcaption></figure>
-  <figure><img src="gate1-corrected/normalhair8_13.png" alt="normal hair layer, frame 13">
-   <figcaption>Normal hair only — the removable<br>layer, drawn nowhere after frame 7.</figcaption></figure>
-  <figure><img src="gate1-corrected/ssjhair8_13.png" alt="ssj1 hair layer, frame 13">
-   <figcaption>SSJ1 hair only — 986 px,<br>five shades, all approved gold.</figcaption></figure>
- </div>
- <div class="row" style="margin-top:14px">
-  <figure><img src="gate1-corrected/overlay_before8_13.png" alt="rejected overlay, frame 13">
-   <figcaption>Rejected — detection overlay</figcaption></figure>
-  <figure><img src="gate1-corrected/overlay8_13.png" alt="corrected overlay, frame 13">
-   <figcaption>Corrected — detection overlay</figcaption></figure>
-  <figure class="wide"><h3>Detection overlay</h3>
-   <p class="note" style="font-size:12.5px;margin:0">Magenta marks any Normal-brown pixel or aura shining through the scalp, inside the head, skull and hairstyle region. Empty.</p>
-   <figcaption>Counted on the flattened PNG, not on the layers that made it.
-   Normal-brown: <b>0</b> · aura through the scalp: <b>0</b></figcaption>
-  </figure>
- </div>
-</div>
-<div class="frame">
- <header><span class="fid">Frame 18</span>
-  <span class="tag">settling</span><span class="tag zero">0 Normal-brown px</span><span class="tag zero">0 aura through the scalp</span></header>
- <div class="row">
-  <figure><img src="gate1-corrected/before_18.png" width="144" alt="rejected, frame 18">
-   <figcaption>Rejected — 405af70<br>native 144×176</figcaption></figure>
-  <figure><img src="gate1-corrected/after_18.png" width="144" alt="corrected, frame 18">
-   <figcaption>Corrected<br>native 144×176</figcaption></figure>
-  <figure><img src="gate1-corrected/before_head8_18.png" alt="rejected head, frame 18">
-   <figcaption>Rejected — head at 8×</figcaption></figure>
-  <figure><img src="gate1-corrected/after_head8_18.png" alt="corrected head, frame 18">
-   <figcaption>Corrected — head at 8×</figcaption></figure>
- </div>
- <div class="row" style="margin-top:14px">
-  <figure><img src="gate1-corrected/after_head16_18.png" alt="corrected head 16x, frame 18">
-   <figcaption>Corrected — head at 16×, the forehead and roots</figcaption></figure>
-  <figure><img src="gate1-corrected/skull8_18.png" alt="hairless head, frame 18">
-   <figcaption>Hairless head only — skin, ears,<br>face shading. No hair of any kind.</figcaption></figure>
-  <figure><img src="gate1-corrected/normalhair8_18.png" alt="normal hair layer, frame 18">
-   <figcaption>Normal hair only — the removable<br>layer, drawn nowhere after frame 7.</figcaption></figure>
-  <figure><img src="gate1-corrected/ssjhair8_18.png" alt="ssj1 hair layer, frame 18">
-   <figcaption>SSJ1 hair only — 986 px,<br>five shades, all approved gold.</figcaption></figure>
- </div>
- <div class="row" style="margin-top:14px">
-  <figure><img src="gate1-corrected/overlay_before8_18.png" alt="rejected overlay, frame 18">
-   <figcaption>Rejected — detection overlay</figcaption></figure>
-  <figure><img src="gate1-corrected/overlay8_18.png" alt="corrected overlay, frame 18">
-   <figcaption>Corrected — detection overlay</figcaption></figure>
-  <figure class="wide"><h3>Detection overlay</h3>
-   <p class="note" style="font-size:12.5px;margin:0">Magenta marks any Normal-brown pixel or aura shining through the scalp, inside the head, skull and hairstyle region. Empty.</p>
-   <figcaption>Counted on the flattened PNG, not on the layers that made it.
-   Normal-brown: <b>0</b> · aura through the scalp: <b>0</b></figcaption>
-  </figure>
- </div>
-</div>
-<div class="frame">
- <header><span class="fid">Frame 21</span>
-  <span class="tag">settling</span><span class="tag zero">0 Normal-brown px</span><span class="tag zero">0 aura through the scalp</span></header>
- <div class="row">
-  <figure><img src="gate1-corrected/before_21.png" width="144" alt="rejected, frame 21">
-   <figcaption>Rejected — 405af70<br>native 144×176</figcaption></figure>
-  <figure><img src="gate1-corrected/after_21.png" width="144" alt="corrected, frame 21">
-   <figcaption>Corrected<br>native 144×176</figcaption></figure>
-  <figure><img src="gate1-corrected/before_head8_21.png" alt="rejected head, frame 21">
-   <figcaption>Rejected — head at 8×</figcaption></figure>
-  <figure><img src="gate1-corrected/after_head8_21.png" alt="corrected head, frame 21">
-   <figcaption>Corrected — head at 8×</figcaption></figure>
- </div>
- <div class="row" style="margin-top:14px">
-  <figure><img src="gate1-corrected/after_head16_21.png" alt="corrected head 16x, frame 21">
-   <figcaption>Corrected — head at 16×, the forehead and roots</figcaption></figure>
-  <figure><img src="gate1-corrected/skull8_21.png" alt="hairless head, frame 21">
-   <figcaption>Hairless head only — skin, ears,<br>face shading. No hair of any kind.</figcaption></figure>
-  <figure><img src="gate1-corrected/normalhair8_21.png" alt="normal hair layer, frame 21">
-   <figcaption>Normal hair only — the removable<br>layer, drawn nowhere after frame 7.</figcaption></figure>
-  <figure><img src="gate1-corrected/ssjhair8_21.png" alt="ssj1 hair layer, frame 21">
-   <figcaption>SSJ1 hair only — 986 px,<br>five shades, all approved gold.</figcaption></figure>
- </div>
- <div class="row" style="margin-top:14px">
-  <figure><img src="gate1-corrected/overlay_before8_21.png" alt="rejected overlay, frame 21">
-   <figcaption>Rejected — detection overlay</figcaption></figure>
-  <figure><img src="gate1-corrected/overlay8_21.png" alt="corrected overlay, frame 21">
-   <figcaption>Corrected — detection overlay</figcaption></figure>
-  <figure class="wide"><h3>Detection overlay</h3>
-   <p class="note" style="font-size:12.5px;margin:0">Magenta marks any Normal-brown pixel or aura shining through the scalp, inside the head, skull and hairstyle region. Empty.</p>
-   <figcaption>Counted on the flattened PNG, not on the layers that made it.
-   Normal-brown: <b>0</b> · aura through the scalp: <b>0</b></figcaption>
-  </figure>
- </div>
-</div>
-<div class="frame">
- <header><span class="fid">Frame 24</span>
-  <span class="tag">destination — SSJ1</span><span class="tag zero">0 Normal-brown px</span><span class="tag zero">0 aura through the scalp</span></header>
- <div class="row">
-  <figure><img src="gate1-corrected/before_24.png" width="144" alt="rejected, frame 24">
-   <figcaption>Rejected — 405af70<br>native 144×176</figcaption></figure>
-  <figure><img src="gate1-corrected/after_24.png" width="144" alt="corrected, frame 24">
-   <figcaption>Corrected<br>native 144×176</figcaption></figure>
-  <figure><img src="gate1-corrected/before_head8_24.png" alt="rejected head, frame 24">
-   <figcaption>Rejected — head at 8×</figcaption></figure>
-  <figure><img src="gate1-corrected/after_head8_24.png" alt="corrected head, frame 24">
-   <figcaption>Corrected — head at 8×</figcaption></figure>
- </div>
- <div class="row" style="margin-top:14px">
-  <figure><img src="gate1-corrected/after_head16_24.png" alt="corrected head 16x, frame 24">
-   <figcaption>Corrected — head at 16×, the forehead and roots</figcaption></figure>
-  <figure><img src="gate1-corrected/skull8_24.png" alt="hairless head, frame 24">
-   <figcaption>Hairless head only — skin, ears,<br>face shading. No hair of any kind.</figcaption></figure>
-  <figure><img src="gate1-corrected/normalhair8_24.png" alt="normal hair layer, frame 24">
-   <figcaption>Normal hair only — the removable<br>layer, drawn nowhere after frame 7.</figcaption></figure>
-  <figure><img src="gate1-corrected/ssjhair8_24.png" alt="ssj1 hair layer, frame 24">
-   <figcaption>SSJ1 hair only — 986 px,<br>five shades, all approved gold.</figcaption></figure>
- </div>
- <div class="row" style="margin-top:14px">
-  <figure><img src="gate1-corrected/overlay_before8_24.png" alt="rejected overlay, frame 24">
-   <figcaption>Rejected — detection overlay</figcaption></figure>
-  <figure><img src="gate1-corrected/overlay8_24.png" alt="corrected overlay, frame 24">
-   <figcaption>Corrected — detection overlay</figcaption></figure>
-  <figure class="wide"><h3>Detection overlay</h3>
-   <p class="note" style="font-size:12.5px;margin:0">Magenta marks any Normal-brown pixel or aura shining through the scalp, inside the head, skull and hairstyle region. Empty.</p>
-   <figcaption>Counted on the flattened PNG, not on the layers that made it.
-   Normal-brown: <b>0</b> · aura through the scalp: <b>0</b></figcaption>
-  </figure>
- </div>
-</div>
-
-<h2>How the head is built</h2>
-<div class="rule"></div>
-<p class="note">Every transformed frame is composed in this order, so a flattened Normal
-head can never sit under a transformed hairstyle:</p>
-<ul>
- <li>body with no head hair → <b>hairless skull</b> (approved <code>head_skin</code>,
- clipped to this frame's head socket) → SSJ1 rear hair → face and eyebrows →
- SSJ1 front hair → aura and effects.</li>
- <li>The knockout is derived by toggling the Aseprite hair layers on and off, not by the
- classifier and not by colour. Those layers contribute exactly 394 px in the five
- Normal-brown ramp shades; none of the five appears in any transformed frame.</li>
- <li>The removed region is filled with the artist's own scalp pixels. Nothing is mirrored
- and no skin colour is invented.</li>
-</ul>
-
-<h2>Audit and controls</h2>
-<div class="rule"></div>
-<p class="note">The audit reads the exported PNG, geometrically scoped to the head socket,
-the skull and the destination hairstyle — the hairstyle is included because two controls
-went undetected while the region stopped at the head. Five defects are injected on purpose;
-every one must be caught, or the audit is not valid.</p>
-<div class="scroll"><table>
- <tr><th>Injected defect</th><th>Caught</th></tr>
- <tr><th>A complete Normal fringe pasted under SSJ1</th><td class="n">131 px</td></tr>
- <tr><th>One Normal-brown pixel at the gold hairline</th><td class="n">1 px</td></tr>
- <tr><th>A brown curl placed inside the SSJ1 hair asset</th><td class="n">12 px</td></tr>
- <tr><th>A fringe curl misclassified as an eyebrow</th><td class="n">15 px</td></tr>
- <tr><th>Normal rear hair left behind the destination hair</th><td class="n">12 px</td></tr>
-</table></div>
-<p class="note">The fifth control was passing for the wrong reason: it only filled
-transparent pixels, and all twelve rear-hair pixels are already covered, so it planted
-nothing. It now plants visibly, and is caught.</p>
-
-<h2>What did not change</h2>
-<div class="rule"></div>
-<div class="scroll"><table>
- <tr><th>Changed pixels, frames 8–24</th><td>96 per frame · 1,632 total</td></tr>
- <tr><th>Of those, outside the head and hair region</th><td class="n">0</td></tr>
- <tr><th>Frames 0–7</th><td class="n">byte-identical</td></tr>
- <tr><th>Bounding box, all 25 frames</th><td class="n">identical</td></tr>
- <tr><th>SSJ1 hair asset</th><td class="n">986 px, 5 gold shades, same bbox</td></tr>
- <tr><th>Skip destination</th><td class="n">byte-identical to frame 24</td></tr>
-</table></div>
-<p class="note">Choreography, frame timing, joint trajectories, poses, positioning, the
-shirt, badge, body, legs, shoes and the aura are untouched by this pass: every changed
-pixel lies inside the head and hair repair region.</p>
-
-<h2>Also on this site</h2>
-<div class="rule"></div>
-<p><a href="handoff-all-nine.html">Hair handoff — all nine transformations</a> ·
-<a href="gate-1/">Gate 1, previous submission</a> ·
-<a href="transformation/">Transformation cinematic</a></p>
