@@ -1,0 +1,24 @@
+Automated neutral-pose checks
+canvas 128x160  neck_row=109  ground_line=152
+Gold jersey emblem excluded from skin detection (it is yellow, not skin).
+========================================================================
+
+build 8400 shipped
+  wrist/hand skin inside the face region        :   0 px   PASS
+  hand skin overlapping chest centre            :   0 px   PASS
+  left hand x-range  / right hand x-range       : (50, 61) / (67, 78)   PASS
+  hands on opposite sides of torso centre (x=64): PASS
+  shoulder connection opaque px  left / right   :  70 /  80   PASS
+  foot pixels at ground line     left / right   :  65 /  82   PASS
+  neutral sprite sha256 (first 32)              : 3c9ccc71014eadaf1211d706c8c34867
+
+candidate (pose-fix pipeline @481ef80)
+  wrist/hand skin inside the face region        :   0 px   PASS
+  hand skin overlapping chest centre            :   0 px   PASS
+  left hand x-range  / right hand x-range       : (50, 61) / (67, 78)   PASS
+  hands on opposite sides of torso centre (x=64): PASS
+  shoulder connection opaque px  left / right   :  70 /  80   PASS
+  foot pixels at ground line     left / right   :  65 /  82   PASS
+  neutral sprite sha256 (first 32)              : f4a981c3f7f90ff1f8119ff3bcaf1344
+
+  reset returns byte-for-byte identical neutral sprite : True

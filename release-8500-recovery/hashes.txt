@@ -1,0 +1,20 @@
+Production avatar catalog tree object (git), per candidate source
+================================================================
+d950aa6  build 8100 source        tree=3a9eb918c777ebde43ad465ae37e986bbd6c0d0f
+ff10bf3  build 8200 source (est)  tree=3a9eb918c777ebde43ad465ae37e986bbd6c0d0f
+40299cb  build 8300 source (est)  tree=3a9eb918c777ebde43ad465ae37e986bbd6c0d0f
+44ee9de  pre-pixellab-2d-safe     tree=3a9eb918c777ebde43ad465ae37e986bbd6c0d0f
+6e7af22  build 8400 SHIPPED       tree=3a9eb918c777ebde43ad465ae37e986bbd6c0d0f
+
+All five identical => builds 8100, 8200, 8300 and 8400 shipped the SAME avatar art.
+
+Shipped manifest provenance (6e7af22): generated_from_commit=2f9122c  (2026-08-25 21:01)
+Candidate preview provenance          : generated_from_commit=481ef80  (2026-08-29)
+
+Per-layer comparison, Normal neutral stand (8400 vs candidate)
+--------------------------------------------------------------
+AvatarV2NormalStandUnder   IDENTICAL
+AvatarV2NormalStandSpark   IDENTICAL
+AvatarV2BodyStandNormal    DIFFERS
+AvatarV2NormalStandOver    DIFFERS   <- hair + face live here
+composed frame 0           396 of 20480 px differ, bbox (47,73)-(81,96) = hairline only

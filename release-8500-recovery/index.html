@@ -1,0 +1,132 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Release 8500 recovery — avatar source investigation</title>
+<style>
+:root{--bg:#12131a;--card:#1b1d27;--ink:#e9ebf2;--dim:#a2a8bd;--line:#2c3040;--warn:#ffb454;--bad:#ff6b6b;--good:#5ad18e}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 ui-sans-serif,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:32px 20px 80px}
+h1{font-size:28px;margin:0 0 6px}h2{font-size:20px;margin:38px 0 12px;border-bottom:1px solid var(--line);padding-bottom:8px}
+h3{font-size:16px;margin:22px 0 8px;color:var(--dim)}
+.sub{color:var(--dim);margin:0 0 22px}
+.verdict{background:#2a1c1c;border:1px solid #5a2b2b;border-left:4px solid var(--bad);padding:16px 18px;border-radius:8px;margin:18px 0}
+.verdict b{color:var(--bad)}
+.note{background:#1e2430;border-left:4px solid var(--warn);padding:14px 16px;border-radius:8px;margin:16px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.card h4{margin:0 0 4px;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--dim)}
+img{image-rendering:pixelated;max-width:100%;background:#fff;border-radius:6px;display:block}
+code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px}
+pre{background:#0e0f15;border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+td,th{border:1px solid var(--line);padding:7px 10px;text-align:left}
+th{background:#232734;color:var(--dim)}
+.pass{color:var(--good)}.fail{color:var(--bad)}
+.hash{color:var(--dim);font-size:11.5px;word-break:break-all}
+a{color:#8ab4ff}
+</style></head><body><div class="wrap">
+
+<h1>Release 8500 recovery — avatar source investigation</h1>
+<p class="sub">Generated 2026-08-31 · investigation only · <b>no build was uploaded</b></p>
+
+<div class="verdict">
+<b>STOPPED — did not upload.</b> The requested candidate source <code>40299cb</code> (build 8300)
+carries a <b>byte-identical</b> avatar catalog to shipped build 8400. Releasing from it would change
+no artwork whatsoever. Per the fail-closed rule, nothing was archived or uploaded.
+</div>
+
+<h2>1. Why 40299cb cannot be the answer</h2>
+<p>The production catalog is <code>ios/Resources/AvatarV2.xcassets</code>. Its git tree object is
+identical across every shipped source from build 8100 to 8400:</p>
+<table><tr><th>Source</th><th>Build</th><th>Catalog tree</th></tr>
+<tr><td><code>d950aa6</code></td><td>8100</td><td class="hash">3a9eb918c777ebde43ad465ae37e986bbd6c0d0f</td></tr>
+<tr><td><code>ff10bf3</code></td><td>8200 (est)</td><td class="hash">3a9eb918c777ebde43ad465ae37e986bbd6c0d0f</td></tr>
+<tr><td><code>40299cb</code></td><td>8300 (est)</td><td class="hash">3a9eb918c777ebde43ad465ae37e986bbd6c0d0f</td></tr>
+<tr><td><code>44ee9de</code></td><td>tag pre-pixellab-2d-safe</td><td class="hash">3a9eb918c777ebde43ad465ae37e986bbd6c0d0f</td></tr>
+<tr><td><code>6e7af22</code></td><td><b>8400 shipped</b></td><td class="hash">3a9eb918c777ebde43ad465ae37e986bbd6c0d0f</td></tr></table>
+<p>The shipped manifest records <code>generated_from_commit = 2f9122c</code> (2026-08-25 21:01) — the last
+time production art was rendered. Every later avatar commit changed
+<code>scripts/aseprite/*</code>, <code>scripts/avatar_v2/forms.py</code>, Aseprite masters and tests, but
+<b>never regenerated the shipping catalog</b>.</p>
+
+<h2>2. The newer curly hair does exist — but was never rendered to production</h2>
+<p>It exists only as pipeline source on <code>feature/avatar-v3-old-model-pose-fix</code>, visible in that
+worktree's <code>preview.xcassets</code> (@1x, gitignored, never read by the app),
+generated from <code>481ef80</code>.</p>
+
+<h3>Normal Ryan — composed Body + Under + Over</h3>
+<div class="grid">
+<div class="card"><h4>Build 8400 shipped — native</h4><img src="img/normal_8400_1x.png" alt="8400 native"></div>
+<div class="card"><h4>Candidate — native</h4><img src="img/normal_cand_1x.png" alt="candidate native"></div>
+<div class="card"><h4>Build 8400 — 8×</h4><img src="img/normal_8400_8x.png" alt="8400 8x"></div>
+<div class="card"><h4>Candidate — 8×</h4><img src="img/normal_cand_8x.png" alt="candidate 8x"></div>
+</div>
+
+<h3>Hair close-up (12×) — the actual difference</h3>
+<div class="grid">
+<div class="card"><h4>8400 — looser, lighter waves</h4><img src="img/hair_8400_12x.png" alt="8400 hair"></div>
+<div class="card"><h4>Candidate — tighter, darker ring curls</h4><img src="img/hair_cand_12x.png" alt="candidate hair"></div>
+</div>
+
+<h3>Face and hairline (8×)</h3>
+<div class="grid">
+<div class="card"><h4>8400</h4><img src="img/head_8400_8x.png" alt="8400 head"></div>
+<div class="card"><h4>Candidate</h4><img src="img/head_cand_8x.png" alt="candidate head"></div>
+</div>
+<div class="note">Both have eyes, eyebrows, nose and mouth. The isolated
+<code>AvatarV2BodyStandNormal</code> layer looks faceless and bald in <em>both</em> versions — face and hair
+live in the <code>Over</code> layer. Judging that body layer alone is misleading.</div>
+
+<h3>Silhouette</h3>
+<div class="grid">
+<div class="card"><h4>8400</h4><img src="img/silhouette_8400_4x.png" alt="8400 silhouette"></div>
+<div class="card"><h4>Candidate</h4><img src="img/silhouette_cand_4x.png" alt="candidate silhouette"></div>
+</div>
+
+<h2>3. Transformation keyframes</h2>
+<div class="grid">
+<div class="card"><h4>Normal → SSJ1 · 8400</h4><img src="img/keyframes_Normal-to-SSJ1_8400_3x.png" alt=""></div>
+<div class="card"><h4>Normal → SSJ1 · candidate</h4><img src="img/keyframes_Normal-to-SSJ1_cand_3x.png" alt=""></div>
+<div class="card"><h4>SSJ1 → SSJ2 · 8400</h4><img src="img/keyframes_SSJ1-to-SSJ2_8400_3x.png" alt=""></div>
+<div class="card"><h4>SSJ1 → SSJ2 · candidate</h4><img src="img/keyframes_SSJ1-to-SSJ2_cand_3x.png" alt=""></div>
+<div class="card"><h4>SSJ2 → SSJ3 · 8400</h4><img src="img/keyframes_SSJ2-to-SSJ3_8400_3x.png" alt=""></div>
+<div class="card"><h4>SSJ2 → SSJ3 · candidate</h4><img src="img/keyframes_SSJ2-to-SSJ3_cand_3x.png" alt=""></div>
+</div>
+
+<h3>Full animations</h3>
+<div class="grid">
+<div class="card"><h4>Idle · 8400</h4><img src="img/idle_8400.gif" alt=""></div>
+<div class="card"><h4>Idle · candidate</h4><img src="img/idle_cand.gif" alt=""></div>
+<div class="card"><h4>Normal → SSJ1 · 8400</h4><img src="img/Normal-to-SSJ1_8400.gif" alt=""></div>
+<div class="card"><h4>Normal → SSJ1 · candidate</h4><img src="img/Normal-to-SSJ1_cand.gif" alt=""></div>
+<div class="card"><h4>SSJ1 → SSJ2 · 8400</h4><img src="img/SSJ1-to-SSJ2_8400.gif" alt=""></div>
+<div class="card"><h4>SSJ1 → SSJ2 · candidate</h4><img src="img/SSJ1-to-SSJ2_cand.gif" alt=""></div>
+<div class="card"><h4>SSJ2 → SSJ3 · 8400</h4><img src="img/SSJ2-to-SSJ3_8400.gif" alt=""></div>
+<div class="card"><h4>SSJ2 → SSJ3 · candidate</h4><img src="img/SSJ2-to-SSJ3_cand.gif" alt=""></div>
+</div>
+
+<h2>4. Neutral default pose — both comply</h2>
+<p>Both candidates already satisfy the mandatory resting pose: upright, front-facing, head level,
+arms hanging beside the torso, hands near the hips, both feet planted, no aura or power-up effect.
+Neither shows arm-across-chest, hand-to-face, crossed arms, a fighting guard or a charging stance.</p>
+<pre id="checks">loading pose-checks.txt …</pre>
+<script>
+fetch('pose-checks.txt').then(r=>r.text()).then(t=>{document.getElementById('checks').textContent=t;})
+.catch(()=>{document.getElementById('checks').textContent='see pose-checks.txt';});
+</script>
+
+<h2>5. Evidence files</h2>
+<ul>
+<li><a href="pose-checks.txt">pose-checks.txt</a> — automated neutral-pose assertions</li>
+<li><a href="hashes.txt">hashes.txt</a> — catalog tree objects, provenance, per-layer diff</li>
+</ul>
+
+<h2>6. What a corrective build would require</h2>
+<p>The curly hair has never existed as a shipped production asset set. Producing it means running the
+repository's own generator to render a <b>new</b> @1x/@2x/@3x catalog from the pose-fix pipeline —
+artwork that has never been reviewed or shipped at retina scale. That is a new asset generation, not a
+transplant of proven assets, so it was not done unilaterally.</p>
+<div class="note">Build <b>8400 remains installable and untouched</b> as the fallback. Tag
+<code>pre-pixellab-2d-safe</code>, branch <code>release/testflight-pre-pixellab-avatar</code> and all
+PixelLab v4 work are unmodified.</div>
+
+</div></body></html>
