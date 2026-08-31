@@ -36,7 +36,7 @@ code{background:var(--panel);border:1px solid var(--line);border-radius:4px;padd
 ul{max-width:90ch}li{margin:4px 0}
 </style>
 <h1>Avatar V4 — Ryan, rebuilt from photographs</h1>
-<p style="margin:0 0 10px"><a href="#articulated-full-aura">Jump to the articulated motion and full aura</a> · <a href="#coherent-motion-eyes-hair">earlier pass</a> · <a href="#motion-aura-reference">earlier animation pass</a> · <a href="#eyes-aura-rebuild">eyes rebuild</a> · <a href="#final">earlier tuning pass</a></p>
+<p style="margin:0 0 10px"><a href="#authored-six-frame">Jump to the hand-authored six-frame motion</a> · <a href="#articulated-full-aura">rejected 0777805 warp pass</a> · <a href="#coherent-motion-eyes-hair">earlier pass</a> · <a href="#motion-aura-reference">earlier animation pass</a> · <a href="#eyes-aura-rebuild">eyes rebuild</a> · <a href="#final">earlier tuning pass</a></p>
 <p class="lede">The previous set was rejected for not resembling Ryan, for SSJ1 facing away, and for the forms looking past the viewer. This one is built from his own photographs, and <b>every state faces the viewer</b>: each is the south rotation of a character state, so a forward gaze is a property of the render rather than something hoped for.</p>
 <p class="note">One internal identity was built first, deliberately with a buzz cut so no curls can survive under gold hair. Normal, SSJ1, SSJ2 and SSJ3 are each a state <i>of that identity</i> — none is chained off another, so a defect in one cannot travel into the next. The rejected set is kept at <a href="rejected-0887f3f/">rejected-0887f3f/</a> and is not shown here as a current result.</p>
 <h2>Ryan — the identity references</h2><div class="rule"></div>
@@ -260,7 +260,116 @@ ul{max-width:90ch}li{margin:4px 0}
 <tr><th>aura px</th><td>5314</td></tr>
 <tr><th>lightning px</th><td>467</td></tr>
 </table></div></div>
-<h2 id="articulated-full-aura">Coherent articulated motion + full aura composite</h2><div class="rule"></div>
+<h2 id="authored-six-frame">Hand-authored six-frame coherent sprite motion</h2><div class="rule"></div>
+<p class="lede">The previous checkpoint <code>0777805</code> was rejected: the gaussian joint-anchor inverse warp still read as a body breaking into pieces. That was the third rejected technique, after rigid part translation and row-wise raster deformation, and <b>all three failed for the same reason no connectivity metric can see</b> &mdash; each moved parts of the body relative to each other by a sub-anatomical amount, so adjacent regions slid past one another. The gaussian field was the worst of the three: because its displacement varied continuously across the sprite, neighbouring pixels <i>inside a single arm</i> received slightly different offsets, so the arm sheared internally while remaining perfectly connected and scoring 1.0 on every reach test.</p>
+<p class="lede">Nothing here is deformed. Each pose moves the upper body as <b>one rigid unit by a whole pixel</b>, so nothing inside it can slide against anything else, and the two contacts that opens are authored rather than patched: the shorts grow upward into the row the jersey vacated, and the head group’s bottom contour grows downward &mdash; both in the body’s own edge colours, which is what a hand-drawn frame does. Maximum excursion is two pixels.</p>
+<p class="note"><b>These are not acceptance criteria.</b> Torso reach 1.0, one connected component and zero unreached pixels all passed on the rejected version too. The checks below exist so a fixed defect cannot silently return; the acceptance criterion is whether each frame reads as one drawn body.</p>
+<h3>The loop, and the rejected loop beside it</h3>
+<p class="note">Left: the new authored loop. Right: <code>0777805</code>, rejected. Both at 10&nbsp;fps, both 4&times; nearest-neighbour.</p>
+<div class="form"><header><span class="fid">SSJ1</span><span class="tag ok">authored</span><span class="tag">4 poses / 6 frames</span></header>
+<div class="row">
+<figure><img src="authored/ssj1_composite_4x.gif" width="256" alt="new authored loop, 10fps"><figcaption><b>NEW</b> &mdash; authored, 10&nbsp;fps</figcaption></figure>
+<figure><img src="authored/ssj1_rejected_0777805_composite.gif" width="256" alt="rejected gaussian-warp loop"><figcaption><b>REJECTED 0777805</b> &mdash; gaussian joint-anchor warp</figcaption></figure>
+<figure><img src="authored/ssj1_composite_slow_4x.gif" width="256" alt="new authored loop, 2fps"><figcaption>Same six frames at 2&nbsp;fps for inspection</figcaption></figure>
+<figure><img src="authored/ssj1_body_4x.gif" width="256" alt="body only, 10fps"><figcaption>Body only, aura removed, 10&nbsp;fps</figcaption></figure>
+<figure><img src="authored/ssj1_body_slow_4x.gif" width="256" alt="body only, 2fps"><figcaption>Body only at 2&nbsp;fps</figcaption></figure>
+</div>
+<h3>Six frames, native resolution</h3><div class="row">
+<figure><img src="authored/ssj1_frame_0_native.png" width="128" alt="frame 0 native"><figcaption>f0 &mdash; neutral<br>the approved transformed pose, unaltered</figcaption></figure>
+<figure><img src="authored/ssj1_frame_1_native.png" width="128" alt="frame 1 native"><figcaption>f1 &mdash; inhale<br>upper body up 1px, waistband authored</figcaption></figure>
+<figure><img src="authored/ssj1_frame_2_native.png" width="128" alt="frame 2 native"><figcaption>f2 &mdash; rise<br>head leads the chest by 1px, neck contour extended</figcaption></figure>
+<figure><img src="authored/ssj1_frame_3_native.png" width="128" alt="frame 3 native"><figcaption>f3 &mdash; peak<br>whole upper body up 2px, rigid, no junction to repair</figcaption></figure>
+<figure><img src="authored/ssj1_frame_4_native.png" width="128" alt="frame 4 native"><figcaption>f4 &mdash; settle<br>head still leading, chest beginning to drop</figcaption></figure>
+<figure><img src="authored/ssj1_frame_5_native.png" width="128" alt="frame 5 native"><figcaption>f5 &mdash; return<br>back to a single pixel, closing the loop</figcaption></figure>
+</div>
+<h3>Six-frame strip, 8&times;</h3><div class="row scroll"><figure><img src="authored/ssj1_strip_8x.png" alt="six frame strip"><figcaption>Every frame is a finished sprite on its own, not a stage of a warp.</figcaption></figure></div>
+<h3>Onion skin &mdash; previous frame dimmed under the current one</h3><div class="row scroll"><figure><img src="authored/ssj1_onion_6x.png" alt="onion skin"><figcaption>The dim layer is the previous frame; the bright layer is this one.</figcaption></figure></div>
+<h3>Changed pixels only</h3><div class="row scroll"><figure><img src="authored/ssj1_changed_6x.png" alt="changed pixels"><figcaption>Red marks every pixel that differs from the previous frame. They form whole anatomical regions &mdash; the upper body, or the head alone &mdash; not horizontal bands, vertical bands, checkerboard warp artifacts, scattered interior pixels or detached clusters. The legs, shorts and shoes are never red.</figcaption></figure></div>
+<h3>Shoulder, arm and neck at 14&times;</h3><div class="row scroll"><figure><img src="authored/ssj1_shoulder_14x.png" alt="shoulder arm neck closeup"><figcaption>Inspected by eye, not by connected-component test. No crack at the shoulder, no one-pixel neck tether, no sleeve sliding over the arm, no new internal dark seam.</figcaption></figure></div>
+<h3>Frozen effects, all six beats</h3>
+<p class="note">Published as strips rather than GIFs on purpose. The aura holds each of the three approved reference frames for two beats, so an aura-only GIF legitimately decodes to <b>three</b> frames and a lightning-only GIF to one or four. Next to six-frame body loops those numbers look like stale assets, so every beat is shown here where no encoder can collapse it.</p>
+<div class="row scroll"><figure><img src="authored/ssj1_aura_beats.png" alt="aura beats"><figcaption>Aura, beats 0&ndash;5 (reference frames 0,0,1,1,2,2)</figcaption></figure></div>
+<div class="row scroll"><figure><img src="authored/ssj1_lightning_beats.png" alt="lightning beats"><figcaption>Lightning, beats 0&ndash;5</figcaption></figure></div>
+</div>
+<div class="form"><header><span class="fid">SSJ2</span><span class="tag ok">authored</span><span class="tag">4 poses / 6 frames</span></header>
+<div class="row">
+<figure><img src="authored/ssj2_composite_4x.gif" width="256" alt="new authored loop, 10fps"><figcaption><b>NEW</b> &mdash; authored, 10&nbsp;fps</figcaption></figure>
+<figure><img src="authored/ssj2_rejected_0777805_composite.gif" width="256" alt="rejected gaussian-warp loop"><figcaption><b>REJECTED 0777805</b> &mdash; gaussian joint-anchor warp</figcaption></figure>
+<figure><img src="authored/ssj2_composite_slow_4x.gif" width="256" alt="new authored loop, 2fps"><figcaption>Same six frames at 2&nbsp;fps for inspection</figcaption></figure>
+<figure><img src="authored/ssj2_body_4x.gif" width="256" alt="body only, 10fps"><figcaption>Body only, aura removed, 10&nbsp;fps</figcaption></figure>
+<figure><img src="authored/ssj2_body_slow_4x.gif" width="256" alt="body only, 2fps"><figcaption>Body only at 2&nbsp;fps</figcaption></figure>
+</div>
+<h3>Six frames, native resolution</h3><div class="row">
+<figure><img src="authored/ssj2_frame_0_native.png" width="128" alt="frame 0 native"><figcaption>f0 &mdash; neutral<br>the approved transformed pose, unaltered</figcaption></figure>
+<figure><img src="authored/ssj2_frame_1_native.png" width="128" alt="frame 1 native"><figcaption>f1 &mdash; inhale<br>upper body up 1px, waistband authored</figcaption></figure>
+<figure><img src="authored/ssj2_frame_2_native.png" width="128" alt="frame 2 native"><figcaption>f2 &mdash; rise<br>head leads the chest by 1px, neck contour extended</figcaption></figure>
+<figure><img src="authored/ssj2_frame_3_native.png" width="128" alt="frame 3 native"><figcaption>f3 &mdash; peak<br>whole upper body up 2px, rigid, no junction to repair</figcaption></figure>
+<figure><img src="authored/ssj2_frame_4_native.png" width="128" alt="frame 4 native"><figcaption>f4 &mdash; settle<br>head still leading, chest beginning to drop</figcaption></figure>
+<figure><img src="authored/ssj2_frame_5_native.png" width="128" alt="frame 5 native"><figcaption>f5 &mdash; return<br>back to a single pixel, closing the loop</figcaption></figure>
+</div>
+<h3>Six-frame strip, 8&times;</h3><div class="row scroll"><figure><img src="authored/ssj2_strip_8x.png" alt="six frame strip"><figcaption>Every frame is a finished sprite on its own, not a stage of a warp.</figcaption></figure></div>
+<h3>Onion skin &mdash; previous frame dimmed under the current one</h3><div class="row scroll"><figure><img src="authored/ssj2_onion_6x.png" alt="onion skin"><figcaption>The dim layer is the previous frame; the bright layer is this one.</figcaption></figure></div>
+<h3>Changed pixels only</h3><div class="row scroll"><figure><img src="authored/ssj2_changed_6x.png" alt="changed pixels"><figcaption>Red marks every pixel that differs from the previous frame. They form whole anatomical regions &mdash; the upper body, or the head alone &mdash; not horizontal bands, vertical bands, checkerboard warp artifacts, scattered interior pixels or detached clusters. The legs, shorts and shoes are never red.</figcaption></figure></div>
+<h3>Shoulder, arm and neck at 14&times;</h3><div class="row scroll"><figure><img src="authored/ssj2_shoulder_14x.png" alt="shoulder arm neck closeup"><figcaption>Inspected by eye, not by connected-component test. No crack at the shoulder, no one-pixel neck tether, no sleeve sliding over the arm, no new internal dark seam.</figcaption></figure></div>
+<h3>Frozen effects, all six beats</h3>
+<p class="note">Published as strips rather than GIFs on purpose. The aura holds each of the three approved reference frames for two beats, so an aura-only GIF legitimately decodes to <b>three</b> frames and a lightning-only GIF to one or four. Next to six-frame body loops those numbers look like stale assets, so every beat is shown here where no encoder can collapse it.</p>
+<div class="row scroll"><figure><img src="authored/ssj2_aura_beats.png" alt="aura beats"><figcaption>Aura, beats 0&ndash;5 (reference frames 0,0,1,1,2,2)</figcaption></figure></div>
+<div class="row scroll"><figure><img src="authored/ssj2_lightning_beats.png" alt="lightning beats"><figcaption>Lightning, beats 0&ndash;5</figcaption></figure></div>
+</div>
+<div class="form"><header><span class="fid">SSJ3</span><span class="tag ok">authored</span><span class="tag">4 poses / 6 frames</span></header>
+<div class="row">
+<figure><img src="authored/ssj3_composite_4x.gif" width="256" alt="new authored loop, 10fps"><figcaption><b>NEW</b> &mdash; authored, 10&nbsp;fps</figcaption></figure>
+<figure><img src="authored/ssj3_rejected_0777805_composite.gif" width="256" alt="rejected gaussian-warp loop"><figcaption><b>REJECTED 0777805</b> &mdash; gaussian joint-anchor warp</figcaption></figure>
+<figure><img src="authored/ssj3_composite_slow_4x.gif" width="256" alt="new authored loop, 2fps"><figcaption>Same six frames at 2&nbsp;fps for inspection</figcaption></figure>
+<figure><img src="authored/ssj3_body_4x.gif" width="256" alt="body only, 10fps"><figcaption>Body only, aura removed, 10&nbsp;fps</figcaption></figure>
+<figure><img src="authored/ssj3_body_slow_4x.gif" width="256" alt="body only, 2fps"><figcaption>Body only at 2&nbsp;fps</figcaption></figure>
+</div>
+<h3>Six frames, native resolution</h3><div class="row">
+<figure><img src="authored/ssj3_frame_0_native.png" width="128" alt="frame 0 native"><figcaption>f0 &mdash; neutral<br>the approved transformed pose, unaltered</figcaption></figure>
+<figure><img src="authored/ssj3_frame_1_native.png" width="128" alt="frame 1 native"><figcaption>f1 &mdash; inhale<br>upper body up 1px, waistband authored</figcaption></figure>
+<figure><img src="authored/ssj3_frame_2_native.png" width="128" alt="frame 2 native"><figcaption>f2 &mdash; rise<br>head leads the chest by 1px, neck contour extended</figcaption></figure>
+<figure><img src="authored/ssj3_frame_3_native.png" width="128" alt="frame 3 native"><figcaption>f3 &mdash; peak<br>whole upper body up 2px, rigid, no junction to repair</figcaption></figure>
+<figure><img src="authored/ssj3_frame_4_native.png" width="128" alt="frame 4 native"><figcaption>f4 &mdash; settle<br>head still leading, chest beginning to drop</figcaption></figure>
+<figure><img src="authored/ssj3_frame_5_native.png" width="128" alt="frame 5 native"><figcaption>f5 &mdash; return<br>back to a single pixel, closing the loop</figcaption></figure>
+</div>
+<h3>Six-frame strip, 8&times;</h3><div class="row scroll"><figure><img src="authored/ssj3_strip_8x.png" alt="six frame strip"><figcaption>Every frame is a finished sprite on its own, not a stage of a warp.</figcaption></figure></div>
+<h3>Onion skin &mdash; previous frame dimmed under the current one</h3><div class="row scroll"><figure><img src="authored/ssj3_onion_6x.png" alt="onion skin"><figcaption>The dim layer is the previous frame; the bright layer is this one.</figcaption></figure></div>
+<h3>Changed pixels only</h3><div class="row scroll"><figure><img src="authored/ssj3_changed_6x.png" alt="changed pixels"><figcaption>Red marks every pixel that differs from the previous frame. They form whole anatomical regions &mdash; the upper body, or the head alone &mdash; not horizontal bands, vertical bands, checkerboard warp artifacts, scattered interior pixels or detached clusters. The legs, shorts and shoes are never red.</figcaption></figure></div>
+<h3>Shoulder, arm and neck at 14&times;</h3><div class="row scroll"><figure><img src="authored/ssj3_shoulder_14x.png" alt="shoulder arm neck closeup"><figcaption>Inspected by eye, not by connected-component test. No crack at the shoulder, no one-pixel neck tether, no sleeve sliding over the arm, no new internal dark seam.</figcaption></figure></div>
+<h3>Frozen effects, all six beats</h3>
+<p class="note">Published as strips rather than GIFs on purpose. The aura holds each of the three approved reference frames for two beats, so an aura-only GIF legitimately decodes to <b>three</b> frames and a lightning-only GIF to one or four. Next to six-frame body loops those numbers look like stale assets, so every beat is shown here where no encoder can collapse it.</p>
+<div class="row scroll"><figure><img src="authored/ssj3_aura_beats.png" alt="aura beats"><figcaption>Aura, beats 0&ndash;5 (reference frames 0,0,1,1,2,2)</figcaption></figure></div>
+<div class="row scroll"><figure><img src="authored/ssj3_lightning_beats.png" alt="lightning beats"><figcaption>Lightning, beats 0&ndash;5</figcaption></figure></div>
+</div>
+<h3>SSJ3 hair &mdash; restored spikes, uncropped</h3>
+<div class="row scroll"><figure><img src="authored/ssj3_hair_9x.png" alt="ssj3 hair"><figcaption>Not cropped, shortened or regenerated in this pass. Top row 14&ndash;16 on a 192-row canvas; left 19, right 108 on 128 columns.</figcaption></figure></div>
+<h3>Per-frame record</h3><div class="scroll"><table><tr><th>form</th><th>frame</th><th>pose</th><th>upper &Delta;y</th><th>head lead</th><th>sole row</th><th>top row</th><th>opaque px</th></tr>
+<tr><th>ssj1</th><td>0</td><td style="text-align:left">neutral</td><td>0</td><td>0</td><td class="n">175</td><td>42</td><td>5344</td></tr>
+<tr><th>ssj1</th><td>1</td><td style="text-align:left">inhale</td><td>1</td><td>0</td><td class="n">175</td><td>41</td><td>5385</td></tr>
+<tr><th>ssj1</th><td>2</td><td style="text-align:left">rise</td><td>1</td><td>1</td><td class="n">175</td><td>40</td><td>5405</td></tr>
+<tr><th>ssj1</th><td>3</td><td style="text-align:left">peak</td><td>2</td><td>0</td><td class="n">175</td><td>40</td><td>5426</td></tr>
+<tr><th>ssj1</th><td>4</td><td style="text-align:left">settle</td><td>1</td><td>1</td><td class="n">175</td><td>40</td><td>5405</td></tr>
+<tr><th>ssj1</th><td>5</td><td style="text-align:left">return</td><td>1</td><td>0</td><td class="n">175</td><td>41</td><td>5385</td></tr>
+<tr><th>ssj2</th><td>0</td><td style="text-align:left">neutral</td><td>0</td><td>0</td><td class="n">175</td><td>40</td><td>5293</td></tr>
+<tr><th>ssj2</th><td>1</td><td style="text-align:left">inhale</td><td>1</td><td>0</td><td class="n">175</td><td>39</td><td>5333</td></tr>
+<tr><th>ssj2</th><td>2</td><td style="text-align:left">rise</td><td>1</td><td>1</td><td class="n">175</td><td>38</td><td>5357</td></tr>
+<tr><th>ssj2</th><td>3</td><td style="text-align:left">peak</td><td>2</td><td>0</td><td class="n">175</td><td>38</td><td>5373</td></tr>
+<tr><th>ssj2</th><td>4</td><td style="text-align:left">settle</td><td>1</td><td>1</td><td class="n">175</td><td>38</td><td>5357</td></tr>
+<tr><th>ssj2</th><td>5</td><td style="text-align:left">return</td><td>1</td><td>0</td><td class="n">175</td><td>39</td><td>5333</td></tr>
+<tr><th>ssj3</th><td>0</td><td style="text-align:left">neutral</td><td>0</td><td>0</td><td class="n">167</td><td>16</td><td>9133</td></tr>
+<tr><th>ssj3</th><td>1</td><td style="text-align:left">inhale</td><td>1</td><td>0</td><td class="n">167</td><td>15</td><td>9169</td></tr>
+<tr><th>ssj3</th><td>2</td><td style="text-align:left">rise</td><td>1</td><td>1</td><td class="n">167</td><td>14</td><td>9205</td></tr>
+<tr><th>ssj3</th><td>3</td><td style="text-align:left">peak</td><td>2</td><td>0</td><td class="n">167</td><td>14</td><td>9205</td></tr>
+<tr><th>ssj3</th><td>4</td><td style="text-align:left">settle</td><td>1</td><td>1</td><td class="n">167</td><td>14</td><td>9205</td></tr>
+<tr><th>ssj3</th><td>5</td><td style="text-align:left">return</td><td>1</td><td>0</td><td class="n">167</td><td>15</td><td>9169</td></tr>
+</table></div>
+<p class="note">The sole row is constant within each form (175 for SSJ1/SSJ2, 167 for the floating SSJ3). Feet, ankles, lower legs, knees, hips, pelvis and shorts are byte-identical to the approved body in all eighteen frames.</p>
+<h3>What was found by looking rather than measuring</h3>
+<ul><li><b>The back hair lagged the face by one pixel.</b> <code>hair_back</code> is drawn first for depth, and it was given the torso offset along with the other behind-the-legs layers. On the two frames where the head leads, the forehead visibly grew. Every metric passed. Caught at 18&times; on the ear crop.</li>
+<li><b>An earlobe floated off as a two-pixel island.</b> The junction repair worked per column, so where SSJ3’s back hair hangs lower than the ear in the same column, the column’s bottom belonged to the hair and the ear’s own junction was never repaired. Fixed by repairing each contiguous run, not each column.</li>
+<li><b>Far-side limbs and back hair rose into the locked shorts and socks.</b> Twenty pixels of a region the brief locks byte-for-byte. Fixed with an explicit depth order: back hair and far arm, then the locked lower body, then everything else.</li></ul>
+<p class="note">Three measurement errors were also corrected rather than tuned around: a seam-corridor gate that cannot follow a rigidly lifted body across a joint (supplying its displacement field made it <i>worse</i> &mdash; SSJ1 worst delta 1&nbsp;&rarr;&nbsp;8), a positional dark-pixel diff that flagged every outline pixel in a body that moved, and a severed-hand control that passed for the wrong reason because the fist rests against the hip and stayed connected through the shorts.</p>
+<h2 id="articulated-full-aura">Coherent articulated motion + full aura composite</h2><p class="note"><span class="tag no">REJECTED 0777805 &mdash; gaussian joint-anchor warp. Kept as evidence; its assets are historical.</span></p><div class="rule"></div>
 <p class="lede">Two defects fixed. The animation no longer warps the sprite line-by-line, and the black dead zone between Ryan and the aura is gone — without a single approved aura pixel changing.</p>
 <h3>Why it looked sliced, and what replaced it</h3>
 <p class="note">The old renderer displaced whole <b>rows</b>. A row-wise field is constant across x, so every pixel on a row moved in lockstep and the eye saw horizontal bands shearing — even though every joint was connected and torso reach measured 1.0. Connectivity was never the problem; the field's shape was.</p>
@@ -335,7 +444,7 @@ ul{max-width:90ch}li{margin:4px 0}
 </table></div>
 <p class="note">Tests: <b>69</b> recovery checks (five band/shear controls plus a knockout-reproduction control), <b>121</b> coherent, <b>110</b> rebuild, <b>86</b> structural, <b>43</b> tuning — <b>429 in total</b>.</p>
 <p class="note"><b>Honest limitation:</b> one required control — a forearm nudged sideways while staying connected — is not caught by any metric here. Torso reach reads 1.0 and the slice audit reads 0.015 against real frames scoring 0.16–0.34, so an edge-step detector would flag legitimate motion before it flagged the defect. Rather than tune a threshold until the control passed, it is recorded as undetected and left to the 12× joint sheets and visual inspection.</p>
-<h2 id="coherent-motion-eyes-hair">Coherent motion, solid irises, restored hair</h2><div class="rule"></div>
+<h2 id="coherent-motion-eyes-hair">Coherent motion, solid irises, restored hair</h2><p class="note"><span class="tag no">SUPERSEDED. Kept as evidence; its assets are historical.</span></p><div class="rule"></div>
 <p class="lede">Three fixes, zero PixelLab generations. The loose-pieces animation is deleted and replaced by a six-frame loop that deforms the figure as one raster; every transformed iris is a single solid teal block with no pupil; and SSJ3's cropped top spikes are restored from its own raw source. <b>The approved aura is untouched.</b></p>
 <h3>Why the old animation looked loose</h3>
 <p class="note">It translated slot bitmaps independently, so each limb was a rigid tile sliding over its neighbours — held together only by an accidental pixel. A "one connected component" test passed anyway, which is why that test is no longer used as the anatomy check. The replacement drives the whole figure with two smooth row-wise fields — vertical squash/stretch and lateral sway — that change by at most one pixel between adjacent rows. A displacement that never jumps cannot open a gap, so shoulders, elbows, wrists, hips and the hairline stay welded <i>by construction</i>.</p>
@@ -449,7 +558,7 @@ ul{max-width:90ch}li{margin:4px 0}
 <p class="note">The raw PixelLab state always contained the complete spikes; the cleanup cropped them flat against row 0. The body canvas grew from 128×160 to 128×192 and the 8 lost rows were pasted back from the raw source — no new hairstyle was drawn. The body origin inside the effects canvas moved (64,64) → (64,40) to cancel the growth exactly, so every pixel keeps its absolute position and <b>the aura needed no translation at all</b>.</p>
 <div class="row"><figure><img src="coherent/ssj3_hair_restore.png" alt="Raw source, the cropped result, and the restored body"><figcaption>Raw source, the cropped result, and the restored body</figcaption></figure></div>
 <p class="note">Tests: <b>121</b> coherent-motion checks with twelve positive controls — severed shoulder, one-pixel tether, dark joint seam, detached fist, floating hair, hair on the top canvas row, cropped top spike, dark pupil, second teal shade, teal in the eyelid, changed aura pixel, changed lightning pixel — plus 113 rebuild, 86 structural and 43 tuning: <b>363 in total</b>.</p>
-<h2 id="motion-aura-reference">Character motion and reference-derived aura</h2><div class="rule"></div>
+<h2 id="motion-aura-reference">Character motion and reference-derived aura</h2><p class="note"><span class="tag no">SUPERSEDED &mdash; this section’s loops are 8-frame assets from that pass. Kept as evidence; they are not current.</span></p><div class="rule"></div>
 <p class="lede">Two rejections fixed. The loops were a frozen PNG with a moving aura — Ryan now genuinely animates, articulated slot by slot. And the aura is no longer approximated with random strokes: the reference GIF's own frames are extracted and used directly.</p>
 <p class="note">Zero PixelLab generations. Frame 0 of every loop is the approved body byte-for-byte; frames 1–7 move owned slots — legs, hips, torso, arms, fists, head, hair — by one or two pixels. Feet never move: <b>0 sock or shoe pixels change in any frame of any form</b>, so the character compresses against a fixed ground contact instead of floating.</p>
 <h3>Aura: rejected versus corrected</h3>
