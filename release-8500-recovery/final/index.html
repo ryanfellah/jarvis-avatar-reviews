@@ -1,0 +1,103 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Build 8500 — final promoted avatar</title>
+<style>
+:root{--bg:#12131a;--card:#1b1d27;--ink:#e9ebf2;--dim:#a2a8bd;--line:#2c3040;--good:#5ad18e;--warn:#ffb454}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 ui-sans-serif,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:32px 20px 80px}
+h1{font-size:28px;margin:0 0 6px}h2{font-size:20px;margin:38px 0 12px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.sub{color:var(--dim);margin:0 0 22px}
+.ok{background:#16281f;border-left:4px solid var(--good);padding:14px 16px;border-radius:8px;margin:16px 0}
+.note{background:#1e2430;border-left:4px solid var(--warn);padding:14px 16px;border-radius:8px;margin:16px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.card h4{margin:0 0 8px;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--dim)}
+img{image-rendering:pixelated;max-width:100%;background:#fff;border-radius:6px;display:block}
+code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px}
+pre{background:#0e0f15;border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13.5px}td,th{border:1px solid var(--line);padding:7px 10px;text-align:left}
+th{background:#232734;color:var(--dim)}a{color:#8ab4ff}
+</style></head><body><div class="wrap">
+
+<h1>Build 8500 — final promoted avatar</h1>
+<p class="sub">Source <code>2dd1ff495e2e5fd5f49ea553e2da23800319028d</code> · branch
+<code>release/testflight-new-curly-avatar-recovery</code> · <b>READY FOR UPLOAD, NOT UPLOADED</b></p>
+
+<div class="ok"><b>This is the final post-fix production output</b> — rendered from the exact
+<code>ios/Resources/AvatarV2.xcassets</code> that will be compiled, not from a review copy or the
+earlier pre-fix candidate. All 93 @1x imagesets are byte-identical to the artwork you approved.</div>
+
+<h2>Normal Ryan</h2>
+<div class="grid">
+<div class="card"><h4>Native (128×160)</h4><img src="normal_1x.png" alt=""></div>
+<div class="card"><h4>4×</h4><img src="normal_4x.png" alt=""></div>
+<div class="card"><h4>8×</h4><img src="normal_8x.png" alt=""></div>
+<div class="card"><h4>Curly hair detail · 12×</h4><img src="normal_hair_12x.png" alt=""></div>
+<div class="card"><h4>Face · 8×</h4><img src="normal_head_8x.png" alt=""></div>
+<div class="card"><h4>Idle</h4><img src="idle.gif" alt=""></div>
+</div>
+
+<h2>Forms</h2>
+<div class="grid">
+<div class="card"><h4>SS1 · 4×</h4><img src="ss1_4x.png" alt=""></div>
+<div class="card"><h4>SS2 · 4×</h4><img src="ss2_4x.png" alt=""></div>
+<div class="card"><h4>SS3 · 4×</h4><img src="ss3_4x.png" alt=""></div>
+<div class="card"><h4>Victory · 4×</h4><img src="victory_4x.png" alt=""></div>
+<div class="card"><h4>SS1 · 8×</h4><img src="ss1_8x.png" alt=""></div>
+<div class="card"><h4>SS2 · 8×</h4><img src="ss2_8x.png" alt=""></div>
+</div>
+
+<h2>Transformations</h2>
+<div class="grid">
+<div class="card"><h4>Normal → SS1</h4><img src="normal_to_ss1.gif" alt=""></div>
+<div class="card"><h4>SS1 → SS2</h4><img src="ss1_to_ss2.gif" alt=""></div>
+<div class="card"><h4>SS2 → SS3</h4><img src="ss2_to_ss3.gif" alt=""></div>
+</div>
+
+<h2>Watch scale — rendered with bodyShareOfFrame = 0.4625</h2>
+<div class="grid">
+<div class="card"><h4>Watch preview (2×)</h4><img src="watch_scale_2x.png" alt=""></div>
+<div class="card"><h4>Why it moved</h4>
+<pre>body box   84...152  ->  78...152
+share      (152-78)/160 = 37/80 = 0.4625  exact
+uniform in all 8 body atlases at frame 0
+old frame-0 bounds  (84,152) x8
+new frame-0 bounds  (78,152) x8
+
+bodyCentreShare     0.7375  UNCHANGED
+  measured 0.71875, inside its +/-0.02 band
+tallestContentShare 0.956   UNCHANGED
+  mane still reaches row 0
+ring geometry / offsets / placement  UNTOUCHED</pre></div>
+</div>
+
+<h2>Old build 8400 vs new candidate</h2>
+<div class="grid">
+<div class="card"><h4>8400 shipped · 8×</h4><img src="../img/normal_8400_8x.png" alt=""></div>
+<div class="card"><h4>New promoted · 8×</h4><img src="normal_8x.png" alt=""></div>
+<div class="card"><h4>8400 hair · 12×</h4><img src="../img/hair_8400_12x.png" alt=""></div>
+<div class="card"><h4>New hair · 12×</h4><img src="normal_hair_12x.png" alt=""></div>
+</div>
+
+<h2>What the locks say</h2>
+<div class="note"><b>hair_template, face_layer and the palette did not move.</b> Every hair and face
+prefix in the manifest lock is byte-identical to the one it replaces, and <code>clothing</code>
+compares equal across the promotion. Only <code>character</code> and
+<code>static_composition</code> moved — the shape the lock's own docstring says may be re-recorded
+rather than escalated. The two git-asked guards stay git-asked, so re-recording a hash still cannot
+satisfy them; they now ask whether production matches the approved baseline <code>28816e4</code>.</div>
+
+<table>
+<tr><th>Gate</th><th>Result</th></tr>
+<tr><td>Avatar + art-lock suite</td><td>198 passed, 0 failed</td></tr>
+<tr><td>Python suite (check --full)</td><td>2364 passed, 11 skipped, 5 deselected</td></tr>
+<tr><td>Swift JarvisKit</td><td>2089 passed, 0 failures</td></tr>
+<tr><td>iPhone simulator build</td><td>BUILD SUCCEEDED</td></tr>
+<tr><td>Watch simulator build</td><td>BUILD SUCCEEDED</td></tr>
+<tr><td>check.sh --full</td><td>13 PASS / 0 WARN / 0 FAIL</td></tr>
+<tr><td>@1x vs approved preview</td><td>93 / 93 byte-identical</td></tr>
+<tr><td>@2x / @3x geometry</td><td>97 imagesets, 0 violations</td></tr>
+<tr><td>V3 pose-fix / V4 PixelLab leakage</td><td>none</td></tr>
+</table>
+
+</div></body></html>
