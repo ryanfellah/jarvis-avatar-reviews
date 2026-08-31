@@ -1,71 +1,52 @@
 {
   "date": "2026-08-30",
-  "status": "FIRST REVIEW GATE - awaiting visual approval before the other seven transitions",
-  "baseline": {
-    "commit": "5bcd74f",
-    "what": "the animation immediately before aa8c1b4",
-    "kept": [
-      "25-frame choreography and timing",
-      "joint trajectories and poses",
-      "the newer form hair designs, palettes and silhouettes",
-      "form aura and effects"
-    ]
+  "status": "GATE 1 REPUBLISHED - hair ownership corrected, awaiting visual approval",
+  "the_bug": {
+    "symptom": "Normal's brown curls visible under the transformed hair at the forehead and roots, worst at frames 13 and 21",
+    "root_cause": "the hairline and fringe curls were classified into the BROW slot, not a hair slot. The brow slot is drawn unchanged for every form, so Normal hair came back underneath every destination hairstyle.",
+    "evidence": "brow_near spanned rows 12-26 while the eye top was row 29 - a fifteen-row 'eyebrow' reaching seventeen rows above the eye",
+    "fix": "the brow is bounded to a five-row band immediately above the eye; everything above it is hair again",
+    "not_a_fitting_problem": true
   },
-  "rejected_direction": {
-    "commit": "aa8c1b4",
-    "what": "the approved-art-only / arms-down rig experiment",
-    "status": "rejected, not pursued"
+  "ownership_rule": "tracked by provenance - the coordinate sets each layer owns - never by colour. The brow ramp and the Normal hair ramp literally share the shades (16,10,5) and (32,20,11), so a colour test cannot separate them.",
+  "verification": {
+    "normal_hair_layer_pixels_drawn": {
+      "8": 0,
+      "12": 0,
+      "13": 0,
+      "18": 0,
+      "21": 0,
+      "24": 0
+    },
+    "frame_0_draws_normal_hair_px": 380
   },
-  "corrections_in_this_gate": [
-    "hair is anchored to each frame's own skull instead of one fixed position: the offset is derived from that frame's eyes, which are the one feature always on the skull, so roots, hairline, temples and rear hair follow the head as it moves",
-    "SSJ4 torso rebuilt: bare chest with sternum, pectoral and rib definition under a crimson shoulder mantle and arm fur, connected shoulders, neck and waist, tail behind the body, no jersey or badge"
+  "kept_unchanged": [
+    "the newer hairstyle designs",
+    "the animation and choreography",
+    "frame timing and poses",
+    "the per-frame skull anchoring",
+    "the SSJ4 correction"
   ],
-  "hair_offsets_per_key_pose": {
-    "0": [
-      0,
-      2
-    ],
-    "1": [
-      0,
-      4
-    ],
-    "2": [
-      0,
-      2
-    ],
-    "3": [
-      0,
-      0
-    ],
-    "4": [
-      0,
-      6
-    ],
-    "5": [
-      0,
-      8
-    ]
-  },
-  "note_on_tilt": "the choreography's head does not rotate - the eye centre stays at x 59.5 in every pose - so the fit is a pure vertical translation. No tilt is applied because none is present to follow.",
   "gate_scope": {
     "frames": [
       0,
-      1,
-      3,
-      4,
       5,
       8,
       12,
+      13,
+      18,
+      21,
       24
     ],
-    "transitions": [
-      "normal to superSaiyan",
-      "superSaiyan3 to superSaiyan4"
-    ]
+    "transition": "normal to superSaiyan"
   },
   "source_branch": "feature/avatar-v3-old-model-pose-fix",
-  "source_sha": "aa8c1b438e59b6dc7787104a262466405605136d",
+  "source_sha": "9a49a0b52ff9c01cb68b4d1a98c1f152bb737103",
   "tests": {
+    "hair_ownership": {
+      "passed": 7,
+      "total": 7
+    },
     "slot_ownership": {
       "passed": 20,
       "total": 20
@@ -80,12 +61,9 @@
     }
   },
   "files": {
-    "latest.png": "the full prior-vs-corrected comparison sheet",
-    "latest.gif": "SSJ3 to SSJ4, corrected, 12 fps",
-    "index.html": "looping previews plus the comparison sheet",
-    "gate-1/": "the four looping previews and the comparison sheet",
-    "forms-rejected-f98f452/": "first rejected composition",
-    "forms-rejected-c2c0fcd/": "second rejected composition",
-    "forms-rejected-5bcd74f/": "the prior build's published gallery"
+    "latest.png": "forehead/root 8x prior vs corrected, plus owned layers per frame",
+    "latest.gif": "Normal to SSJ1 corrected",
+    "index.html": "previews plus the sheet",
+    "gate-1/": "the sheet and both looping previews"
   }
 }
