@@ -1,126 +1,78 @@
 {
   "date": "2026-08-30",
-  "review": "nine form transitions, reassembled from animation slots",
-  "supersedes": {
-    "commit": "c2c0fcd",
-    "status": "REJECTED",
-    "kept_as": "forms-rejected-c2c0fcd/ (BEFORE evidence)",
-    "defects": [
-      "opaque slab from the jaw through neck and shoulders",
-      "neckline and upper shirt covered",
-      "sleeve and shoulder shapes damaged",
-      "head replacement wrote into torso territory",
-      "dark/skin block behind and below the head on powered forms",
-      "SSJ4 chest was a narrow static strip not matching the pose",
-      "SSJ4 shoulders, arms, fur and chest did not assemble as one body"
-    ]
+  "status": "BLOCKED - awaiting Ryan's decision. No new final artwork produced.",
+  "review": "approved-art-only pipeline: feasibility evidence for Normal Ryan",
+  "rejected_and_kept_as_before_evidence": {
+    "f98f452": "forms-rejected-f98f452/",
+    "c2c0fcd": "forms-rejected-c2c0fcd/",
+    "5bcd74f": "forms-rejected-5bcd74f/"
   },
-  "approach": {
-    "canvas": "144x176 union, approved and unchanged",
-    "method": "every frame reassembled from its slot decomposition, which partitions the sprite so head and body cannot overlap by construction",
-    "guarantees": [
-      "assembled Normal reproduces the approved cinematic frame byte-for-byte",
-      "shirt, band and badge byte-identical between Normal and every non-SSJ4 form",
-      "head socket is anatomical, ends at the neck slot, never enters shirt, sleeve, badge, arm or neck",
-      "hair_front may only draw where the choreography had hair or on empty space",
-      "SSJ4 torso authored per pose from that pose's own slots"
-    ]
+  "kept": [
+    "the approved 25-frame choreography and timing (tag cinematic-body-approved)",
+    "the motion sequence adapted from the reference gif",
+    "the previously approved Ryan artwork and form designs"
+  ],
+  "what_works": {
+    "approved_art_available": true,
+    "renderer": "avatar_v2.clips.render draws the approved Ryan - face, nose, mouth, brows, Barcelona shirt, badge, spiral curls - at any pose",
+    "pixellab_pixels_in_output": false,
+    "acceptable_key_pose": "frame 5, arms snapping down and outward"
   },
+  "blocker": {
+    "summary": "the approved arm vocabulary has no raised option, so four of the six choreography key poses cannot be posed from approved data",
+    "UPPER": {
+      "down": [
+        1,
+        4
+      ],
+      "level": [
+        4,
+        1
+      ]
+    },
+    "THIRTEEN": {
+      "down": [
+        0,
+        13
+      ],
+      "out": [
+        5,
+        12
+      ],
+      "in": [
+        -5,
+        12
+      ]
+    },
+    "every_vector_points_down": true,
+    "aseprite_master_pose_tags": [
+      "BASE-connected-approved",
+      "POSE-charging-approved"
+    ],
+    "both_tags_are_arms_down": true,
+    "unreachable_key_poses": [
+      "frames 0-1 forearms crossed over the face",
+      "frames 2-3 crossed arms rising",
+      "frame 4 arms fully overhead"
+    ],
+    "why_driving_it_anyway_fails": "draw_arm draws two thickened line segments; with the arm raised there is no artwork for foreshortening, overlap or hand orientation, so the limbs read as sticks and bury the nose and the mouth",
+    "bone_lengths_were_preserved_exactly": {
+      "upper_arm": 4.123,
+      "forearm": 13.0
+    }
+  },
+  "needed_from_ryan": [
+    "approved Ryan arm artwork or Aseprite pose tags for: forearms crossed over the face, crossed arms rising, and arms fully overhead",
+    "OR explicit permission to author those arm poses as new approved art, which step 1 currently forbids",
+    "for SSJ4: approved layer art for bare chest, fur, SSJ4 hands and tail - saiyan4.py draws them procedurally over a finished frame and there is no layer source"
+  ],
   "source_branch": "feature/avatar-v3-old-model-pose-fix",
-  "source_sha": "c2c0fcdc3aa9c7dfee147fc18882946ea34e43b3",
-  "body_cinematic": {
-    "tag": "cinematic-body-approved",
-    "frozen": "pose timing, joint locations, movement and badge animation"
-  },
-  "canvas": [
-    144,
-    176
-  ],
-  "frames": 25,
-  "fps": 12,
-  "transitions": [
-    {
-      "name": "normal__to__superSaiyan",
-      "source": "normal",
-      "destination": "superSaiyan",
-      "clipped": 0
-    },
-    {
-      "name": "superSaiyan__to__superSaiyan2",
-      "source": "superSaiyan",
-      "destination": "superSaiyan2",
-      "clipped": 0
-    },
-    {
-      "name": "superSaiyan2__to__superSaiyan3",
-      "source": "superSaiyan2",
-      "destination": "superSaiyan3",
-      "clipped": 0
-    },
-    {
-      "name": "superSaiyan3__to__superSaiyan4",
-      "source": "superSaiyan3",
-      "destination": "superSaiyan4",
-      "clipped": 0
-    },
-    {
-      "name": "superSaiyan4__to__god",
-      "source": "superSaiyan4",
-      "destination": "god",
-      "clipped": 0
-    },
-    {
-      "name": "god__to__blue",
-      "source": "god",
-      "destination": "blue",
-      "clipped": 0
-    },
-    {
-      "name": "blue__to__blueEvolved",
-      "source": "blue",
-      "destination": "blueEvolved",
-      "clipped": 0
-    },
-    {
-      "name": "blueEvolved__to__ultraInstinctSign",
-      "source": "blueEvolved",
-      "destination": "ultraInstinctSign",
-      "clipped": 0
-    },
-    {
-      "name": "ultraInstinctSign__to__masteredUltraInstinct",
-      "source": "ultraInstinctSign",
-      "destination": "masteredUltraInstinct",
-      "clipped": 0
-    }
-  ],
-  "tests": {
-    "slot_ownership": {
-      "passed": 20,
-      "total": 20,
-      "suite": "tests/test_slots_forms.py"
-    },
-    "cinematic": {
-      "passed": 26,
-      "total": 26,
-      "suite": "tests/test_cinematic.py"
-    },
-    "system": {
-      "passed": 67,
-      "total": 67,
-      "suite": "tests/test_system.py"
-    }
-  },
-  "pixellab_called_this_pass": false,
+  "source_sha": "5bcd74f139240669bd70bbe6b85f022452df8283",
   "files": {
-    "latest.png": "stages, ownership overlays, BEFORE/AFTER, gate frames",
-    "latest.gif": "SSJ3 to SSJ4 at 12 fps",
-    "index.html": "selector, stepping, nine GIFs",
-    "forms/": "per-sheet PNGs, nine GIFs and stepping strips",
-    "forms-rejected-c2c0fcd/": "the rejected slab composition, BEFORE evidence",
-    "forms-rejected-f98f452/": "the earlier rejected composition",
-    "transformation/": "body-only cinematic",
-    "before/": "the bf3eb1e result",
-    "poses/": "multi-angle pose review"
+    "latest.png": "the pose-blocker evidence sheet",
+    "normal-pilot/pose-blocker.png": "same sheet, permanent path",
+    "forms-rejected-f98f452/": "first rejected composition",
+    "forms-rejected-c2c0fcd/": "second rejected composition (slab)",
+    "forms-rejected-5bcd74f/": "third rejected composition (slot rebuild)"
   }
 }
