@@ -1,78 +1,91 @@
 {
   "date": "2026-08-30",
-  "status": "BLOCKED - awaiting Ryan's decision. No new final artwork produced.",
-  "review": "approved-art-only pipeline: feasibility evidence for Normal Ryan",
-  "rejected_and_kept_as_before_evidence": {
-    "f98f452": "forms-rejected-f98f452/",
-    "c2c0fcd": "forms-rejected-c2c0fcd/",
-    "5bcd74f": "forms-rejected-5bcd74f/"
+  "status": "FIRST REVIEW GATE - awaiting visual approval before the other seven transitions",
+  "baseline": {
+    "commit": "5bcd74f",
+    "what": "the animation immediately before aa8c1b4",
+    "kept": [
+      "25-frame choreography and timing",
+      "joint trajectories and poses",
+      "the newer form hair designs, palettes and silhouettes",
+      "form aura and effects"
+    ]
   },
-  "kept": [
-    "the approved 25-frame choreography and timing (tag cinematic-body-approved)",
-    "the motion sequence adapted from the reference gif",
-    "the previously approved Ryan artwork and form designs"
+  "rejected_direction": {
+    "commit": "aa8c1b4",
+    "what": "the approved-art-only / arms-down rig experiment",
+    "status": "rejected, not pursued"
+  },
+  "corrections_in_this_gate": [
+    "hair is anchored to each frame's own skull instead of one fixed position: the offset is derived from that frame's eyes, which are the one feature always on the skull, so roots, hairline, temples and rear hair follow the head as it moves",
+    "SSJ4 torso rebuilt: bare chest with sternum, pectoral and rib definition under a crimson shoulder mantle and arm fur, connected shoulders, neck and waist, tail behind the body, no jersey or badge"
   ],
-  "what_works": {
-    "approved_art_available": true,
-    "renderer": "avatar_v2.clips.render draws the approved Ryan - face, nose, mouth, brows, Barcelona shirt, badge, spiral curls - at any pose",
-    "pixellab_pixels_in_output": false,
-    "acceptable_key_pose": "frame 5, arms snapping down and outward"
+  "hair_offsets_per_key_pose": {
+    "0": [
+      0,
+      2
+    ],
+    "1": [
+      0,
+      4
+    ],
+    "2": [
+      0,
+      2
+    ],
+    "3": [
+      0,
+      0
+    ],
+    "4": [
+      0,
+      6
+    ],
+    "5": [
+      0,
+      8
+    ]
   },
-  "blocker": {
-    "summary": "the approved arm vocabulary has no raised option, so four of the six choreography key poses cannot be posed from approved data",
-    "UPPER": {
-      "down": [
-        1,
-        4
-      ],
-      "level": [
-        4,
-        1
-      ]
-    },
-    "THIRTEEN": {
-      "down": [
-        0,
-        13
-      ],
-      "out": [
-        5,
-        12
-      ],
-      "in": [
-        -5,
-        12
-      ]
-    },
-    "every_vector_points_down": true,
-    "aseprite_master_pose_tags": [
-      "BASE-connected-approved",
-      "POSE-charging-approved"
+  "note_on_tilt": "the choreography's head does not rotate - the eye centre stays at x 59.5 in every pose - so the fit is a pure vertical translation. No tilt is applied because none is present to follow.",
+  "gate_scope": {
+    "frames": [
+      0,
+      1,
+      3,
+      4,
+      5,
+      8,
+      12,
+      24
     ],
-    "both_tags_are_arms_down": true,
-    "unreachable_key_poses": [
-      "frames 0-1 forearms crossed over the face",
-      "frames 2-3 crossed arms rising",
-      "frame 4 arms fully overhead"
-    ],
-    "why_driving_it_anyway_fails": "draw_arm draws two thickened line segments; with the arm raised there is no artwork for foreshortening, overlap or hand orientation, so the limbs read as sticks and bury the nose and the mouth",
-    "bone_lengths_were_preserved_exactly": {
-      "upper_arm": 4.123,
-      "forearm": 13.0
+    "transitions": [
+      "normal to superSaiyan",
+      "superSaiyan3 to superSaiyan4"
+    ]
+  },
+  "source_branch": "feature/avatar-v3-old-model-pose-fix",
+  "source_sha": "aa8c1b438e59b6dc7787104a262466405605136d",
+  "tests": {
+    "slot_ownership": {
+      "passed": 20,
+      "total": 20
+    },
+    "cinematic": {
+      "passed": 26,
+      "total": 26
+    },
+    "system": {
+      "passed": 67,
+      "total": 67
     }
   },
-  "needed_from_ryan": [
-    "approved Ryan arm artwork or Aseprite pose tags for: forearms crossed over the face, crossed arms rising, and arms fully overhead",
-    "OR explicit permission to author those arm poses as new approved art, which step 1 currently forbids",
-    "for SSJ4: approved layer art for bare chest, fur, SSJ4 hands and tail - saiyan4.py draws them procedurally over a finished frame and there is no layer source"
-  ],
-  "source_branch": "feature/avatar-v3-old-model-pose-fix",
-  "source_sha": "5bcd74f139240669bd70bbe6b85f022452df8283",
   "files": {
-    "latest.png": "the pose-blocker evidence sheet",
-    "normal-pilot/pose-blocker.png": "same sheet, permanent path",
+    "latest.png": "the full prior-vs-corrected comparison sheet",
+    "latest.gif": "SSJ3 to SSJ4, corrected, 12 fps",
+    "index.html": "looping previews plus the comparison sheet",
+    "gate-1/": "the four looping previews and the comparison sheet",
     "forms-rejected-f98f452/": "first rejected composition",
-    "forms-rejected-c2c0fcd/": "second rejected composition (slab)",
-    "forms-rejected-5bcd74f/": "third rejected composition (slot rebuild)"
+    "forms-rejected-c2c0fcd/": "second rejected composition",
+    "forms-rejected-5bcd74f/": "the prior build's published gallery"
   }
 }

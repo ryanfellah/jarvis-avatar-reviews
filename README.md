@@ -2,24 +2,20 @@
 
 Exported review media for the Ryan pixel avatar.
 
-## Current status: BLOCKED, awaiting a decision
+## Current status: FIRST REVIEW GATE — awaiting visual approval
 
-The approved-art-only pipeline is feasible for the body, the face and the shirt —
-`avatar_v2.clips.render` draws the historical approved Ryan at any pose with no
-PixelLab pixels. It is **not** feasible for four of the six choreography key poses,
-because the approved arm vocabulary has no raised option. See `latest.png`.
+The prior animation (`5bcd74f`) is the baseline: its choreography, timing, poses and
+newer form hair are kept unchanged. Only fitting and construction are corrected.
+Two transitions only — Normal to SSJ1 and SSJ3 to SSJ4 — as the gate asks.
 
 | File | What it is |
 |---|---|
-| `latest.png` | Pose-blocker evidence: the approved vocabulary, the approved stance, and the four key poses at native and 8x |
-| `normal-pilot/` | The same sheet at a permanent path |
-| `manifest.json` | Status, the blocker in detail, and what is needed |
-| `forms-rejected-f98f452/` | First rejected composition |
-| `forms-rejected-c2c0fcd/` | Second rejected composition (the slab) |
-| `forms-rejected-5bcd74f/` | Third rejected composition (the slot rebuild) |
-| `transformation/` | The approved body-only cinematic |
-| `before/` | The preserved `bf3eb1e` result |
-| `poses/` | The multi-angle pose review |
+| `latest.png` | Prior vs corrected: full sprites at native and 8x, face, hairline/roots, arms/shoulders, shirt/logo, silhouettes, SSJ4 full body |
+| `latest.gif` | SSJ3 to SSJ4, corrected, 12 fps |
+| `index.html` | Looping previews (prior and corrected, both transitions) plus the comparison sheet |
+| `manifest.json` | What was kept, what was corrected, and the per-pose hair offsets |
+| `gate-1/` | The four looping previews and the comparison sheet |
+| `forms-rejected-*/` | Earlier rejected compositions, kept as evidence |
 
 **Media only.** No source code, credentials, logs, local paths, build files or
 private information.
