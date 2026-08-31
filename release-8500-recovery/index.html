@@ -120,7 +120,32 @@ fetch('pose-checks.txt').then(r=>r.text()).then(t=>{document.getElementById('che
 <li><a href="hashes.txt">hashes.txt</a> — catalog tree objects, provenance, per-layer diff</li>
 </ul>
 
-<h2>6. What a corrective build would require</h2>
+<h2>6. Attempt 2 — regenerated production, then blocked by the repository's own art locks</h2>
+<p>On the go-ahead I regenerated the full @1x/@2x/@3x catalog from the pipeline already present in
+<code>6e7af22</code> (no transplant needed — <code>481ef80</code> is an ancestor). The result was
+<b>exactly the approved artwork</b>: all 93 imagesets of the regenerated @1x output are byte-identical
+to the preview reviewed above.</p>
+<div class="grid">
+<div class="card"><h4>Regenerated production — native</h4><img src="img/normal_prod_1x.png" alt=""></div>
+<div class="card"><h4>Regenerated production — 8×</h4><img src="img/normal_prod_8x.png" alt=""></div>
+<div class="card"><h4>Hair 12×</h4><img src="img/hair_prod_12x.png" alt=""></div>
+<div class="card"><h4>Idle</h4><img src="img/idle_prod.gif" alt=""></div>
+</div>
+<p>The full check then failed with <b>16 test failures</b>, six of them deliberate art locks:</p>
+<pre>test_avatar_v2_body_lock.py  the body atlases are byte-for-byte the approved ones
+test_avatar_v2_body_lock.py  the first/second forms character + aura baselines
+test_character_model_spec.py test_nothing_production_was_touched
+test_old_model_pose_options  test_the_production_artwork_is_byte_identical_to_build_8100
+test_watch_avatar_assets.py  watch layout constants still match the artwork</pre>
+<div class="verdict"><b>These guards forbid this operation by design.</b> The build-8100 pin reads:
+<em>"Asked of git rather than of a recorded digest, so it cannot pass because somebody re-recorded a
+hash — the question is whether these bytes are that build's bytes."</em> Its failure message states the
+policy: <em>"pose work may not begin until the base model is the approved one."</em> Production artwork
+on this branch is intentionally frozen at build 8100 (<code>d950aa6</code>) while masters and pipeline
+evolve. Shipping the curly hair would require deleting or rewriting those guards, which was explicitly
+out of scope. The regeneration was reverted; all 72 art-lock tests are green again.</div>
+
+<h2>7. What a corrective build would require</h2>
 <p>The curly hair has never existed as a shipped production asset set. Producing it means running the
 repository's own generator to render a <b>new</b> @1x/@2x/@3x catalog from the pose-fix pipeline —
 artwork that has never been reviewed or shipped at retina scale. That is a new asset generation, not a
