@@ -36,7 +36,7 @@ code{background:var(--panel);border:1px solid var(--line);border-radius:4px;padd
 ul{max-width:90ch}li{margin:4px 0}
 </style>
 <h1>Avatar V4 — Ryan, rebuilt from photographs</h1>
-<p style="margin:0 0 10px"><a href="#motion-aura-reference">Jump to the animation and aura</a> · <a href="#eyes-aura-rebuild">eyes rebuild</a> · <a href="#final">earlier tuning pass</a></p>
+<p style="margin:0 0 10px"><a href="#coherent-motion-eyes-hair">Jump to the coherent motion, eyes and hair</a> · <a href="#motion-aura-reference">earlier animation pass</a> · <a href="#eyes-aura-rebuild">eyes rebuild</a> · <a href="#final">earlier tuning pass</a></p>
 <p class="lede">The previous set was rejected for not resembling Ryan, for SSJ1 facing away, and for the forms looking past the viewer. This one is built from his own photographs, and <b>every state faces the viewer</b>: each is the south rotation of a character state, so a forward gaze is a property of the render rather than something hoped for.</p>
 <p class="note">One internal identity was built first, deliberately with a buzz cut so no curls can survive under gold hair. Normal, SSJ1, SSJ2 and SSJ3 are each a state <i>of that identity</i> — none is chained off another, so a defect in one cannot travel into the next. The rejected set is kept at <a href="rejected-0887f3f/">rejected-0887f3f/</a> and is not shown here as a current result.</p>
 <h2>Ryan — the identity references</h2><div class="rule"></div>
@@ -260,6 +260,120 @@ ul{max-width:90ch}li{margin:4px 0}
 <tr><th>aura px</th><td>5314</td></tr>
 <tr><th>lightning px</th><td>467</td></tr>
 </table></div></div>
+<h2 id="coherent-motion-eyes-hair">Coherent motion, solid irises, restored hair</h2><div class="rule"></div>
+<p class="lede">Three fixes, zero PixelLab generations. The loose-pieces animation is deleted and replaced by a six-frame loop that deforms the figure as one raster; every transformed iris is a single solid teal block with no pupil; and SSJ3's cropped top spikes are restored from its own raw source. <b>The approved aura is untouched.</b></p>
+<h3>Why the old animation looked loose</h3>
+<p class="note">It translated slot bitmaps independently, so each limb was a rigid tile sliding over its neighbours — held together only by an accidental pixel. A "one connected component" test passed anyway, which is why that test is no longer used as the anatomy check. The replacement drives the whole figure with two smooth row-wise fields — vertical squash/stretch and lateral sway — that change by at most one pixel between adjacent rows. A displacement that never jumps cannot open a gap, so shoulders, elbows, wrists, hips and the hairline stay welded <i>by construction</i>.</p>
+<p class="note">The anatomy test is now <b>torso reach</b>: the fraction of the figure reachable four-connected from the jersey. It measures <b>1.0000 with zero unreached pixels in every frame of every form</b>. A limb hanging off one diagonal pixel would still be "one component" but would not be reachable.</p>
+<h3>Six-frame loops — 10 fps</h3>
+<h4 class="note">ssj1</h4><div class="row">
+<figure><img src="coherent/ssj1_composite.gif" width="256" alt="ssj1 composite"><figcaption>ssj1 composite</figcaption></figure>
+<figure><img src="coherent/ssj1_body_only_4x.gif" alt="ssj1 body only, 4×"><figcaption>ssj1 body only, 4×</figcaption></figure>
+<figure><img src="coherent/ssj1_body_only_8x.gif" alt="ssj1 body only, 8× — watch the shoulders, jersey and hair"><figcaption>ssj1 body only, 8× — watch the shoulders, jersey and hair</figcaption></figure>
+</div><div class="row">
+<figure><img src="coherent/ssj1_aura_only.gif" width="200" alt="ssj1 aura only (frozen)"><figcaption>ssj1 aura only (frozen)</figcaption></figure>
+<figure><img src="coherent/ssj1_lightning_only.gif" width="200" alt="ssj1 lightning only — none by design"><figcaption>ssj1 lightning only — none by design</figcaption></figure>
+</div><div class="row">
+<figure><img src="coherent/ssj1_body_strip.png" alt="ssj1 — six body frames: neutral, inhale, rise, peak, release, return"><figcaption>ssj1 — six body frames: neutral, inhale, rise, peak, release, return</figcaption></figure>
+</div><div class="row">
+<figure><img src="coherent/ssj1_corridors_4x.png" alt="ssj1 — the 10 seam corridors the audit walks"><figcaption>ssj1 — the 10 seam corridors the audit walks</figcaption></figure>
+<figure><img src="coherent/ssj1_margins_4x.png" alt="ssj1 — canvas margins, green band is 8px"><figcaption>ssj1 — canvas margins, green band is 8px</figcaption></figure>
+</div><div class="row">
+<figure><img src="coherent/ssj1_joints_12x.png" alt="ssj1 — every joint at 12×, all six frames"><figcaption>ssj1 — every joint at 12×, all six frames</figcaption></figure>
+</div>
+<div class="scroll"><table><tr><th>frame</th><th>pose</th><th>torso reach</th><th>unreached</th><th>seam holes</th><th>max contact Δ</th><th>sole row</th><th>top row</th><th>aura sha</th></tr>
+<tr><th>0</th><td>neutral</td><td class="n">1.0</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td>175</td><td>42</td><td>304bc27fd5</td></tr>
+<tr><th>1</th><td>inhale</td><td class="n">1.0</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td>175</td><td>41</td><td>304bc27fd5</td></tr>
+<tr><th>2</th><td>rise</td><td class="n">1.0</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td>175</td><td>41</td><td>336daeecb4</td></tr>
+<tr><th>3</th><td>peak</td><td class="n">1.0</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td>175</td><td>40</td><td>336daeecb4</td></tr>
+<tr><th>4</th><td>release</td><td class="n">1.0</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td>175</td><td>41</td><td>26fc6ae2cd</td></tr>
+<tr><th>5</th><td>return</td><td class="n">1.0</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td>175</td><td>42</td><td>26fc6ae2cd</td></tr>
+</table></div>
+<h4 class="note">ssj2</h4><div class="row">
+<figure><img src="coherent/ssj2_composite.gif" width="256" alt="ssj2 composite"><figcaption>ssj2 composite</figcaption></figure>
+<figure><img src="coherent/ssj2_body_only_4x.gif" alt="ssj2 body only, 4×"><figcaption>ssj2 body only, 4×</figcaption></figure>
+<figure><img src="coherent/ssj2_body_only_8x.gif" alt="ssj2 body only, 8× — watch the shoulders, jersey and hair"><figcaption>ssj2 body only, 8× — watch the shoulders, jersey and hair</figcaption></figure>
+</div><div class="row">
+<figure><img src="coherent/ssj2_aura_only.gif" width="200" alt="ssj2 aura only (frozen)"><figcaption>ssj2 aura only (frozen)</figcaption></figure>
+<figure><img src="coherent/ssj2_lightning_only.gif" width="200" alt="ssj2 lightning only"><figcaption>ssj2 lightning only</figcaption></figure>
+</div><div class="row">
+<figure><img src="coherent/ssj2_body_strip.png" alt="ssj2 — six body frames: neutral, inhale, rise, peak, release, return"><figcaption>ssj2 — six body frames: neutral, inhale, rise, peak, release, return</figcaption></figure>
+</div><div class="row">
+<figure><img src="coherent/ssj2_corridors_4x.png" alt="ssj2 — the 10 seam corridors the audit walks"><figcaption>ssj2 — the 10 seam corridors the audit walks</figcaption></figure>
+<figure><img src="coherent/ssj2_margins_4x.png" alt="ssj2 — canvas margins, green band is 8px"><figcaption>ssj2 — canvas margins, green band is 8px</figcaption></figure>
+</div><div class="row">
+<figure><img src="coherent/ssj2_joints_12x.png" alt="ssj2 — every joint at 12×, all six frames"><figcaption>ssj2 — every joint at 12×, all six frames</figcaption></figure>
+</div>
+<div class="scroll"><table><tr><th>frame</th><th>pose</th><th>torso reach</th><th>unreached</th><th>seam holes</th><th>max contact Δ</th><th>sole row</th><th>top row</th><th>aura sha</th></tr>
+<tr><th>0</th><td>neutral</td><td class="n">1.0</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td>175</td><td>40</td><td>4d52587b7d</td></tr>
+<tr><th>1</th><td>inhale</td><td class="n">1.0</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td>175</td><td>39</td><td>4d52587b7d</td></tr>
+<tr><th>2</th><td>rise</td><td class="n">1.0</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td>175</td><td>39</td><td>af967eafac</td></tr>
+<tr><th>3</th><td>peak</td><td class="n">1.0</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td>175</td><td>38</td><td>af967eafac</td></tr>
+<tr><th>4</th><td>release</td><td class="n">1.0</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td>175</td><td>39</td><td>2a51409c3c</td></tr>
+<tr><th>5</th><td>return</td><td class="n">1.0</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td>175</td><td>40</td><td>2a51409c3c</td></tr>
+</table></div>
+<h4 class="note">ssj3</h4><div class="row">
+<figure><img src="coherent/ssj3_composite.gif" width="256" alt="ssj3 composite"><figcaption>ssj3 composite</figcaption></figure>
+<figure><img src="coherent/ssj3_body_only_4x.gif" alt="ssj3 body only, 4×"><figcaption>ssj3 body only, 4×</figcaption></figure>
+<figure><img src="coherent/ssj3_body_only_8x.gif" alt="ssj3 body only, 8× — watch the shoulders, jersey and hair"><figcaption>ssj3 body only, 8× — watch the shoulders, jersey and hair</figcaption></figure>
+</div><div class="row">
+<figure><img src="coherent/ssj3_aura_only.gif" width="200" alt="ssj3 aura only (frozen)"><figcaption>ssj3 aura only (frozen)</figcaption></figure>
+<figure><img src="coherent/ssj3_lightning_only.gif" width="200" alt="ssj3 lightning only"><figcaption>ssj3 lightning only</figcaption></figure>
+</div><div class="row">
+<figure><img src="coherent/ssj3_body_strip.png" alt="ssj3 — six body frames: neutral, inhale, rise, peak, release, return"><figcaption>ssj3 — six body frames: neutral, inhale, rise, peak, release, return</figcaption></figure>
+</div><div class="row">
+<figure><img src="coherent/ssj3_corridors_4x.png" alt="ssj3 — the 11 seam corridors the audit walks"><figcaption>ssj3 — the 11 seam corridors the audit walks</figcaption></figure>
+<figure><img src="coherent/ssj3_margins_4x.png" alt="ssj3 — canvas margins, green band is 8px"><figcaption>ssj3 — canvas margins, green band is 8px</figcaption></figure>
+</div><div class="row">
+<figure><img src="coherent/ssj3_joints_12x.png" alt="ssj3 — every joint at 12×, all six frames"><figcaption>ssj3 — every joint at 12×, all six frames</figcaption></figure>
+</div>
+<div class="scroll"><table><tr><th>frame</th><th>pose</th><th>torso reach</th><th>unreached</th><th>seam holes</th><th>max contact Δ</th><th>sole row</th><th>top row</th><th>aura sha</th></tr>
+<tr><th>0</th><td>neutral</td><td class="n">1.0</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td>167</td><td>16</td><td>a056277f1e</td></tr>
+<tr><th>1</th><td>inhale</td><td class="n">1.0</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td>167</td><td>15</td><td>a056277f1e</td></tr>
+<tr><th>2</th><td>rise</td><td class="n">1.0</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td>167</td><td>15</td><td>3263020cff</td></tr>
+<tr><th>3</th><td>peak</td><td class="n">1.0</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td>167</td><td>14</td><td>3263020cff</td></tr>
+<tr><th>4</th><td>release</td><td class="n">1.0</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td>167</td><td>15</td><td>93d1ac6bfc</td></tr>
+<tr><th>5</th><td>return</td><td class="n">1.0</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td>167</td><td>16</td><td>93d1ac6bfc</td></tr>
+</table></div>
+<h3>The aura did not change</h3>
+<div class="scroll"><table><tr><th>form</th><th>frame</th><th>aura sha (approved 141dadb)</th><th>aura sha (now)</th><th>match</th></tr>
+<tr><th>ssj1</th><td>0</td><td>304bc27fd507546d</td><td>304bc27fd507546d</td><td class="n">identical</td></tr>
+<tr><th>ssj1</th><td>1</td><td>304bc27fd507546d</td><td>304bc27fd507546d</td><td class="n">identical</td></tr>
+<tr><th>ssj1</th><td>2</td><td>336daeecb44dc04c</td><td>336daeecb44dc04c</td><td class="n">identical</td></tr>
+<tr><th>ssj1</th><td>3</td><td>336daeecb44dc04c</td><td>336daeecb44dc04c</td><td class="n">identical</td></tr>
+<tr><th>ssj1</th><td>4</td><td>26fc6ae2cd728c45</td><td>26fc6ae2cd728c45</td><td class="n">identical</td></tr>
+<tr><th>ssj1</th><td>5</td><td>26fc6ae2cd728c45</td><td>26fc6ae2cd728c45</td><td class="n">identical</td></tr>
+<tr><th>ssj2</th><td>0</td><td>4d52587b7d05224c</td><td>4d52587b7d05224c</td><td class="n">identical</td></tr>
+<tr><th>ssj2</th><td>1</td><td>4d52587b7d05224c</td><td>4d52587b7d05224c</td><td class="n">identical</td></tr>
+<tr><th>ssj2</th><td>2</td><td>af967eafacdaa522</td><td>af967eafacdaa522</td><td class="n">identical</td></tr>
+<tr><th>ssj2</th><td>3</td><td>af967eafacdaa522</td><td>af967eafacdaa522</td><td class="n">identical</td></tr>
+<tr><th>ssj2</th><td>4</td><td>2a51409c3c9c42f4</td><td>2a51409c3c9c42f4</td><td class="n">identical</td></tr>
+<tr><th>ssj2</th><td>5</td><td>2a51409c3c9c42f4</td><td>2a51409c3c9c42f4</td><td class="n">identical</td></tr>
+<tr><th>ssj3</th><td>0</td><td>a056277f1effac8a</td><td>a056277f1effac8a</td><td class="n">identical</td></tr>
+<tr><th>ssj3</th><td>1</td><td>a056277f1effac8a</td><td>a056277f1effac8a</td><td class="n">identical</td></tr>
+<tr><th>ssj3</th><td>2</td><td>3263020cff7721f5</td><td>3263020cff7721f5</td><td class="n">identical</td></tr>
+<tr><th>ssj3</th><td>3</td><td>3263020cff7721f5</td><td>3263020cff7721f5</td><td class="n">identical</td></tr>
+<tr><th>ssj3</th><td>4</td><td>93d1ac6bfccabb81</td><td>93d1ac6bfccabb81</td><td class="n">identical</td></tr>
+<tr><th>ssj3</th><td>5</td><td>93d1ac6bfccabb81</td><td>93d1ac6bfccabb81</td><td class="n">identical</td></tr>
+</table></div>
+<h3>Solid teal irises</h3>
+<p class="note">The whole iris mask is filled with one colour — no pupil, no highlight, no inner shadow. Sclera stays white and the dark lash is untouched.</p>
+<p class="note"><b>ssj1</b>: iris contains <b>1 distinct RGB value</b>, zero dark pixels.</p><div class="row">
+<figure><img src="coherent/ssj1_eyes_16x.png" alt="ssj1 eyes at 16×"><figcaption>ssj1 eyes at 16×</figcaption></figure>
+<figure><img src="coherent/ssj1_eye_masks_16x.png" alt="ssj1 masks — red lash, white sclera, cyan iris"><figcaption>ssj1 masks — red lash, white sclera, cyan iris</figcaption></figure>
+</div>
+<p class="note"><b>ssj2</b>: iris contains <b>1 distinct RGB value</b>, zero dark pixels.</p><div class="row">
+<figure><img src="coherent/ssj2_eyes_16x.png" alt="ssj2 eyes at 16×"><figcaption>ssj2 eyes at 16×</figcaption></figure>
+<figure><img src="coherent/ssj2_eye_masks_16x.png" alt="ssj2 masks — red lash, white sclera, cyan iris"><figcaption>ssj2 masks — red lash, white sclera, cyan iris</figcaption></figure>
+</div>
+<p class="note"><b>ssj3</b>: iris contains <b>1 distinct RGB value</b>, zero dark pixels.</p><div class="row">
+<figure><img src="coherent/ssj3_eyes_16x.png" alt="ssj3 eyes at 16×"><figcaption>ssj3 eyes at 16×</figcaption></figure>
+<figure><img src="coherent/ssj3_eye_masks_16x.png" alt="ssj3 masks — red lash, white sclera, cyan iris"><figcaption>ssj3 masks — red lash, white sclera, cyan iris</figcaption></figure>
+</div>
+<h3>SSJ3's hair, restored from its own source</h3>
+<p class="note">The raw PixelLab state always contained the complete spikes; the cleanup cropped them flat against row 0. The body canvas grew from 128×160 to 128×192 and the 8 lost rows were pasted back from the raw source — no new hairstyle was drawn. The body origin inside the effects canvas moved (64,64) → (64,40) to cancel the growth exactly, so every pixel keeps its absolute position and <b>the aura needed no translation at all</b>.</p>
+<div class="row"><figure><img src="coherent/ssj3_hair_restore.png" alt="Raw source, the cropped result, and the restored body"><figcaption>Raw source, the cropped result, and the restored body</figcaption></figure></div>
+<p class="note">Tests: <b>121</b> coherent-motion checks with twelve positive controls — severed shoulder, one-pixel tether, dark joint seam, detached fist, floating hair, hair on the top canvas row, cropped top spike, dark pupil, second teal shade, teal in the eyelid, changed aura pixel, changed lightning pixel — plus 113 rebuild, 86 structural and 43 tuning: <b>363 in total</b>.</p>
 <h2 id="motion-aura-reference">Character motion and reference-derived aura</h2><div class="rule"></div>
 <p class="lede">Two rejections fixed. The loops were a frozen PNG with a moving aura — Ryan now genuinely animates, articulated slot by slot. And the aura is no longer approximated with random strokes: the reference GIF's own frames are extracted and used directly.</p>
 <p class="note">Zero PixelLab generations. Frame 0 of every loop is the approved body byte-for-byte; frames 1–7 move owned slots — legs, hips, torso, arms, fists, head, hair — by one or two pixels. Feet never move: <b>0 sock or shoe pixels change in any frame of any form</b>, so the character compresses against a fixed ground contact instead of floating.</p>
