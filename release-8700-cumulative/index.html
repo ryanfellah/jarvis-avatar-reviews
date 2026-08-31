@@ -1,0 +1,102 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Build 8700 — cumulative 8500 + curly avatar</title>
+<style>
+:root{--bg:#12131a;--card:#1b1d27;--ink:#e9ebf2;--dim:#a2a8bd;--line:#2c3040;--good:#5ad18e;--bad:#ff6b6b;--warn:#ffb454}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 ui-sans-serif,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:32px 20px 80px}
+h1{font-size:28px;margin:0 0 6px}h2{font-size:20px;margin:38px 0 12px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.sub{color:var(--dim);margin:0 0 22px}
+.ok{background:#16281f;border-left:4px solid var(--good);padding:14px 16px;border-radius:8px;margin:16px 0}
+.bad{background:#2a1c1c;border-left:4px solid var(--bad);padding:14px 16px;border-radius:8px;margin:16px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.card h4{margin:0 0 8px;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--dim)}
+img{image-rendering:pixelated;max-width:100%;background:#fff;border-radius:6px;display:block}
+code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px}
+pre{background:#0e0f15;border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13.5px}td,th{border:1px solid var(--line);padding:7px 10px;text-align:left}
+th{background:#232734;color:var(--dim)}.g{color:var(--good)}.r{color:var(--bad)}a{color:#8ab4ff}
+</style></head><body><div class="wrap">
+
+<h1>Build 8700 — cumulative 8500 + curly avatar</h1>
+<p class="sub">Candidate <code>bec7c6a0a2e003111da41a6f163d83a766873455</code> ·
+<code>release/cumulative-8500-curly-avatar</code> · <b>READY FOR CORRECTED UPLOAD, NOT UPLOADED</b></p>
+
+<div class="bad"><b>What went wrong with 8600.</b> It was cut from <code>6e7af22</code>, the build-8400
+line. Build 8500 (<code>d2c46c9</code>) branched from that same commit and added the dashboard /
+Insights work. The two are <b>siblings</b>, so 8600 shipped correct artwork on a product base that
+never had 8500's dashboard — <b>12 Insights/dashboard files were dropped</b>.</div>
+
+<div class="ok"><b>This candidate is 8500 + CURLY, not 8600 again.</b> It starts at
+<code>d2c46c9</code> and cherry-picks only the three approved curly commits. All five of 8500's
+cumulative commits are ancestors; the avatar catalogue tree is byte-identical to 8600's approved
+artwork (<code>dc180f5e…</code>) and differs from 8500's old one (<code>3a9eb918…</code>).</div>
+
+<h2>Cumulative containment</h2>
+<table>
+<tr><th>Feature / source</th><th>8500</th><th>8600</th><th>candidate</th><th>status</th></tr>
+<tr><td>Insights / dashboard</td><td>18</td><td class="r">6</td><td class="g">18</td><td class="g">restored</td></tr>
+<tr><td>Workout (JarvisKit)</td><td>42</td><td>42</td><td>42</td><td class="g">OK</td></tr>
+<tr><td>Training Programs</td><td>5</td><td>5</td><td>5</td><td class="g">OK</td></tr>
+<tr><td>active-workout lifecycle</td><td>4</td><td>4</td><td>4</td><td class="g">OK</td></tr>
+<tr><td>routines / schedule</td><td>19</td><td>19</td><td>19</td><td class="g">OK</td></tr>
+<tr><td>catalog / week</td><td>10</td><td>10</td><td>10</td><td class="g">OK</td></tr>
+<tr><td>progression</td><td>9</td><td>9</td><td>9</td><td class="g">OK</td></tr>
+<tr><td>Diet / Nutrition</td><td>25</td><td>25</td><td>25</td><td class="g">OK</td></tr>
+<tr><td>navigation / root wiring</td><td>4</td><td>4</td><td>4</td><td class="g">OK</td></tr>
+<tr><td>Watch sources</td><td>21</td><td>21</td><td>21</td><td class="g">OK</td></tr>
+<tr><td>Watch sync / mapping</td><td>18</td><td>18</td><td>18</td><td class="g">OK</td></tr>
+<tr><td>Avatar sources</td><td>27</td><td>27</td><td>27</td><td class="g">OK</td></tr>
+<tr><td>gateway</td><td>15</td><td>15</td><td>15</td><td class="g">OK</td></tr>
+</table>
+<p>All 674 files changed against the 8500 base fall inside the avatar scope: 261 production art,
+406 generator review artefacts, 5 art-lock/avatar tests, 1 Watch measurement, 1 Watch mapping test.
+Nothing outside.</p>
+
+<h2>Normal Ryan — from the candidate's own production catalogue</h2>
+<div class="grid">
+<div class="card"><h4>Native</h4><img src="img/normal_1x.png" alt=""></div>
+<div class="card"><h4>4×</h4><img src="img/normal_4x.png" alt=""></div>
+<div class="card"><h4>8×</h4><img src="img/normal_8x.png" alt=""></div>
+<div class="card"><h4>Curls · 12×</h4><img src="img/normal_hair_12x.png" alt=""></div>
+<div class="card"><h4>Face · 8×</h4><img src="img/normal_head_8x.png" alt=""></div>
+<div class="card"><h4>Idle</h4><img src="img/idle.gif" alt=""></div>
+</div>
+
+<h2>Forms</h2>
+<div class="grid">
+<div class="card"><h4>SS1 · 4×</h4><img src="img/ss1_4x.png" alt=""></div>
+<div class="card"><h4>SS2 · 4×</h4><img src="img/ss2_4x.png" alt=""></div>
+<div class="card"><h4>SS3 · 4×</h4><img src="img/ss3_4x.png" alt=""></div>
+<div class="card"><h4>Victory · 4×</h4><img src="img/victory_4x.png" alt=""></div>
+</div>
+
+<h2>Transformations</h2>
+<div class="grid">
+<div class="card"><h4>Normal → SS1</h4><img src="img/normal_to_ss1.gif" alt=""></div>
+<div class="card"><h4>SS1 → SS2</h4><img src="img/ss1_to_ss2.gif" alt=""></div>
+<div class="card"><h4>SS2 → SS3</h4><img src="img/ss2_to_ss3.gif" alt=""></div>
+<div class="card"><h4>Watch scale · 0.4625</h4><img src="img/watch_scale_2x.png" alt=""></div>
+</div>
+
+<h2>Gates</h2>
+<table>
+<tr><th>Gate</th><th>Result</th></tr>
+<tr><td>Avatar + art-lock suite</td><td class="g">212 passed, 0 failed</td></tr>
+<tr><td>Cumulative feature suites</td><td class="g">520 passed (Workout, Programs, Diet, nav, Watch, active workout)</td></tr>
+<tr><td>Python suite (check --full)</td><td class="g">2408 passed, 11 skipped, 5 deselected</td></tr>
+<tr><td>Swift JarvisKit</td><td class="g">2145 passed, 0 failures</td></tr>
+<tr><td>iPhone / watchOS simulator builds</td><td class="g">BUILD SUCCEEDED (both)</td></tr>
+<tr><td>check.sh --full</td><td class="g">13 PASS / 0 WARN / 0 FAIL</td></tr>
+<tr><td>@1x vs approved preview</td><td class="g">93 / 93 byte-identical</td></tr>
+<tr><td>@2x / @3x geometry</td><td class="g">97 imagesets, 0 violations</td></tr>
+<tr><td>body frame-0 bounds</td><td class="g">(78, 152) across all 8 atlases</td></tr>
+<tr><td>bodyShareOfFrame</td><td class="g">(152−78)/160 = 0.4625 exact</td></tr>
+</table>
+<pre>bodyCentreShare     0.7375  unchanged (measured 0.71875, inside its +/-0.02 band)
+tallestContentShare 0.956   unchanged (mane still reaches row 0)
+hair_template / face_layer / palette   unchanged
+ring geometry / offsets / placement    untouched</pre>
+
+</div></body></html>
