@@ -1,226 +1,104 @@
 {
   "date": "2026-08-30",
-  "review": "nine form transitions, rebuilt on the production coordinate system",
+  "review": "nine form transitions, reassembled from animation slots",
   "supersedes": {
-    "commit": "f98f452",
+    "commit": "c2c0fcd",
     "status": "REJECTED",
-    "kept_as": "forms-rejected-f98f452/ (BEFORE evidence)",
+    "kept_as": "forms-rejected-c2c0fcd/ (BEFORE evidence)",
     "defects": [
-      "hair clipped flat across the canvas top",
-      "auras clipped on top and sides",
-      "nose and mouth missing in most forms",
-      "partial face overlays erased the cinematic face",
-      "hairlines and eye placement misregistered",
-      "SSJ4 still wore the jersey; no chest, fur or tail",
-      "frame 24 compared against idles this pass had just made"
+      "opaque slab from the jaw through neck and shoulders",
+      "neckline and upper shirt covered",
+      "sleeve and shoulder shapes damaged",
+      "head replacement wrote into torso territory",
+      "dark/skin block behind and below the head on powered forms",
+      "SSJ4 chest was a narrow static strip not matching the pose",
+      "SSJ4 shoulders, arms, fur and chest did not assemble as one body"
+    ]
+  },
+  "approach": {
+    "canvas": "144x176 union, approved and unchanged",
+    "method": "every frame reassembled from its slot decomposition, which partitions the sprite so head and body cannot overlap by construction",
+    "guarantees": [
+      "assembled Normal reproduces the approved cinematic frame byte-for-byte",
+      "shirt, band and badge byte-identical between Normal and every non-SSJ4 form",
+      "head socket is anatomical, ends at the neck slot, never enters shirt, sleeve, badge, arm or neck",
+      "hair_front may only draw where the choreography had hair or on empty space",
+      "SSJ4 torso authored per pose from that pose's own slots"
     ]
   },
   "source_branch": "feature/avatar-v3-old-model-pose-fix",
-  "source_sha": "f98f452f336bcbabd058275551e888f41f0bbc95",
+  "source_sha": "c2c0fcdc3aa9c7dfee147fc18882946ea34e43b3",
   "body_cinematic": {
     "tag": "cinematic-body-approved",
-    "frozen": "pose timing, joint locations, movement and badge animation",
-    "not_frozen": "the final RGBA composite; form layers compose over it"
+    "frozen": "pose timing, joint locations, movement and badge animation"
   },
-  "canvas": {
-    "union": [
-      144,
-      176
-    ],
-    "production": [
-      128,
-      160
-    ],
-    "pad": 8,
-    "body_in_production": [
-      13,
-      67
-    ],
-    "note": "no pixel art resized or resampled; the canvas grew, the art did not"
-  },
-  "head_offsets": {
-    "0": [
-      0,
-      -2
-    ],
-    "1": [
-      0,
-      -2
-    ],
-    "2": [
-      0,
-      -4
-    ],
-    "3": [
-      0,
-      -4
-    ],
-    "4": [
-      -6,
-      -2
-    ],
-    "5": [
-      0,
-      2
-    ],
-    "8": [
-      0,
-      2
-    ],
-    "9": [
-      0,
-      2
-    ],
-    "10": [
-      0,
-      2
-    ],
-    "11": [
-      0,
-      2
-    ],
-    "12": [
-      0,
-      2
-    ],
-    "13": [
-      0,
-      2
-    ],
-    "14": [
-      0,
-      2
-    ],
-    "15": [
-      0,
-      2
-    ],
-    "16": [
-      0,
-      2
-    ],
-    "17": [
-      0,
-      2
-    ],
-    "18": [
-      0,
-      2
-    ],
-    "19": [
-      0,
-      2
-    ],
-    "20": [
-      0,
-      2
-    ],
-    "21": [
-      0,
-      2
-    ],
-    "22": [
-      0,
-      2
-    ],
-    "23": [
-      0,
-      2
-    ],
-    "24": [
-      0,
-      2
-    ]
-  },
-  "overflow": {
-    "before_canvas": [
-      104,
-      92
-    ],
-    "after_canvas": [
-      144,
-      176
-    ],
-    "total_before_clipped": 6640,
-    "total_after_clipped": 0,
-    "per_transition": [
-      {
-        "name": "blueEvolved__to__ultraInstinctSign",
-        "before_clipped": 482,
-        "after_clipped": 0,
-        "before_min_margin": 0,
-        "after_min_margin": 13
-      },
-      {
-        "name": "blue__to__blueEvolved",
-        "before_clipped": 878,
-        "after_clipped": 0,
-        "before_min_margin": 0,
-        "after_min_margin": 12
-      },
-      {
-        "name": "god__to__blue",
-        "before_clipped": 716,
-        "after_clipped": 0,
-        "before_min_margin": 0,
-        "after_min_margin": 15
-      },
-      {
-        "name": "normal__to__superSaiyan",
-        "before_clipped": 633,
-        "after_clipped": 0,
-        "before_min_margin": 0,
-        "after_min_margin": 15
-      },
-      {
-        "name": "superSaiyan2__to__superSaiyan3",
-        "before_clipped": 974,
-        "after_clipped": 0,
-        "before_min_margin": 0,
-        "after_min_margin": 8
-      },
-      {
-        "name": "superSaiyan3__to__superSaiyan4",
-        "before_clipped": 949,
-        "after_clipped": 0,
-        "before_min_margin": 0,
-        "after_min_margin": 8
-      },
-      {
-        "name": "superSaiyan4__to__god",
-        "before_clipped": 646,
-        "after_clipped": 0,
-        "before_min_margin": 0,
-        "after_min_margin": 10
-      },
-      {
-        "name": "superSaiyan__to__superSaiyan2",
-        "before_clipped": 715,
-        "after_clipped": 0,
-        "before_min_margin": 0,
-        "after_min_margin": 15
-      },
-      {
-        "name": "ultraInstinctSign__to__masteredUltraInstinct",
-        "before_clipped": 647,
-        "after_clipped": 0,
-        "before_min_margin": 0,
-        "after_min_margin": 11
-      }
-    ]
-  },
-  "references": {
-    "hair_and_aura": "approved-charging-loop-ten-forms + avatar_v2 form locks",
-    "destination_idles": "saiyan_clips.destination_frame (historical)",
-    "ssj4_body": "avatar_v2.saiyan4 chest, fur and tail"
-  },
-  "pixellab_generations_used": 6,
-  "pixellab_called_this_pass": false,
+  "canvas": [
+    144,
+    176
+  ],
+  "frames": 25,
+  "fps": 12,
+  "transitions": [
+    {
+      "name": "normal__to__superSaiyan",
+      "source": "normal",
+      "destination": "superSaiyan",
+      "clipped": 0
+    },
+    {
+      "name": "superSaiyan__to__superSaiyan2",
+      "source": "superSaiyan",
+      "destination": "superSaiyan2",
+      "clipped": 0
+    },
+    {
+      "name": "superSaiyan2__to__superSaiyan3",
+      "source": "superSaiyan2",
+      "destination": "superSaiyan3",
+      "clipped": 0
+    },
+    {
+      "name": "superSaiyan3__to__superSaiyan4",
+      "source": "superSaiyan3",
+      "destination": "superSaiyan4",
+      "clipped": 0
+    },
+    {
+      "name": "superSaiyan4__to__god",
+      "source": "superSaiyan4",
+      "destination": "god",
+      "clipped": 0
+    },
+    {
+      "name": "god__to__blue",
+      "source": "god",
+      "destination": "blue",
+      "clipped": 0
+    },
+    {
+      "name": "blue__to__blueEvolved",
+      "source": "blue",
+      "destination": "blueEvolved",
+      "clipped": 0
+    },
+    {
+      "name": "blueEvolved__to__ultraInstinctSign",
+      "source": "blueEvolved",
+      "destination": "ultraInstinctSign",
+      "clipped": 0
+    },
+    {
+      "name": "ultraInstinctSign__to__masteredUltraInstinct",
+      "source": "ultraInstinctSign",
+      "destination": "masteredUltraInstinct",
+      "clipped": 0
+    }
+  ],
   "tests": {
-    "forms_rebuild": {
-      "passed": 22,
-      "total": 22,
-      "suite": "tests/test_forms2.py"
+    "slot_ownership": {
+      "passed": 20,
+      "total": 20,
+      "suite": "tests/test_slots_forms.py"
     },
     "cinematic": {
       "passed": 26,
@@ -233,81 +111,16 @@
       "suite": "tests/test_system.py"
     }
   },
-  "transitions": [
-    {
-      "name": "normal__to__superSaiyan",
-      "source": "normal",
-      "destination": "superSaiyan",
-      "frame24_is_historical_destination": true,
-      "clipped": 0
-    },
-    {
-      "name": "superSaiyan__to__superSaiyan2",
-      "source": "superSaiyan",
-      "destination": "superSaiyan2",
-      "frame24_is_historical_destination": true,
-      "clipped": 0
-    },
-    {
-      "name": "superSaiyan2__to__superSaiyan3",
-      "source": "superSaiyan2",
-      "destination": "superSaiyan3",
-      "frame24_is_historical_destination": true,
-      "clipped": 0
-    },
-    {
-      "name": "superSaiyan3__to__superSaiyan4",
-      "source": "superSaiyan3",
-      "destination": "superSaiyan4",
-      "frame24_is_historical_destination": true,
-      "clipped": 0
-    },
-    {
-      "name": "superSaiyan4__to__god",
-      "source": "superSaiyan4",
-      "destination": "god",
-      "frame24_is_historical_destination": true,
-      "clipped": 0
-    },
-    {
-      "name": "god__to__blue",
-      "source": "god",
-      "destination": "blue",
-      "frame24_is_historical_destination": true,
-      "clipped": 0
-    },
-    {
-      "name": "blue__to__blueEvolved",
-      "source": "blue",
-      "destination": "blueEvolved",
-      "frame24_is_historical_destination": true,
-      "clipped": 0
-    },
-    {
-      "name": "blueEvolved__to__ultraInstinctSign",
-      "source": "blueEvolved",
-      "destination": "ultraInstinctSign",
-      "frame24_is_historical_destination": true,
-      "clipped": 0
-    },
-    {
-      "name": "ultraInstinctSign__to__masteredUltraInstinct",
-      "source": "ultraInstinctSign",
-      "destination": "masteredUltraInstinct",
-      "frame24_is_historical_destination": true,
-      "clipped": 0
-    }
-  ],
-  "fps": 12,
-  "frames": 25,
+  "pixellab_called_this_pass": false,
   "files": {
-    "latest.png": "gallery, close-ups, edge margins, overflow table, endpoints",
+    "latest.png": "stages, ownership overlays, BEFORE/AFTER, gate frames",
     "latest.gif": "SSJ3 to SSJ4 at 12 fps",
-    "index.html": "selector, frame stepping, nine GIFs, all sheets",
-    "forms/": "per-sheet PNGs, nine GIFs and stepping strips, overflow.json",
-    "forms-rejected-f98f452/": "the rejected composition, kept as BEFORE evidence",
-    "transformation/": "the body-only cinematic",
+    "index.html": "selector, stepping, nine GIFs",
+    "forms/": "per-sheet PNGs, nine GIFs and stepping strips",
+    "forms-rejected-c2c0fcd/": "the rejected slab composition, BEFORE evidence",
+    "forms-rejected-f98f452/": "the earlier rejected composition",
+    "transformation/": "body-only cinematic",
     "before/": "the bf3eb1e result",
-    "poses/": "the multi-angle pose review"
+    "poses/": "multi-angle pose review"
   }
 }
