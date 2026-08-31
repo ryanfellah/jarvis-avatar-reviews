@@ -36,6 +36,7 @@ code{background:var(--panel);border:1px solid var(--line);border-radius:4px;padd
 ul{max-width:90ch}li{margin:4px 0}
 </style>
 <h1>Avatar V4 — Ryan, rebuilt from photographs</h1>
+<p style="margin:0 0 10px"><a href="#final">Jump to the final tuning pass</a></p>
 <p class="lede">The previous set was rejected for not resembling Ryan, for SSJ1 facing away, and for the forms looking past the viewer. This one is built from his own photographs, and <b>every state faces the viewer</b>: each is the south rotation of a character state, so a forward gaze is a property of the render rather than something hoped for.</p>
 <p class="note">One internal identity was built first, deliberately with a buzz cut so no curls can survive under gold hair. Normal, SSJ1, SSJ2 and SSJ3 are each a state <i>of that identity</i> — none is chained off another, so a defect in one cannot travel into the next. The rejected set is kept at <a href="rejected-0887f3f/">rejected-0887f3f/</a> and is not shown here as a current result.</p>
 <h2>Ryan — the identity references</h2><div class="rule"></div>
@@ -115,13 +116,13 @@ ul{max-width:90ch}li{margin:4px 0}
 <tr><th>opaque px</th><td>4941</td></tr>
 <tr><th>head width</th><td>30</td></tr>
 <tr><th>shoulder width</th><td>None</td></tr>
-<tr><th>eye px</th><td>41</td></tr>
+<tr><th>eye px</th><td>40</td></tr>
 <tr><th>float offset</th><td>0</td></tr>
 <tr><th>ground row</th><td>122</td></tr>
 <tr><th>aura px</th><td>0</td></tr>
 <tr><th>lightning px</th><td>0</td></tr>
 </table></div></div>
-<div class="form"><header><span class="fid">Super Saiyan 1</span><span class="tag ok">0 forbidden hair px</span><span class="tag ok">control 24/24</span><span class="tag ok">reassembly 0 px diff</span><span class="tag">5143 opaque px</span></header>
+<div class="form"><header><span class="fid">Super Saiyan 1</span><span class="tag ok">0 forbidden hair px</span><span class="tag ok">control 24/24</span><span class="tag ok">reassembly 0 px diff</span><span class="tag">5344 opaque px</span></header>
 <div class="row">
 <figure><img src="refs/pose_ssj1.png" width="210" alt="Pose reference (pose, hair direction and energy only — not identity or clothing)"><figcaption>Pose reference (pose, hair direction and energy only — not identity or clothing)</figcaption></figure>
 <figure><img src="ssj1/raw_4x.png" alt="Raw PixelLab output, 4x"><figcaption>Raw PixelLab output, 4x</figcaption></figure>
@@ -157,14 +158,14 @@ ul{max-width:90ch}li{margin:4px 0}
 </div>
 <h3>Measurements</h3><div class="scroll"><table>
 <tr><th>total height</th><td>134</td></tr>
-<tr><th>total width</th><td>58</td></tr>
-<tr><th>opaque px</th><td>5143</td></tr>
-<tr><th>head width</th><td>30</td></tr>
+<tr><th>total width</th><td>64</td></tr>
+<tr><th>opaque px</th><td>5344</td></tr>
+<tr><th>head width</th><td>46</td></tr>
 <tr><th>shoulder width</th><td>None</td></tr>
-<tr><th>eye px</th><td>45</td></tr>
+<tr><th>eye px</th><td>47</td></tr>
 <tr><th>float offset</th><td>0</td></tr>
-<tr><th>ground row</th><td>122</td></tr>
-<tr><th>aura px</th><td>3367</td></tr>
+<tr><th>ground row</th><td>123</td></tr>
+<tr><th>aura px</th><td>3965</td></tr>
 <tr><th>lightning px</th><td>0</td></tr>
 </table></div></div>
 <div class="form"><header><span class="fid">Super Saiyan 2</span><span class="tag ok">0 forbidden hair px</span><span class="tag ok">control 24/24</span><span class="tag ok">reassembly 0 px diff</span><span class="tag">5293 opaque px</span></header>
@@ -205,9 +206,9 @@ ul{max-width:90ch}li{margin:4px 0}
 <tr><th>total height</th><td>136</td></tr>
 <tr><th>total width</th><td>63</td></tr>
 <tr><th>opaque px</th><td>5293</td></tr>
-<tr><th>head width</th><td>42</td></tr>
+<tr><th>head width</th><td>43</td></tr>
 <tr><th>shoulder width</th><td>None</td></tr>
-<tr><th>eye px</th><td>32</td></tr>
+<tr><th>eye px</th><td>36</td></tr>
 <tr><th>float offset</th><td>0</td></tr>
 <tr><th>ground row</th><td>122</td></tr>
 <tr><th>aura px</th><td>4633</td></tr>
@@ -253,34 +254,126 @@ ul{max-width:90ch}li{margin:4px 0}
 <tr><th>opaque px</th><td>9025</td></tr>
 <tr><th>head width</th><td>58</td></tr>
 <tr><th>shoulder width</th><td>None</td></tr>
-<tr><th>eye px</th><td>23</td></tr>
+<tr><th>eye px</th><td>29</td></tr>
 <tr><th>float offset</th><td>8</td></tr>
 <tr><th>ground row</th><td>111</td></tr>
 <tr><th>aura px</th><td>5314</td></tr>
 <tr><th>lightning px</th><td>467</td></tr>
 </table></div></div>
+<h2 id="final">Final tuning pass</h2><div class="rule"></div>
+<p class="lede">SSJ1 was rejected outright and regenerated from the shared identity. Normal, SSJ2 and SSJ3 were <b>not</b> regenerated — they received tightly masked pixel repairs only, and the page below proves nothing outside those masks moved.</p>
+<h3>Normal — left-eye repair</h3>
+<p class="note">In a front-facing sprite Ryan's <b>anatomical LEFT</b> eye is on the <b>VIEWER'S RIGHT</b>. That is the defective one: its sclera was split in two by a black bar and it was two pixels wider than the good eye. It was rebuilt to the good eye's geometry. <b>22 pixels changed</b>, all inside x73–79, y45–49; <b>0 outside the mask</b>. Body sha d2e8b4c1ef98fc45 → 1172964a44ca2f02.</p>
+<div class="row"><figure><img src="final/normal_eye_16x.png" alt="Normal left-eye repair at 16x, sides labelled"><figcaption>Normal left-eye repair at 16x, sides labelled</figcaption></figure></div>
+<h3>Shared palettes</h3><div class="row">
+<figure><img src="final/palette_teal.png" alt="Locked teal eye ramp — identical in all three transformed forms"><figcaption>Locked teal eye ramp — identical in all three transformed forms</figcaption></figure>
+<figure><img src="final/palette_gold_brow.png" alt="Gold brow family — SSJ1 and SSJ2"><figcaption>Gold brow family — SSJ1 and SSJ2</figcaption></figure>
+</div>
+<h3>SSJ2 and SSJ3 — eyes and brows only</h3>
+<p class="note"><b>ssj2</b>: 109 pixels changed (32 iris, 77 brow), <b>0 outside the eye/brow masks</b>. sha 58ba5fb3c31550b4 → 447e40e9595e8a50.
+<div class="row">
+<figure><img src="final/ssj2_eye_brow_16x.png" alt="ssj2 before and after at 16x"><figcaption>ssj2 before and after at 16x</figcaption></figure>
+<figure><img src="final/ssj2_changed_mask_4x.png" alt="ssj2 changed-pixel mask (magenta) over the silhouette"><figcaption>ssj2 changed-pixel mask (magenta) over the silhouette</figcaption></figure>
+</div>
+<p class="note"><b>ssj3</b>: 23 pixels changed (23 iris, 0 brow), <b>0 outside the eye/brow masks</b>. sha 187d475ce241f01c → ddced409075d05bd. SSJ3 has no ordinary eyebrows, so there were no brow pixels to regold — its ridge geometry is untouched.
+<div class="row">
+<figure><img src="final/ssj3_eye_brow_16x.png" alt="ssj3 before and after at 16x"><figcaption>ssj3 before and after at 16x</figcaption></figure>
+<figure><img src="final/ssj3_changed_mask_4x.png" alt="ssj3 changed-pixel mask (magenta) over the silhouette"><figcaption>ssj3 changed-pixel mask (magenta) over the silhouette</figcaption></figure>
+</div>
+<h3>SSJ1 — rejected, and four new candidates</h3>
+<p class="note">The rejected state e9d8bb17 is recorded never-reuse: none of its pose, body, head, hair, face, effects or pixels are used. All four candidates were generated directly from the shared identity 7cac30da. <b>B was selected.</b></p>
+<div class="row"><figure><img src="final/ssj1_candidates_5x.png" alt="Rejected beside candidates A-D at 5x"><figcaption>Rejected beside candidates A-D at 5x</figcaption></figure></div>
+<div class="row">
+<figure><img src="final/ssj1_pose_compare_5x.png" alt="Pose comparison: rejected versus the new calm power stance"><figcaption>Pose comparison: rejected versus the new calm power stance</figcaption></figure>
+<figure><img src="final/ssj1_hair_10x.png" alt="New SSJ1 hair at 10x — clean forehead and temples, no roots"><figcaption>New SSJ1 hair at 10x — clean forehead and temples, no roots</figcaption></figure>
+<figure><img src="final/ssj1_silhouette_5x.png" alt="New SSJ1 silhouette at 5x"><figcaption>New SSJ1 silhouette at 5x</figcaption></figure>
+</div>
+<h4 class="note">Why A, C and D were not selected</h4><ul>
+<li><b>A (classic)</b> — France red socks instead of black.</li>
+<li><b>C (dense short)</b> — hair reads as texture rather than spikes, and the face is narrower than Ryan's.</li>
+<li><b>D (central lock)</b> — red socks, and the spike height crowds SSJ2's territory.</li>
+</ul>
+<h3>Direct gaze</h3>
+<div class="row"><figure><img src="final/gaze_overlay_12x.png" alt="Eye centres ringed with a line dropped toward the viewer, all four states"><figcaption>Eye centres ringed with a line dropped toward the viewer, all four states</figcaption></figure></div>
+<h3>Charging aura — six frames at 12 fps</h3>
+<p class="note">Built from the reference's three-key pulse and its measured four-step ramp: gold (254,197,0), yellow (254,225,65), pale (254,249,187), white-hot (242,242,242). The effects canvas was enlarged to 256×288 with the body at a constant (64,64) — Ryan himself is never resampled.</p>
+<div class="row"><figure><img src="final/aura_reference.gif" width="240" alt="The supplied reference GIF"><figcaption>The supplied reference GIF</figcaption></figure>
+<figure><img src="final/ssj1_composite.gif" width="200" alt="ssj1 — composite loop"><figcaption>ssj1 — composite loop</figcaption></figure>
+<figure><img src="final/ssj2_composite.gif" width="200" alt="ssj2 — composite loop"><figcaption>ssj2 — composite loop</figcaption></figure>
+<figure><img src="final/ssj3_composite.gif" width="200" alt="ssj3 — composite loop"><figcaption>ssj3 — composite loop</figcaption></figure>
+</div>
+<h4 class="note">ssj1</h4><div class="row">
+<figure><img src="final/ssj1_aura_frames.png" alt="ssj1 — all six frames"><figcaption>ssj1 — all six frames</figcaption></figure>
+</div><div class="row">
+<figure><img src="final/ssj1_aura_only.gif" width="200" alt="ssj1 aura-only loop"><figcaption>ssj1 aura-only loop</figcaption></figure>
+<figure><img src="final/ssj1_lightning_only.gif" width="200" alt="ssj1 lightning-only loop — empty by design"><figcaption>ssj1 lightning-only loop — empty by design</figcaption></figure>
+<figure><img src="final/ssj1_margin_2x.png" alt="ssj1 margin check: green band is the 8px safety margin"><figcaption>ssj1 margin check: green band is the 8px safety margin</figcaption></figure>
+</div>
+<div class="scroll"><table><tr><th>frame</th><th>aura px</th><th>lightning px</th><th>aura on body</th><th>lightning on aura</th><th>margin</th></tr>
+<tr><th>0</th><td>6849</td><td>0</td><td class="n">0</td><td class="n">0</td><td>36</td></tr>
+<tr><th>1</th><td>6075</td><td>0</td><td class="n">0</td><td class="n">0</td><td>31</td></tr>
+<tr><th>2</th><td>6887</td><td>0</td><td class="n">0</td><td class="n">0</td><td>29</td></tr>
+<tr><th>3</th><td>5659</td><td>0</td><td class="n">0</td><td class="n">0</td><td>37</td></tr>
+<tr><th>4</th><td>6568</td><td>0</td><td class="n">0</td><td class="n">0</td><td>40</td></tr>
+<tr><th>5</th><td>6235</td><td>0</td><td class="n">0</td><td class="n">0</td><td>34</td></tr>
+</table></div>
+<h4 class="note">ssj2</h4><div class="row">
+<figure><img src="final/ssj2_aura_frames.png" alt="ssj2 — all six frames"><figcaption>ssj2 — all six frames</figcaption></figure>
+</div><div class="row">
+<figure><img src="final/ssj2_aura_only.gif" width="200" alt="ssj2 aura-only loop"><figcaption>ssj2 aura-only loop</figcaption></figure>
+<figure><img src="final/ssj2_lightning_only.gif" width="200" alt="ssj2 lightning-only loop"><figcaption>ssj2 lightning-only loop</figcaption></figure>
+<figure><img src="final/ssj2_margin_2x.png" alt="ssj2 margin check: green band is the 8px safety margin"><figcaption>ssj2 margin check: green band is the 8px safety margin</figcaption></figure>
+</div>
+<div class="scroll"><table><tr><th>frame</th><th>aura px</th><th>lightning px</th><th>aura on body</th><th>lightning on aura</th><th>margin</th></tr>
+<tr><th>0</th><td>10355</td><td>62</td><td class="n">0</td><td class="n">0</td><td>27</td></tr>
+<tr><th>1</th><td>9815</td><td>67</td><td class="n">0</td><td class="n">0</td><td>8</td></tr>
+<tr><th>2</th><td>9987</td><td>60</td><td class="n">0</td><td class="n">0</td><td>22</td></tr>
+<tr><th>3</th><td>9860</td><td>53</td><td class="n">0</td><td class="n">0</td><td>17</td></tr>
+<tr><th>4</th><td>10574</td><td>70</td><td class="n">0</td><td class="n">0</td><td>9</td></tr>
+<tr><th>5</th><td>9673</td><td>60</td><td class="n">0</td><td class="n">0</td><td>8</td></tr>
+</table></div>
+<h4 class="note">ssj3</h4><div class="row">
+<figure><img src="final/ssj3_aura_frames.png" alt="ssj3 — all six frames"><figcaption>ssj3 — all six frames</figcaption></figure>
+</div><div class="row">
+<figure><img src="final/ssj3_aura_only.gif" width="200" alt="ssj3 aura-only loop"><figcaption>ssj3 aura-only loop</figcaption></figure>
+<figure><img src="final/ssj3_lightning_only.gif" width="200" alt="ssj3 lightning-only loop"><figcaption>ssj3 lightning-only loop</figcaption></figure>
+<figure><img src="final/ssj3_margin_2x.png" alt="ssj3 margin check: green band is the 8px safety margin"><figcaption>ssj3 margin check: green band is the 8px safety margin</figcaption></figure>
+</div>
+<div class="scroll"><table><tr><th>frame</th><th>aura px</th><th>lightning px</th><th>aura on body</th><th>lightning on aura</th><th>margin</th></tr>
+<tr><th>0</th><td>18930</td><td>313</td><td class="n">0</td><td class="n">0</td><td>8</td></tr>
+<tr><th>1</th><td>18057</td><td>341</td><td class="n">0</td><td class="n">0</td><td>8</td></tr>
+<tr><th>2</th><td>18918</td><td>297</td><td class="n">0</td><td class="n">0</td><td>8</td></tr>
+<tr><th>3</th><td>18522</td><td>300</td><td class="n">0</td><td class="n">0</td><td>8</td></tr>
+<tr><th>4</th><td>19500</td><td>340</td><td class="n">0</td><td class="n">0</td><td>8</td></tr>
+<tr><th>5</th><td>19526</td><td>310</td><td class="n">0</td><td class="n">0</td><td>8</td></tr>
+</table></div>
+<div class="scroll"><table><tr><th>ladder</th><th>SSJ1</th><th>SSJ2</th><th>SSJ3</th></tr>
+<tr><th>aura px (mean)</th><td>6379</td><td>10044</td><td>18909</td></tr>
+<tr><th>lightning px (mean)</th><td>0</td><td>62</td><td>317</td></tr>
+</table></div>
+<p class="note">Tests: <b>71/71</b> final-tuning checks and <b>86/86</b> structural checks, each critical audit carrying a positive control that injects the defect and requires the audit to fail.</p>
 <h2>Layer slots</h2><div class="rule"></div>
 <div class="scroll"><table><tr><th>slot</th><th>normal</th><th>ssj1</th><th>ssj2</th><th>ssj3</th></tr>
-<tr><th>hair_back</th><td>17</td><td>93</td><td>141</td><td>3521</td></tr>
-<tr><th>head_skin</th><td>338</td><td>339</td><td>288</td><td>424</td></tr>
-<tr><th>ears</th><td>62</td><td>69</td><td>96</td><td>64</td></tr>
-<tr><th>face_shading</th><td>53</td><td>94</td><td>230</td><td>113</td></tr>
-<tr><th>eyes</th><td>41</td><td>45</td><td>32</td><td>23</td></tr>
-<tr><th>nose</th><td>12</td><td>10</td><td>4</td><td>5</td></tr>
+<tr><th>hair_back</th><td>17</td><td>280</td><td>139</td><td>3521</td></tr>
+<tr><th>head_skin</th><td>342</td><td>273</td><td>283</td><td>422</td></tr>
+<tr><th>ears</th><td>62</td><td>181</td><td>101</td><td>64</td></tr>
+<tr><th>face_shading</th><td>53</td><td>48</td><td>230</td><td>110</td></tr>
+<tr><th>eyes</th><td>40</td><td>47</td><td>36</td><td>29</td></tr>
+<tr><th>nose</th><td>10</td><td>9</td><td>4</td><td>5</td></tr>
 <tr><th>mouth</th><td>28</td><td>8</td><td>9</td><td>14</td></tr>
-<tr><th>brows_or_ssj3_ridge</th><td>61</td><td>39</td><td>77</td><td>0</td></tr>
-<tr><th>hair_front</th><td>545</td><td>618</td><td>814</td><td>1092</td></tr>
-<tr><th>neck</th><td>3</td><td>4</td><td>3</td><td>13</td></tr>
-<tr><th>arm_near</th><td>314</td><td>314</td><td>274</td><td>252</td></tr>
-<tr><th>hand_near</th><td>88</td><td>89</td><td>88</td><td>64</td></tr>
-<tr><th>arm_far</th><td>207</td><td>212</td><td>209</td><td>174</td></tr>
-<tr><th>hand_far</th><td>189</td><td>194</td><td>202</td><td>233</td></tr>
-<tr><th>france_jersey</th><td>1625</td><td>1677</td><td>1519</td><td>1580</td></tr>
-<tr><th>black_shorts</th><td>371</td><td>346</td><td>306</td><td>644</td></tr>
+<tr><th>brows_or_ssj3_ridge</th><td>61</td><td>7</td><td>82</td><td>0</td></tr>
+<tr><th>hair_front</th><td>544</td><td>706</td><td>807</td><td>1091</td></tr>
+<tr><th>neck</th><td>3</td><td>6</td><td>3</td><td>13</td></tr>
+<tr><th>arm_near</th><td>314</td><td>251</td><td>274</td><td>252</td></tr>
+<tr><th>hand_near</th><td>88</td><td>86</td><td>88</td><td>64</td></tr>
+<tr><th>arm_far</th><td>207</td><td>264</td><td>209</td><td>174</td></tr>
+<tr><th>hand_far</th><td>189</td><td>188</td><td>202</td><td>233</td></tr>
+<tr><th>france_jersey</th><td>1625</td><td>1736</td><td>1519</td><td>1580</td></tr>
+<tr><th>black_shorts</th><td>371</td><td>383</td><td>306</td><td>644</td></tr>
 <tr><th>leg_near</th><td>46</td><td>46</td><td>69</td><td>38</td></tr>
-<tr><th>leg_far</th><td>46</td><td>46</td><td>43</td><td>32</td></tr>
-<tr><th>socks</th><td>451</td><td>454</td><td>437</td><td>298</td></tr>
-<tr><th>shoes</th><td>444</td><td>446</td><td>452</td><td>441</td></tr>
+<tr><th>leg_far</th><td>46</td><td>43</td><td>43</td><td>32</td></tr>
+<tr><th>socks</th><td>451</td><td>383</td><td>437</td><td>298</td></tr>
+<tr><th>shoes</th><td>444</td><td>399</td><td>452</td><td>441</td></tr>
 </table></div>
 <p class="note">SSJ3's eyebrow slot is empty by design — it has a brow ridge instead. Every other slot is populated in every state.</p>
 <h2>Generation ledger</h2><div class="rule"></div>
@@ -296,12 +389,17 @@ ul{max-width:90ch}li{margin:4px 0}
 <tr><th>9</th><td>create_character_state</td><td>144x144</td><td>881</td><td>40</td><td>1559</td><td class="n">ACCEPTED</td></tr>
 <tr><th>10</th><td>create_character_state</td><td>200x200</td><td>4407</td><td>40</td><td>1519</td><td class="n">ACCEPTED</td></tr>
 <tr><th>11</th><td>create_character_state</td><td>144x144</td><td>2201</td><td></td><td></td><td class="">pending</td></tr>
-<tr><th>12</th><td>create_character_state</td><td>144x144</td><td>9315</td><td></td><td></td><td class="">pending</td></tr>
+<tr><th>12</th><td>create_character_state</td><td>144x144</td><td>9315</td><td>40</td><td>1439</td><td class="r">REJECTED</td></tr>
+<tr><th>13</th><td>create_character_state</td><td>144x144</td><td>5101</td><td></td><td></td><td class="">pending</td></tr>
+<tr><th>14</th><td>create_character_state</td><td>144x144</td><td>6202</td><td></td><td></td><td class="">pending</td></tr>
+<tr><th>15</th><td>create_character_state</td><td>144x144</td><td>7303</td><td></td><td></td><td class="">pending</td></tr>
+<tr><th>16</th><td>create_character_state</td><td>144x144</td><td>8404</td><td></td><td></td><td class="">pending</td></tr>
 </table></div>
 <h3>Why each candidate was rejected</h3><ul>
 <li><b>call 1</b> — c1 is an excellent face likeness (dense curls, fuller face, thick brows, straight nose, olive skin) and c0 has the right front-facing arms-down pose, but every candidate kept the photo curls instead of the requested buzz cut, and c0/c2 gave France white/blue shorts instead of black. Kept as identity evidence; not used as the structural base.</li>
 <li><b>call 2</b> — drifted into scene illustrations rather than clean sprites: c1 has a golf course and flag behind it, c2 is a waist-up holding a drink, c3 is running with a ball in front of a crowd. c0 is a portrait, not a full body. None gave the requested buzz cut - the photo curls were kept in every candidate.</li>
 <li><b>call 7</b> — eyebrows are missing - the brief requires SSJ2 to keep thick dark eyebrows - and the socks came back France red instead of black. Stance, spike density and forward gaze were all correct.</li>
 <li><b>call 8</b> — eyes rendered GREEN, which breaks Ryan dark-eyed identity across the set, and the socks came back red instead of black. Hair length, floating pose, brow ridge and forward gaze were all correct.</li>
+<li><b>call 12</b> — Normal candidate c completed late; superseded by Normal a which was already accepted and has the fuller face and black socks</li>
 </ul>
 <p class="note">Balance remaining after this pass: <b>1439</b> generations.</p>
