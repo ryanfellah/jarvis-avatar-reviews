@@ -36,7 +36,7 @@ code{background:var(--panel);border:1px solid var(--line);border-radius:4px;padd
 ul{max-width:90ch}li{margin:4px 0}
 </style>
 <h1>Avatar V4 — Ryan, rebuilt from photographs</h1>
-<p style="margin:0 0 10px"><a href="#final">Jump to the final tuning pass</a></p>
+<p style="margin:0 0 10px"><a href="#eyes-aura-rebuild">Jump to the eyes and aura rebuild</a> · <a href="#final">earlier tuning pass</a></p>
 <p class="lede">The previous set was rejected for not resembling Ryan, for SSJ1 facing away, and for the forms looking past the viewer. This one is built from his own photographs, and <b>every state faces the viewer</b>: each is the south rotation of a character state, so a forward gaze is a property of the render rather than something hoped for.</p>
 <p class="note">One internal identity was built first, deliberately with a buzz cut so no curls can survive under gold hair. Normal, SSJ1, SSJ2 and SSJ3 are each a state <i>of that identity</i> — none is chained off another, so a defect in one cannot travel into the next. The rejected set is kept at <a href="rejected-0887f3f/">rejected-0887f3f/</a> and is not shown here as a current result.</p>
 <h2>Ryan — the identity references</h2><div class="rule"></div>
@@ -260,6 +260,103 @@ ul{max-width:90ch}li{margin:4px 0}
 <tr><th>aura px</th><td>5314</td></tr>
 <tr><th>lightning px</th><td>467</td></tr>
 </table></div></div>
+<h2 id="eyes-aura-rebuild">Eyes and aura rebuild</h2><div class="rule"></div>
+<p class="lede">Zero PixelLab generations. Every character is the locked artwork; the eyes were redrawn pixel by pixel inside published boxes and the aura renderer was replaced outright.</p>
+<p class="note">The old eyes were recoloured rather than drawn, which put teal in the lash row and left a white rectangle with a one-pixel vertical pupil. These are authored instead: a dark lash, white sclera, and a three-pixel iris block with a centred pupil. Because teal is only ever <i>written</i> into iris_mask, the teal rule holds by construction.</p>
+<h3>Eyes — before and after at 16×</h3>
+<p class="note"><b>normal</b> — boxes 6×4 and 7×4; 52 pixels changed, <b>0 outside the published mask</b>. Viewer-left box is Ryan's anatomical RIGHT; viewer-right is his anatomical LEFT — the originally defective one.</p>
+<div class="row">
+<figure><img src="rebuild/normal_eyes_before_after_16x.png" alt="normal before / after, 16×"><figcaption>normal before / after, 16×</figcaption></figure>
+<figure><img src="rebuild/normal_eye_masks_16x.png" alt="normal masks — red lash, white sclera, cyan iris, violet pupil"><figcaption>normal masks — red lash, white sclera, cyan iris, violet pupil</figcaption></figure>
+</div><div class="row">
+<figure><img src="rebuild/normal_eyes_native.png" width="64" alt="normal native"><figcaption>normal native</figcaption></figure>
+<figure><img src="rebuild/normal_eyes_8x.png" alt="normal 8×"><figcaption>normal 8×</figcaption></figure>
+<figure><img src="rebuild/normal_teal_heatmap_5x.png" alt="normal teal heatmap — magenta would be a face leak; there are none. Olive is approved shoe/jersey teal."><figcaption>normal teal heatmap — magenta would be a face leak; there are none. Olive is approved shoe/jersey teal.</figcaption></figure>
+</div>
+<p class="note"><b>ssj1</b> — boxes 6×4 and 8×4; 52 pixels changed, <b>0 outside the published mask</b>. Viewer-left box is Ryan's anatomical RIGHT; viewer-right is his anatomical LEFT — the originally defective one.</p>
+<div class="row">
+<figure><img src="rebuild/ssj1_eyes_before_after_16x.png" alt="ssj1 before / after, 16×"><figcaption>ssj1 before / after, 16×</figcaption></figure>
+<figure><img src="rebuild/ssj1_eye_masks_16x.png" alt="ssj1 masks — red lash, white sclera, cyan iris, violet pupil"><figcaption>ssj1 masks — red lash, white sclera, cyan iris, violet pupil</figcaption></figure>
+</div><div class="row">
+<figure><img src="rebuild/ssj1_eyes_native.png" width="64" alt="ssj1 native"><figcaption>ssj1 native</figcaption></figure>
+<figure><img src="rebuild/ssj1_eyes_8x.png" alt="ssj1 8×"><figcaption>ssj1 8×</figcaption></figure>
+<figure><img src="rebuild/ssj1_teal_heatmap_5x.png" alt="ssj1 teal heatmap — magenta would be a face leak; there are none. Olive is approved shoe/jersey teal."><figcaption>ssj1 teal heatmap — magenta would be a face leak; there are none. Olive is approved shoe/jersey teal.</figcaption></figure>
+</div>
+<p class="note"><b>ssj2</b> — boxes 6×4 and 7×4; 50 pixels changed, <b>0 outside the published mask</b>. Viewer-left box is Ryan's anatomical RIGHT; viewer-right is his anatomical LEFT — the originally defective one.</p>
+<div class="row">
+<figure><img src="rebuild/ssj2_eyes_before_after_16x.png" alt="ssj2 before / after, 16×"><figcaption>ssj2 before / after, 16×</figcaption></figure>
+<figure><img src="rebuild/ssj2_eye_masks_16x.png" alt="ssj2 masks — red lash, white sclera, cyan iris, violet pupil"><figcaption>ssj2 masks — red lash, white sclera, cyan iris, violet pupil</figcaption></figure>
+</div><div class="row">
+<figure><img src="rebuild/ssj2_eyes_native.png" width="64" alt="ssj2 native"><figcaption>ssj2 native</figcaption></figure>
+<figure><img src="rebuild/ssj2_eyes_8x.png" alt="ssj2 8×"><figcaption>ssj2 8×</figcaption></figure>
+<figure><img src="rebuild/ssj2_teal_heatmap_5x.png" alt="ssj2 teal heatmap — magenta would be a face leak; there are none. Olive is approved shoe/jersey teal."><figcaption>ssj2 teal heatmap — magenta would be a face leak; there are none. Olive is approved shoe/jersey teal.</figcaption></figure>
+</div>
+<p class="note"><b>ssj3</b> — boxes 6×5 and 6×5; 57 pixels changed, <b>0 outside the published mask</b>. Viewer-left box is Ryan's anatomical RIGHT; viewer-right is his anatomical LEFT — the originally defective one.</p>
+<div class="row">
+<figure><img src="rebuild/ssj3_eyes_before_after_16x.png" alt="ssj3 before / after, 16×"><figcaption>ssj3 before / after, 16×</figcaption></figure>
+<figure><img src="rebuild/ssj3_eye_masks_16x.png" alt="ssj3 masks — red lash, white sclera, cyan iris, violet pupil"><figcaption>ssj3 masks — red lash, white sclera, cyan iris, violet pupil</figcaption></figure>
+</div><div class="row">
+<figure><img src="rebuild/ssj3_eyes_native.png" width="64" alt="ssj3 native"><figcaption>ssj3 native</figcaption></figure>
+<figure><img src="rebuild/ssj3_eyes_8x.png" alt="ssj3 8×"><figcaption>ssj3 8×</figcaption></figure>
+<figure><img src="rebuild/ssj3_teal_heatmap_5x.png" alt="ssj3 teal heatmap — magenta would be a face leak; there are none. Olive is approved shoe/jersey teal."><figcaption>ssj3 teal heatmap — magenta would be a face leak; there are none. Olive is approved shoe/jersey teal.</figcaption></figure>
+</div>
+<h3>White outline removed</h3>
+<p class="note">ring1 is the one-pixel ring immediately outside the silhouette. The aura renderer now clears it outright, so the aura sits behind Ryan with a transparent opening and cannot close into a contour. The white platform under the feet is gone too: the base is fanned strokes, never a filled bar.</p><div class="row">
+<figure><img src="rebuild/ssj1_ring1_before_after.png" alt="ssj1 — ring1 before and after, pale pixels marked magenta"><figcaption>ssj1 — ring1 before and after, pale pixels marked magenta</figcaption></figure>
+<figure><img src="rebuild/ssj2_ring1_before_after.png" alt="ssj2 — ring1 before and after, pale pixels marked magenta"><figcaption>ssj2 — ring1 before and after, pale pixels marked magenta</figcaption></figure>
+<figure><img src="rebuild/ssj3_ring1_before_after.png" alt="ssj3 — ring1 before and after, pale pixels marked magenta"><figcaption>ssj3 — ring1 before and after, pale pixels marked magenta</figcaption></figure>
+</div>
+<h3>Charging aura, rebuilt</h3>
+<p class="note">The renderer was replaced, not tuned. A flame is now a bundle of independent strokes — each with its own base, length, width, lean and curve, drawn from heavy-tailed distributions and clustered rather than spread evenly. Nothing reads the distance to the body, which is why there is no shell; the wide spread of lengths is what breaks the fence the previous three attempts kept producing.</p>
+<div class="row"><figure><img src="rebuild/aura_reference.gif" width="230" alt="The supplied reference GIF"><figcaption>The supplied reference GIF</figcaption></figure>
+<figure><img src="rebuild/ssj1_composite.gif" width="210" alt="ssj1 — rebuilt loop, 6 frames at 12 fps"><figcaption>ssj1 — rebuilt loop, 6 frames at 12 fps</figcaption></figure>
+<figure><img src="rebuild/ssj2_composite.gif" width="210" alt="ssj2 — rebuilt loop, 6 frames at 12 fps"><figcaption>ssj2 — rebuilt loop, 6 frames at 12 fps</figcaption></figure>
+<figure><img src="rebuild/ssj3_composite.gif" width="210" alt="ssj3 — rebuilt loop, 6 frames at 12 fps"><figcaption>ssj3 — rebuilt loop, 6 frames at 12 fps</figcaption></figure>
+</div>
+<h4 class="note">ssj1</h4><div class="row"><figure><img src="rebuild/ssj1_frames.png" alt="ssj1 — all six frames"><figcaption>ssj1 — all six frames</figcaption></figure></div>
+<div class="row">
+<figure><img src="rebuild/ssj1_aura_only.gif" width="200" alt="ssj1 aura only"><figcaption>ssj1 aura only</figcaption></figure>
+<figure><img src="rebuild/ssj1_lightning_only.gif" width="200" alt="ssj1 lightning only — empty by design"><figcaption>ssj1 lightning only — empty by design</figcaption></figure>
+</div>
+<div class="scroll"><table><tr><th>frame</th><th>aura px</th><th>lightning px</th><th>aura on body</th><th>aura in ring1</th><th>margin</th></tr>
+<tr><th>0</th><td>8657</td><td>0</td><td class="n">0</td><td class="n">0</td><td>8</td></tr>
+<tr><th>1</th><td>10253</td><td>0</td><td class="n">0</td><td class="n">0</td><td>17</td></tr>
+<tr><th>2</th><td>8993</td><td>0</td><td class="n">0</td><td class="n">0</td><td>8</td></tr>
+<tr><th>3</th><td>6216</td><td>0</td><td class="n">0</td><td class="n">0</td><td>8</td></tr>
+<tr><th>4</th><td>8253</td><td>0</td><td class="n">0</td><td class="n">0</td><td>8</td></tr>
+<tr><th>5</th><td>7031</td><td>0</td><td class="n">0</td><td class="n">0</td><td>30</td></tr>
+</table></div>
+<h4 class="note">ssj2</h4><div class="row"><figure><img src="rebuild/ssj2_frames.png" alt="ssj2 — all six frames"><figcaption>ssj2 — all six frames</figcaption></figure></div>
+<div class="row">
+<figure><img src="rebuild/ssj2_aura_only.gif" width="200" alt="ssj2 aura only"><figcaption>ssj2 aura only</figcaption></figure>
+<figure><img src="rebuild/ssj2_lightning_only.gif" width="200" alt="ssj2 lightning only"><figcaption>ssj2 lightning only</figcaption></figure>
+</div>
+<div class="scroll"><table><tr><th>frame</th><th>aura px</th><th>lightning px</th><th>aura on body</th><th>aura in ring1</th><th>margin</th></tr>
+<tr><th>0</th><td>14876</td><td>58</td><td class="n">0</td><td class="n">0</td><td>8</td></tr>
+<tr><th>1</th><td>18123</td><td>58</td><td class="n">0</td><td class="n">0</td><td>8</td></tr>
+<tr><th>2</th><td>14710</td><td>43</td><td class="n">0</td><td class="n">0</td><td>8</td></tr>
+<tr><th>3</th><td>12516</td><td>40</td><td class="n">0</td><td class="n">0</td><td>8</td></tr>
+<tr><th>4</th><td>12360</td><td>47</td><td class="n">0</td><td class="n">0</td><td>8</td></tr>
+<tr><th>5</th><td>12857</td><td>49</td><td class="n">0</td><td class="n">0</td><td>8</td></tr>
+</table></div>
+<h4 class="note">ssj3</h4><div class="row"><figure><img src="rebuild/ssj3_frames.png" alt="ssj3 — all six frames"><figcaption>ssj3 — all six frames</figcaption></figure></div>
+<div class="row">
+<figure><img src="rebuild/ssj3_aura_only.gif" width="200" alt="ssj3 aura only"><figcaption>ssj3 aura only</figcaption></figure>
+<figure><img src="rebuild/ssj3_lightning_only.gif" width="200" alt="ssj3 lightning only"><figcaption>ssj3 lightning only</figcaption></figure>
+</div>
+<div class="scroll"><table><tr><th>frame</th><th>aura px</th><th>lightning px</th><th>aura on body</th><th>aura in ring1</th><th>margin</th></tr>
+<tr><th>0</th><td>27213</td><td>234</td><td class="n">0</td><td class="n">0</td><td>8</td></tr>
+<tr><th>1</th><td>30006</td><td>237</td><td class="n">0</td><td class="n">0</td><td>8</td></tr>
+<tr><th>2</th><td>24469</td><td>145</td><td class="n">0</td><td class="n">0</td><td>8</td></tr>
+<tr><th>3</th><td>23476</td><td>158</td><td class="n">0</td><td class="n">0</td><td>8</td></tr>
+<tr><th>4</th><td>24493</td><td>157</td><td class="n">0</td><td class="n">0</td><td>8</td></tr>
+<tr><th>5</th><td>22502</td><td>179</td><td class="n">0</td><td class="n">0</td><td>8</td></tr>
+</table></div>
+<div class="scroll"><table><tr><th></th><th>SSJ1</th><th>SSJ2</th><th>SSJ3</th></tr>
+<tr><th>aura px (mean)</th><td>8234</td><td>14240</td><td>25360</td></tr>
+<tr><th>lightning px (mean)</th><td>0</td><td>49</td><td>185</td></tr>
+</table></div>
+<p class="note">Tests: <b>120/120</b> rebuild checks, <b>71/71</b> final-tuning, <b>86/86</b> structural — 277 in total, each critical audit carrying a positive control that injects the defect and requires the audit to fail.</p>
 <h2 id="final">Final tuning pass</h2><div class="rule"></div>
 <p class="lede">SSJ1 was rejected outright and regenerated from the shared identity. Normal, SSJ2 and SSJ3 were <b>not</b> regenerated — they received tightly masked pixel repairs only, and the page below proves nothing outside those masks moved.</p>
 <h3>Normal — left-eye repair</h3>
