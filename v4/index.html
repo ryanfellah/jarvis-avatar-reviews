@@ -36,7 +36,7 @@ code{background:var(--panel);border:1px solid var(--line);border-radius:4px;padd
 ul{max-width:90ch}li{margin:4px 0}
 </style>
 <h1>Avatar V4 — Ryan, rebuilt from photographs</h1>
-<p style="margin:0 0 10px"><a href="#authored-six-frame">Jump to the hand-authored six-frame motion</a> · <a href="#articulated-full-aura">rejected 0777805 warp pass</a> · <a href="#coherent-motion-eyes-hair">earlier pass</a> · <a href="#motion-aura-reference">earlier animation pass</a> · <a href="#eyes-aura-rebuild">eyes rebuild</a> · <a href="#final">earlier tuning pass</a></p>
+<p style="margin:0 0 10px"><a href="#cel-frames">Jump to the true frame-by-frame animation (SSJ2)</a> · <a href="#authored-six-frame">rejected 222c12b</a> · <a href="#articulated-full-aura">rejected 0777805 warp pass</a> · <a href="#coherent-motion-eyes-hair">earlier pass</a> · <a href="#motion-aura-reference">earlier animation pass</a> · <a href="#eyes-aura-rebuild">eyes rebuild</a> · <a href="#final">earlier tuning pass</a></p>
 <p class="lede">The previous set was rejected for not resembling Ryan, for SSJ1 facing away, and for the forms looking past the viewer. This one is built from his own photographs, and <b>every state faces the viewer</b>: each is the south rotation of a character state, so a forward gaze is a property of the render rather than something hoped for.</p>
 <p class="note">One internal identity was built first, deliberately with a buzz cut so no curls can survive under gold hair. Normal, SSJ1, SSJ2 and SSJ3 are each a state <i>of that identity</i> — none is chained off another, so a defect in one cannot travel into the next. The rejected set is kept at <a href="rejected-0887f3f/">rejected-0887f3f/</a> and is not shown here as a current result.</p>
 <h2>Ryan — the identity references</h2><div class="rule"></div>
@@ -260,7 +260,109 @@ ul{max-width:90ch}li{margin:4px 0}
 <tr><th>aura px</th><td>5314</td></tr>
 <tr><th>lightning px</th><td>467</td></tr>
 </table></div></div>
-<h2 id="authored-six-frame">Hand-authored six-frame coherent sprite motion</h2><div class="rule"></div>
+<h2 id="cel-frames">True frame-by-frame animation — SSJ2 prototype</h2><div class="rule"></div>
+<p class="lede">The animation architecture has changed permanently. <b>Every visible frame is now a complete full-body sprite</b>, drawn as a whole, exactly the way traditional cel animation works. Nothing is deformed, warped, or assembled from parts, and at runtime the renderer only advances a frame index.</p>
+<p class="note">Five procedural approaches were rejected on sight: independent body-part translation, row-wise raster deformation, gaussian/joint-anchor deformation, inverse raster warping, and rigid upper-body translation with junction repairs. They failed for one shared reason no connectivity metric can see &mdash; each moved parts of the body <i>relative to each other</i> by a sub-anatomical amount, so adjacent regions slid past one another. Torso reach 1.0, one connected component and zero unreached pixels were true of <b>every one of them</b>.</p>
+<h3>The model sheet comes first</h3>
+<p class="note">Frame-by-frame work drifts &mdash; twenty-five separately drawn frames become twenty-five slightly different characters &mdash; so the canonical proportions are measured and locked before any frame is drawn. Every value below is measured from the approved sprite, never chosen, and every frame is checked against it.</p>
+<div class="scroll"><table><tr><th>form</th><th>height</th><th>width</th><th>foot baseline</th><th>stance</th><th>centreline</th><th>shoulder row</th><th>shoulder w</th><th>eyeline</th><th>hair top</th><th>colours</th></tr>
+<tr><th>normal</th><td>130</td><td>58</td><td>175</td><td>45&ndash;87</td><td>63.5</td><td>91</td><td>43</td><td>70.5</td><td>&mdash;</td><td>32</td></tr>
+<tr><th>ssj1</th><td>134</td><td>64</td><td>175</td><td>37&ndash;90</td><td>63.5</td><td>92</td><td>44</td><td>77.0</td><td>43</td><td>21</td></tr>
+<tr><th>ssj2</th><td>136</td><td>63</td><td>175</td><td>40&ndash;90</td><td>63.0</td><td>96</td><td>41</td><td>79.0</td><td>42</td><td>32</td></tr>
+<tr><th>ssj3</th><td>152</td><td>90</td><td>167</td><td>45&ndash;86</td><td>63.5</td><td>76</td><td>46</td><td>56.5</td><td>16</td><td>41</td></tr>
+</table></div>
+<h3>The loop, and the rejected procedural version beside it</h3>
+<div class="row">
+<figure><img src="cel8/ssj2_composite_4x.gif" width="256"><figcaption><b>NEW</b> &mdash; 8 complete cel frames, 10&nbsp;fps</figcaption></figure>
+<figure><img src="cel8/ssj2_rejected_222c12b_composite.gif" width="256"><figcaption><b>REJECTED 222c12b</b> &mdash; rigid translation with junction repairs</figcaption></figure>
+<figure><img src="cel8/ssj2_body_4x.gif" width="256"><figcaption>Body only, aura removed</figcaption></figure>
+<figure><img src="cel8/ssj2_rejected_222c12b_body_only.gif" width="256"><figcaption><b>REJECTED 222c12b</b> body only</figcaption></figure>
+</div>
+<h3>Three playback speeds, from the same eight frames</h3><div class="row">
+<figure><img src="cel8/ssj2_composite_4x.gif" width="230"><figcaption>Composite, 10 fps — normal</figcaption></figure>
+<figure><img src="cel8/ssj2_composite_half_4x.gif" width="230"><figcaption>Composite, 5 fps — half speed</figcaption></figure>
+<figure><img src="cel8/ssj2_composite_slow_4x.gif" width="230"><figcaption>Composite, 1.7 fps — slow diagnostic</figcaption></figure>
+<figure><img src="cel8/ssj2_body_4x.gif" width="230"><figcaption>Body only, 10 fps — normal</figcaption></figure>
+<figure><img src="cel8/ssj2_body_half_4x.gif" width="230"><figcaption>Body only, 5 fps — half speed</figcaption></figure>
+<figure><img src="cel8/ssj2_body_slow_4x.gif" width="230"><figcaption>Body only, 1.7 fps — slow diagnostic</figcaption></figure>
+</div>
+<h3>Eight-frame sprite sheet</h3>
+<div class="row scroll"><figure><img src="cel8/ssj2_sheet_1x.png"><figcaption>Native resolution &mdash; the runtime atlas: <code>ssj2_frame_00</code> &hellip; <code>ssj2_frame_07</code></figcaption></figure></div>
+<div class="row scroll"><figure><img src="cel8/ssj2_sheet_8x.png"><figcaption>8&times;. Each frame is a finished drawing, not a stage of a warp.</figcaption></figure></div>
+<h3>Joint and detail sheet, 16&times;</h3>
+<div class="row scroll"><figure><img src="cel8/ssj2_joints_16x.png"><figcaption>Neck, shoulders, sleeves, arms and fists across all eight frames. The contour runs continuous in every frame: no crack at the shoulder, no one-pixel tether, no sleeve sliding over the arm, no shearing band.</figcaption></figure></div>
+<h3>Every frame alone, at 1&times;, 4&times;, 8&times; and 16&times;</h3>
+<p class="note">The gate is that each frame must look correct viewed on its own.</p>
+<div class="form"><header><span class="fid">f0</span><span class="tag">neutral</span><span class="tag ok">baseline 175</span><span class="tag">h 136 &middot; w 63</span><span class="tag ok">iris 18px</span><span class="tag ok">0 off-sheet colours</span></header>
+<div class="row">
+<figure><img src="cel8/ssj2_f0_1x.png" width="64"><figcaption>1&times;</figcaption></figure>
+<figure><img src="cel8/ssj2_f0_4x.png" width="150"><figcaption>4&times;</figcaption></figure>
+<figure><img src="cel8/ssj2_f0_8x.png" width="230"><figcaption>8&times;</figcaption></figure>
+<figure><img src="cel8/ssj2_f0_16x.png" width="300"><figcaption>16&times;</figcaption></figure>
+</div></div>
+<div class="form"><header><span class="fid">f1</span><span class="tag">tense</span><span class="tag ok">baseline 175</span><span class="tag">h 136 &middot; w 63</span><span class="tag ok">iris 18px</span><span class="tag ok">0 off-sheet colours</span></header>
+<div class="row">
+<figure><img src="cel8/ssj2_f1_1x.png" width="64"><figcaption>1&times;</figcaption></figure>
+<figure><img src="cel8/ssj2_f1_4x.png" width="150"><figcaption>4&times;</figcaption></figure>
+<figure><img src="cel8/ssj2_f1_8x.png" width="230"><figcaption>8&times;</figcaption></figure>
+<figure><img src="cel8/ssj2_f1_16x.png" width="300"><figcaption>16&times;</figcaption></figure>
+</div></div>
+<div class="form"><header><span class="fid">f2</span><span class="tag">inhale</span><span class="tag ok">baseline 175</span><span class="tag">h 138 &middot; w 67</span><span class="tag ok">iris 18px</span><span class="tag ok">0 off-sheet colours</span></header>
+<div class="row">
+<figure><img src="cel8/ssj2_f2_1x.png" width="64"><figcaption>1&times;</figcaption></figure>
+<figure><img src="cel8/ssj2_f2_4x.png" width="150"><figcaption>4&times;</figcaption></figure>
+<figure><img src="cel8/ssj2_f2_8x.png" width="230"><figcaption>8&times;</figcaption></figure>
+<figure><img src="cel8/ssj2_f2_16x.png" width="300"><figcaption>16&times;</figcaption></figure>
+</div></div>
+<div class="form"><header><span class="fid">f3</span><span class="tag">rise</span><span class="tag ok">baseline 175</span><span class="tag">h 139 &middot; w 71</span><span class="tag ok">iris 15px</span><span class="tag ok">0 off-sheet colours</span></header>
+<div class="row">
+<figure><img src="cel8/ssj2_f3_1x.png" width="64"><figcaption>1&times;</figcaption></figure>
+<figure><img src="cel8/ssj2_f3_4x.png" width="150"><figcaption>4&times;</figcaption></figure>
+<figure><img src="cel8/ssj2_f3_8x.png" width="230"><figcaption>8&times;</figcaption></figure>
+<figure><img src="cel8/ssj2_f3_16x.png" width="300"><figcaption>16&times;</figcaption></figure>
+</div></div>
+<div class="form"><header><span class="fid">f4</span><span class="tag">peak</span><span class="tag ok">baseline 175</span><span class="tag">h 139 &middot; w 76</span><span class="tag ok">iris 18px</span><span class="tag ok">0 off-sheet colours</span></header>
+<div class="row">
+<figure><img src="cel8/ssj2_f4_1x.png" width="64"><figcaption>1&times;</figcaption></figure>
+<figure><img src="cel8/ssj2_f4_4x.png" width="150"><figcaption>4&times;</figcaption></figure>
+<figure><img src="cel8/ssj2_f4_8x.png" width="230"><figcaption>8&times;</figcaption></figure>
+<figure><img src="cel8/ssj2_f4_16x.png" width="300"><figcaption>16&times;</figcaption></figure>
+</div></div>
+<div class="form"><header><span class="fid">f5</span><span class="tag">release</span><span class="tag ok">baseline 175</span><span class="tag">h 140 &middot; w 74</span><span class="tag ok">iris 18px</span><span class="tag ok">0 off-sheet colours</span></header>
+<div class="row">
+<figure><img src="cel8/ssj2_f5_1x.png" width="64"><figcaption>1&times;</figcaption></figure>
+<figure><img src="cel8/ssj2_f5_4x.png" width="150"><figcaption>4&times;</figcaption></figure>
+<figure><img src="cel8/ssj2_f5_8x.png" width="230"><figcaption>8&times;</figcaption></figure>
+<figure><img src="cel8/ssj2_f5_16x.png" width="300"><figcaption>16&times;</figcaption></figure>
+</div></div>
+<div class="form"><header><span class="fid">f6</span><span class="tag">settle</span><span class="tag ok">baseline 175</span><span class="tag">h 138 &middot; w 72</span><span class="tag ok">iris 18px</span><span class="tag ok">0 off-sheet colours</span></header>
+<div class="row">
+<figure><img src="cel8/ssj2_f6_1x.png" width="64"><figcaption>1&times;</figcaption></figure>
+<figure><img src="cel8/ssj2_f6_4x.png" width="150"><figcaption>4&times;</figcaption></figure>
+<figure><img src="cel8/ssj2_f6_8x.png" width="230"><figcaption>8&times;</figcaption></figure>
+<figure><img src="cel8/ssj2_f6_16x.png" width="300"><figcaption>16&times;</figcaption></figure>
+</div></div>
+<div class="form"><header><span class="fid">f7</span><span class="tag">return</span><span class="tag ok">baseline 175</span><span class="tag">h 136 &middot; w 68</span><span class="tag ok">iris 18px</span><span class="tag ok">0 off-sheet colours</span></header>
+<div class="row">
+<figure><img src="cel8/ssj2_f7_1x.png" width="64"><figcaption>1&times;</figcaption></figure>
+<figure><img src="cel8/ssj2_f7_4x.png" width="150"><figcaption>4&times;</figcaption></figure>
+<figure><img src="cel8/ssj2_f7_8x.png" width="230"><figcaption>8&times;</figcaption></figure>
+<figure><img src="cel8/ssj2_f7_16x.png" width="300"><figcaption>16&times;</figcaption></figure>
+</div></div>
+<h3>Model-sheet conformance</h3><div class="scroll"><table><tr><th>frame</th><th>pose</th><th>height</th><th>width</th><th>foot baseline</th><th>iris px</th><th>off-sheet colours</th><th>margin</th></tr>
+<tr><th>f0</th><td style="text-align:left">neutral</td><td>136</td><td>63</td><td class="n">175</td><td class="n">18</td><td class="n">0</td><td>31</td></tr>
+<tr><th>f1</th><td style="text-align:left">tense</td><td>136</td><td>63</td><td class="n">175</td><td class="n">18</td><td class="n">0</td><td>31</td></tr>
+<tr><th>f2</th><td style="text-align:left">inhale</td><td>138</td><td>67</td><td class="n">175</td><td class="n">18</td><td class="n">0</td><td>27</td></tr>
+<tr><th>f3</th><td style="text-align:left">rise</td><td>139</td><td>71</td><td class="n">175</td><td class="n">15</td><td class="n">0</td><td>27</td></tr>
+<tr><th>f4</th><td style="text-align:left">peak</td><td>139</td><td>76</td><td class="n">175</td><td class="n">18</td><td class="n">0</td><td>28</td></tr>
+<tr><th>f5</th><td style="text-align:left">release</td><td>140</td><td>74</td><td class="n">175</td><td class="n">18</td><td class="n">0</td><td>28</td></tr>
+<tr><th>f6</th><td style="text-align:left">settle</td><td>138</td><td>72</td><td class="n">175</td><td class="n">18</td><td class="n">0</td><td>27</td></tr>
+<tr><th>f7</th><td style="text-align:left">return</td><td>136</td><td>68</td><td class="n">175</td><td class="n">18</td><td class="n">0</td><td>31</td></tr>
+</table></div>
+<p class="note">The foot baseline is 175 in all eight frames &mdash; the feet never move. Height stays within 4px of the model sheet and every colour is on it. Width varies 63&ndash;76 as the arms tense outward; that is the pose, and it is the one measurement worth your eye.</p>
+<p class="note"><b>Honest notes.</b> Each frame is drawn independently, so small details are re-drawn rather than copied: the jersey stripe texture and the crest shift by a pixel or two between frames, and the mouth tightens into a grimace through the middle of the loop. That is inherent to frame-by-frame animation and visible in hand-drawn work too, but you should decide whether you want it. The aura and lightning are untouched and still match the frozen reference placement byte-for-byte; the eight beats map to the three approved aura frames as 0,0,1,1,2,2,1,0.</p>
+<p class="note">Only SSJ2 is built. SSJ1, SSJ3 and the three transformation sequences are deliberately not started until you approve this style.</p>
+<h2 id="authored-six-frame">Hand-authored six-frame coherent sprite motion</h2><p class="note"><span class="tag no">REJECTED 222c12b &mdash; rigid translation with junction repairs. Superseded by the cel architecture above.</span></p><div class="rule"></div>
 <p class="lede">The previous checkpoint <code>0777805</code> was rejected: the gaussian joint-anchor inverse warp still read as a body breaking into pieces. That was the third rejected technique, after rigid part translation and row-wise raster deformation, and <b>all three failed for the same reason no connectivity metric can see</b> &mdash; each moved parts of the body relative to each other by a sub-anatomical amount, so adjacent regions slid past one another. The gaussian field was the worst of the three: because its displacement varied continuously across the sprite, neighbouring pixels <i>inside a single arm</i> received slightly different offsets, so the arm sheared internally while remaining perfectly connected and scoring 1.0 on every reach test.</p>
 <p class="lede">Nothing here is deformed. Each pose moves the upper body as <b>one rigid unit by a whole pixel</b>, so nothing inside it can slide against anything else, and the two contacts that opens are authored rather than patched: the shorts grow upward into the row the jersey vacated, and the head group’s bottom contour grows downward &mdash; both in the body’s own edge colours, which is what a hand-drawn frame does. Maximum excursion is two pixels.</p>
 <p class="note"><b>These are not acceptance criteria.</b> Torso reach 1.0, one connected component and zero unreached pixels all passed on the rejected version too. The checks below exist so a fixed defect cannot silently return; the acceptance criterion is whether each frame reads as one drawn body.</p>
