@@ -1,4 +1,4 @@
-<title>SSJ2 Charging Idle</title>
+<title>Remaining Avatar Animations</title>
 <style>
 :root{color-scheme:dark light;--bg:#101014;--panel:#1a1a21;--line:#2c2c36;
  --ink:#eef0f6;--dim:#9aa0ad;--gold:#e8b544}
@@ -7,12 +7,13 @@ body{background:var(--bg);color:var(--ink);margin:0;padding:44px 30px 90px;
  font:14px/1.65 ui-sans-serif,system-ui,-apple-system,sans-serif}
 h1{color:var(--gold);font-size:30px;line-height:1.2;margin:0 0 8px;
  letter-spacing:-.015em;text-wrap:balance}
-h2{font-size:12px;color:var(--dim);margin:44px 0 12px;text-transform:uppercase;
+h2{font-size:19px;color:var(--gold);margin:0 0 14px;letter-spacing:-.01em}
+h3{font-size:12px;color:var(--dim);margin:26px 0 10px;text-transform:uppercase;
  letter-spacing:.11em;font-weight:600}
-.sha{color:var(--dim);font-size:13px;margin:0 0 4px;
- font-variant-numeric:tabular-nums}
+.sha{color:var(--dim);font-size:13px;margin:0 0 4px;font-variant-numeric:tabular-nums}
 code{background:var(--panel);border:1px solid var(--line);border-radius:4px;
  padding:1px 6px;font-size:12.5px}
+section{margin-top:52px;padding-top:26px;border-top:1px solid var(--line)}
 .row{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start}
 figure{margin:0;background:var(--panel);border:1px solid var(--line);
  border-radius:10px;padding:10px}
@@ -23,34 +24,76 @@ img{image-rendering:pixelated;display:block;border-radius:4px;max-width:100%;hei
 .scroll figure{display:inline-block}
 .scroll img{max-width:none}
 </style>
-<h1>Current Review — SSJ2 Frame-by-Frame Charging Idle</h1>
-<p class="sha">Commit <code>751f948</code></p>
-
-<h2>Eight frames, native resolution</h2>
-<div class="row"><figure><img src="v4/cel8/ssj2_f0_1x.png" width="128" height="192" alt="frame 0"><figcaption>00</figcaption></figure><figure><img src="v4/cel8/ssj2_f1_1x.png" width="128" height="192" alt="frame 1"><figcaption>01</figcaption></figure><figure><img src="v4/cel8/ssj2_f2_1x.png" width="128" height="192" alt="frame 2"><figcaption>02</figcaption></figure><figure><img src="v4/cel8/ssj2_f3_1x.png" width="128" height="192" alt="frame 3"><figcaption>03</figcaption></figure><figure><img src="v4/cel8/ssj2_f4_1x.png" width="128" height="192" alt="frame 4"><figcaption>04</figcaption></figure><figure><img src="v4/cel8/ssj2_f5_1x.png" width="128" height="192" alt="frame 5"><figcaption>05</figcaption></figure><figure><img src="v4/cel8/ssj2_f6_1x.png" width="128" height="192" alt="frame 6"><figcaption>06</figcaption></figure><figure><img src="v4/cel8/ssj2_f7_1x.png" width="128" height="192" alt="frame 7"><figcaption>07</figcaption></figure></div>
-
-<h2>Sprite sheet</h2>
-<div class="row scroll"><figure><img src="v4/cel8/ssj2_sheet_1x.png" alt="sprite sheet native">
-<figcaption>Native</figcaption></figure></div>
-<div class="row scroll"><figure><img src="v4/cel8/ssj2_sheet_8x.png" alt="sprite sheet 8x">
-<figcaption>8&times;</figcaption></figure></div>
-
-<h2>Detail and joints, 16&times;</h2>
-<div class="row scroll"><figure><img src="v4/cel8/ssj2_joints_16x.png" alt="joint detail sheet 16x">
-<figcaption>Neck, shoulders, sleeves, arms and fists</figcaption></figure></div>
-
-<h2>Body only</h2>
+<h1>Current Review — Remaining Avatar Animations</h1>
+<p class="sha">Commit <code>35a8444</code></p>
+<section>
+<h2>1. SSJ1 Charging Idle</h2>
 <div class="row">
-<figure><img src="v4/cel8/ssj2_body_4x.gif" width="256" alt="body only normal speed">
-<figcaption>Normal speed</figcaption></figure>
-<figure><img src="v4/cel8/ssj2_body_slow_4x.gif" width="256" alt="body only slow">
-<figcaption>Slow</figcaption></figure>
+<figure><img src="v4/seq/ssj1_idle/ssj1_idle_composite.gif" width="256" alt="ssj1_idle composite">
+<figcaption>Composite &mdash; normal speed</figcaption></figure>
+<figure><img src="v4/seq/ssj1_idle/ssj1_idle_composite_slow.gif" width="256" alt="ssj1_idle composite slow">
+<figcaption>Composite &mdash; slow</figcaption></figure>
+<figure><img src="v4/seq/ssj1_idle/ssj1_idle_body.gif" width="256" alt="ssj1_idle body only">
+<figcaption>Body only</figcaption></figure>
 </div>
-
-<h2>Final composite</h2>
+<div class="row scroll"><figure><img src="v4/seq/ssj1_idle/ssj1_idle_strip.png" alt="ssj1_idle frame strip">
+<figcaption>All 8 frames</figcaption></figure></div>
+<h3>8 frames, native resolution</h3>
+<div class="row"><figure><img src="v4/seq/ssj1_idle/ssj1_idle_f00.png" width="128" height="192" alt="ssj1_idle frame 0"><figcaption>00</figcaption></figure><figure><img src="v4/seq/ssj1_idle/ssj1_idle_f01.png" width="128" height="192" alt="ssj1_idle frame 1"><figcaption>01</figcaption></figure><figure><img src="v4/seq/ssj1_idle/ssj1_idle_f02.png" width="128" height="192" alt="ssj1_idle frame 2"><figcaption>02</figcaption></figure><figure><img src="v4/seq/ssj1_idle/ssj1_idle_f03.png" width="128" height="192" alt="ssj1_idle frame 3"><figcaption>03</figcaption></figure><figure><img src="v4/seq/ssj1_idle/ssj1_idle_f04.png" width="128" height="192" alt="ssj1_idle frame 4"><figcaption>04</figcaption></figure><figure><img src="v4/seq/ssj1_idle/ssj1_idle_f05.png" width="128" height="192" alt="ssj1_idle frame 5"><figcaption>05</figcaption></figure><figure><img src="v4/seq/ssj1_idle/ssj1_idle_f06.png" width="128" height="192" alt="ssj1_idle frame 6"><figcaption>06</figcaption></figure><figure><img src="v4/seq/ssj1_idle/ssj1_idle_f07.png" width="128" height="192" alt="ssj1_idle frame 7"><figcaption>07</figcaption></figure></div>
+</section><section>
+<h2>2. SSJ3 Charging Idle</h2>
 <div class="row">
-<figure><img src="v4/cel8/ssj2_composite_4x.gif" width="256" alt="composite normal speed">
-<figcaption>Normal speed</figcaption></figure>
-<figure><img src="v4/cel8/ssj2_composite_slow_4x.gif" width="256" alt="composite slow">
-<figcaption>Slow</figcaption></figure>
+<figure><img src="v4/seq/ssj3_idle/ssj3_idle_composite.gif" width="256" alt="ssj3_idle composite">
+<figcaption>Composite &mdash; normal speed</figcaption></figure>
+<figure><img src="v4/seq/ssj3_idle/ssj3_idle_composite_slow.gif" width="256" alt="ssj3_idle composite slow">
+<figcaption>Composite &mdash; slow</figcaption></figure>
+<figure><img src="v4/seq/ssj3_idle/ssj3_idle_body.gif" width="256" alt="ssj3_idle body only">
+<figcaption>Body only</figcaption></figure>
 </div>
+<div class="row scroll"><figure><img src="v4/seq/ssj3_idle/ssj3_idle_strip.png" alt="ssj3_idle frame strip">
+<figcaption>All 8 frames</figcaption></figure></div>
+<h3>8 frames, native resolution</h3>
+<div class="row"><figure><img src="v4/seq/ssj3_idle/ssj3_idle_f00.png" width="128" height="192" alt="ssj3_idle frame 0"><figcaption>00</figcaption></figure><figure><img src="v4/seq/ssj3_idle/ssj3_idle_f01.png" width="128" height="192" alt="ssj3_idle frame 1"><figcaption>01</figcaption></figure><figure><img src="v4/seq/ssj3_idle/ssj3_idle_f02.png" width="128" height="192" alt="ssj3_idle frame 2"><figcaption>02</figcaption></figure><figure><img src="v4/seq/ssj3_idle/ssj3_idle_f03.png" width="128" height="192" alt="ssj3_idle frame 3"><figcaption>03</figcaption></figure><figure><img src="v4/seq/ssj3_idle/ssj3_idle_f04.png" width="128" height="192" alt="ssj3_idle frame 4"><figcaption>04</figcaption></figure><figure><img src="v4/seq/ssj3_idle/ssj3_idle_f05.png" width="128" height="192" alt="ssj3_idle frame 5"><figcaption>05</figcaption></figure><figure><img src="v4/seq/ssj3_idle/ssj3_idle_f06.png" width="128" height="192" alt="ssj3_idle frame 6"><figcaption>06</figcaption></figure><figure><img src="v4/seq/ssj3_idle/ssj3_idle_f07.png" width="128" height="192" alt="ssj3_idle frame 7"><figcaption>07</figcaption></figure></div>
+</section><section>
+<h2>3. Normal &rarr; SSJ1</h2>
+<div class="row">
+<figure><img src="v4/seq/normal_to_ssj1/normal_to_ssj1_composite.gif" width="256" alt="normal_to_ssj1 composite">
+<figcaption>Composite &mdash; normal speed</figcaption></figure>
+<figure><img src="v4/seq/normal_to_ssj1/normal_to_ssj1_composite_slow.gif" width="256" alt="normal_to_ssj1 composite slow">
+<figcaption>Composite &mdash; slow</figcaption></figure>
+<figure><img src="v4/seq/normal_to_ssj1/normal_to_ssj1_body.gif" width="256" alt="normal_to_ssj1 body only">
+<figcaption>Body only</figcaption></figure>
+</div>
+<div class="row scroll"><figure><img src="v4/seq/normal_to_ssj1/normal_to_ssj1_strip.png" alt="normal_to_ssj1 frame strip">
+<figcaption>All 17 frames</figcaption></figure></div>
+<h3>17 frames, native resolution</h3>
+<div class="row"><figure><img src="v4/seq/normal_to_ssj1/normal_to_ssj1_f00.png" width="128" height="192" alt="normal_to_ssj1 frame 0"><figcaption>00</figcaption></figure><figure><img src="v4/seq/normal_to_ssj1/normal_to_ssj1_f01.png" width="128" height="192" alt="normal_to_ssj1 frame 1"><figcaption>01</figcaption></figure><figure><img src="v4/seq/normal_to_ssj1/normal_to_ssj1_f02.png" width="128" height="192" alt="normal_to_ssj1 frame 2"><figcaption>02</figcaption></figure><figure><img src="v4/seq/normal_to_ssj1/normal_to_ssj1_f03.png" width="128" height="192" alt="normal_to_ssj1 frame 3"><figcaption>03</figcaption></figure><figure><img src="v4/seq/normal_to_ssj1/normal_to_ssj1_f04.png" width="128" height="192" alt="normal_to_ssj1 frame 4"><figcaption>04</figcaption></figure><figure><img src="v4/seq/normal_to_ssj1/normal_to_ssj1_f05.png" width="128" height="192" alt="normal_to_ssj1 frame 5"><figcaption>05</figcaption></figure><figure><img src="v4/seq/normal_to_ssj1/normal_to_ssj1_f06.png" width="128" height="192" alt="normal_to_ssj1 frame 6"><figcaption>06</figcaption></figure><figure><img src="v4/seq/normal_to_ssj1/normal_to_ssj1_f07.png" width="128" height="192" alt="normal_to_ssj1 frame 7"><figcaption>07</figcaption></figure><figure><img src="v4/seq/normal_to_ssj1/normal_to_ssj1_f08.png" width="128" height="192" alt="normal_to_ssj1 frame 8"><figcaption>08</figcaption></figure><figure><img src="v4/seq/normal_to_ssj1/normal_to_ssj1_f09.png" width="128" height="192" alt="normal_to_ssj1 frame 9"><figcaption>09</figcaption></figure><figure><img src="v4/seq/normal_to_ssj1/normal_to_ssj1_f10.png" width="128" height="192" alt="normal_to_ssj1 frame 10"><figcaption>10</figcaption></figure><figure><img src="v4/seq/normal_to_ssj1/normal_to_ssj1_f11.png" width="128" height="192" alt="normal_to_ssj1 frame 11"><figcaption>11</figcaption></figure><figure><img src="v4/seq/normal_to_ssj1/normal_to_ssj1_f12.png" width="128" height="192" alt="normal_to_ssj1 frame 12"><figcaption>12</figcaption></figure><figure><img src="v4/seq/normal_to_ssj1/normal_to_ssj1_f13.png" width="128" height="192" alt="normal_to_ssj1 frame 13"><figcaption>13</figcaption></figure><figure><img src="v4/seq/normal_to_ssj1/normal_to_ssj1_f14.png" width="128" height="192" alt="normal_to_ssj1 frame 14"><figcaption>14</figcaption></figure><figure><img src="v4/seq/normal_to_ssj1/normal_to_ssj1_f15.png" width="128" height="192" alt="normal_to_ssj1 frame 15"><figcaption>15</figcaption></figure><figure><img src="v4/seq/normal_to_ssj1/normal_to_ssj1_f16.png" width="128" height="192" alt="normal_to_ssj1 frame 16"><figcaption>16</figcaption></figure></div>
+</section><section>
+<h2>4. SSJ1 &rarr; SSJ2</h2>
+<div class="row">
+<figure><img src="v4/seq/ssj1_to_ssj2/ssj1_to_ssj2_composite.gif" width="256" alt="ssj1_to_ssj2 composite">
+<figcaption>Composite &mdash; normal speed</figcaption></figure>
+<figure><img src="v4/seq/ssj1_to_ssj2/ssj1_to_ssj2_composite_slow.gif" width="256" alt="ssj1_to_ssj2 composite slow">
+<figcaption>Composite &mdash; slow</figcaption></figure>
+<figure><img src="v4/seq/ssj1_to_ssj2/ssj1_to_ssj2_body.gif" width="256" alt="ssj1_to_ssj2 body only">
+<figcaption>Body only</figcaption></figure>
+</div>
+<div class="row scroll"><figure><img src="v4/seq/ssj1_to_ssj2/ssj1_to_ssj2_strip.png" alt="ssj1_to_ssj2 frame strip">
+<figcaption>All 17 frames</figcaption></figure></div>
+<h3>17 frames, native resolution</h3>
+<div class="row"><figure><img src="v4/seq/ssj1_to_ssj2/ssj1_to_ssj2_f00.png" width="128" height="192" alt="ssj1_to_ssj2 frame 0"><figcaption>00</figcaption></figure><figure><img src="v4/seq/ssj1_to_ssj2/ssj1_to_ssj2_f01.png" width="128" height="192" alt="ssj1_to_ssj2 frame 1"><figcaption>01</figcaption></figure><figure><img src="v4/seq/ssj1_to_ssj2/ssj1_to_ssj2_f02.png" width="128" height="192" alt="ssj1_to_ssj2 frame 2"><figcaption>02</figcaption></figure><figure><img src="v4/seq/ssj1_to_ssj2/ssj1_to_ssj2_f03.png" width="128" height="192" alt="ssj1_to_ssj2 frame 3"><figcaption>03</figcaption></figure><figure><img src="v4/seq/ssj1_to_ssj2/ssj1_to_ssj2_f04.png" width="128" height="192" alt="ssj1_to_ssj2 frame 4"><figcaption>04</figcaption></figure><figure><img src="v4/seq/ssj1_to_ssj2/ssj1_to_ssj2_f05.png" width="128" height="192" alt="ssj1_to_ssj2 frame 5"><figcaption>05</figcaption></figure><figure><img src="v4/seq/ssj1_to_ssj2/ssj1_to_ssj2_f06.png" width="128" height="192" alt="ssj1_to_ssj2 frame 6"><figcaption>06</figcaption></figure><figure><img src="v4/seq/ssj1_to_ssj2/ssj1_to_ssj2_f07.png" width="128" height="192" alt="ssj1_to_ssj2 frame 7"><figcaption>07</figcaption></figure><figure><img src="v4/seq/ssj1_to_ssj2/ssj1_to_ssj2_f08.png" width="128" height="192" alt="ssj1_to_ssj2 frame 8"><figcaption>08</figcaption></figure><figure><img src="v4/seq/ssj1_to_ssj2/ssj1_to_ssj2_f09.png" width="128" height="192" alt="ssj1_to_ssj2 frame 9"><figcaption>09</figcaption></figure><figure><img src="v4/seq/ssj1_to_ssj2/ssj1_to_ssj2_f10.png" width="128" height="192" alt="ssj1_to_ssj2 frame 10"><figcaption>10</figcaption></figure><figure><img src="v4/seq/ssj1_to_ssj2/ssj1_to_ssj2_f11.png" width="128" height="192" alt="ssj1_to_ssj2 frame 11"><figcaption>11</figcaption></figure><figure><img src="v4/seq/ssj1_to_ssj2/ssj1_to_ssj2_f12.png" width="128" height="192" alt="ssj1_to_ssj2 frame 12"><figcaption>12</figcaption></figure><figure><img src="v4/seq/ssj1_to_ssj2/ssj1_to_ssj2_f13.png" width="128" height="192" alt="ssj1_to_ssj2 frame 13"><figcaption>13</figcaption></figure><figure><img src="v4/seq/ssj1_to_ssj2/ssj1_to_ssj2_f14.png" width="128" height="192" alt="ssj1_to_ssj2 frame 14"><figcaption>14</figcaption></figure><figure><img src="v4/seq/ssj1_to_ssj2/ssj1_to_ssj2_f15.png" width="128" height="192" alt="ssj1_to_ssj2 frame 15"><figcaption>15</figcaption></figure><figure><img src="v4/seq/ssj1_to_ssj2/ssj1_to_ssj2_f16.png" width="128" height="192" alt="ssj1_to_ssj2 frame 16"><figcaption>16</figcaption></figure></div>
+</section><section>
+<h2>5. SSJ2 &rarr; SSJ3</h2>
+<div class="row">
+<figure><img src="v4/seq/ssj2_to_ssj3/ssj2_to_ssj3_composite.gif" width="256" alt="ssj2_to_ssj3 composite">
+<figcaption>Composite &mdash; normal speed</figcaption></figure>
+<figure><img src="v4/seq/ssj2_to_ssj3/ssj2_to_ssj3_composite_slow.gif" width="256" alt="ssj2_to_ssj3 composite slow">
+<figcaption>Composite &mdash; slow</figcaption></figure>
+<figure><img src="v4/seq/ssj2_to_ssj3/ssj2_to_ssj3_body.gif" width="256" alt="ssj2_to_ssj3 body only">
+<figcaption>Body only</figcaption></figure>
+</div>
+<div class="row scroll"><figure><img src="v4/seq/ssj2_to_ssj3/ssj2_to_ssj3_strip.png" alt="ssj2_to_ssj3 frame strip">
+<figcaption>All 17 frames</figcaption></figure></div>
+<h3>17 frames, native resolution</h3>
+<div class="row"><figure><img src="v4/seq/ssj2_to_ssj3/ssj2_to_ssj3_f00.png" width="128" height="192" alt="ssj2_to_ssj3 frame 0"><figcaption>00</figcaption></figure><figure><img src="v4/seq/ssj2_to_ssj3/ssj2_to_ssj3_f01.png" width="128" height="192" alt="ssj2_to_ssj3 frame 1"><figcaption>01</figcaption></figure><figure><img src="v4/seq/ssj2_to_ssj3/ssj2_to_ssj3_f02.png" width="128" height="192" alt="ssj2_to_ssj3 frame 2"><figcaption>02</figcaption></figure><figure><img src="v4/seq/ssj2_to_ssj3/ssj2_to_ssj3_f03.png" width="128" height="192" alt="ssj2_to_ssj3 frame 3"><figcaption>03</figcaption></figure><figure><img src="v4/seq/ssj2_to_ssj3/ssj2_to_ssj3_f04.png" width="128" height="192" alt="ssj2_to_ssj3 frame 4"><figcaption>04</figcaption></figure><figure><img src="v4/seq/ssj2_to_ssj3/ssj2_to_ssj3_f05.png" width="128" height="192" alt="ssj2_to_ssj3 frame 5"><figcaption>05</figcaption></figure><figure><img src="v4/seq/ssj2_to_ssj3/ssj2_to_ssj3_f06.png" width="128" height="192" alt="ssj2_to_ssj3 frame 6"><figcaption>06</figcaption></figure><figure><img src="v4/seq/ssj2_to_ssj3/ssj2_to_ssj3_f07.png" width="128" height="192" alt="ssj2_to_ssj3 frame 7"><figcaption>07</figcaption></figure><figure><img src="v4/seq/ssj2_to_ssj3/ssj2_to_ssj3_f08.png" width="128" height="192" alt="ssj2_to_ssj3 frame 8"><figcaption>08</figcaption></figure><figure><img src="v4/seq/ssj2_to_ssj3/ssj2_to_ssj3_f09.png" width="128" height="192" alt="ssj2_to_ssj3 frame 9"><figcaption>09</figcaption></figure><figure><img src="v4/seq/ssj2_to_ssj3/ssj2_to_ssj3_f10.png" width="128" height="192" alt="ssj2_to_ssj3 frame 10"><figcaption>10</figcaption></figure><figure><img src="v4/seq/ssj2_to_ssj3/ssj2_to_ssj3_f11.png" width="128" height="192" alt="ssj2_to_ssj3 frame 11"><figcaption>11</figcaption></figure><figure><img src="v4/seq/ssj2_to_ssj3/ssj2_to_ssj3_f12.png" width="128" height="192" alt="ssj2_to_ssj3 frame 12"><figcaption>12</figcaption></figure><figure><img src="v4/seq/ssj2_to_ssj3/ssj2_to_ssj3_f13.png" width="128" height="192" alt="ssj2_to_ssj3 frame 13"><figcaption>13</figcaption></figure><figure><img src="v4/seq/ssj2_to_ssj3/ssj2_to_ssj3_f14.png" width="128" height="192" alt="ssj2_to_ssj3 frame 14"><figcaption>14</figcaption></figure><figure><img src="v4/seq/ssj2_to_ssj3/ssj2_to_ssj3_f15.png" width="128" height="192" alt="ssj2_to_ssj3 frame 15"><figcaption>15</figcaption></figure><figure><img src="v4/seq/ssj2_to_ssj3/ssj2_to_ssj3_f16.png" width="128" height="192" alt="ssj2_to_ssj3 frame 16"><figcaption>16</figcaption></figure></div>
+</section>
