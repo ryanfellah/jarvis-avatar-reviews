@@ -1,0 +1,77 @@
+{
+  "before_canvas": [
+    104,
+    92
+  ],
+  "after_canvas": [
+    144,
+    176
+  ],
+  "per_transition": [
+    {
+      "name": "blueEvolved__to__ultraInstinctSign",
+      "before_clipped": 482,
+      "after_clipped": 0,
+      "before_min_margin": 0,
+      "after_min_margin": 13
+    },
+    {
+      "name": "blue__to__blueEvolved",
+      "before_clipped": 878,
+      "after_clipped": 0,
+      "before_min_margin": 0,
+      "after_min_margin": 12
+    },
+    {
+      "name": "god__to__blue",
+      "before_clipped": 716,
+      "after_clipped": 0,
+      "before_min_margin": 0,
+      "after_min_margin": 15
+    },
+    {
+      "name": "normal__to__superSaiyan",
+      "before_clipped": 633,
+      "after_clipped": 0,
+      "before_min_margin": 0,
+      "after_min_margin": 15
+    },
+    {
+      "name": "superSaiyan2__to__superSaiyan3",
+      "before_clipped": 974,
+      "after_clipped": 0,
+      "before_min_margin": 0,
+      "after_min_margin": 8
+    },
+    {
+      "name": "superSaiyan3__to__superSaiyan4",
+      "before_clipped": 949,
+      "after_clipped": 0,
+      "before_min_margin": 0,
+      "after_min_margin": 8
+    },
+    {
+      "name": "superSaiyan4__to__god",
+      "before_clipped": 646,
+      "after_clipped": 0,
+      "before_min_margin": 0,
+      "after_min_margin": 10
+    },
+    {
+      "name": "superSaiyan__to__superSaiyan2",
+      "before_clipped": 715,
+      "after_clipped": 0,
+      "before_min_margin": 0,
+      "after_min_margin": 15
+    },
+    {
+      "name": "ultraInstinctSign__to__masteredUltraInstinct",
+      "before_clipped": 647,
+      "after_clipped": 0,
+      "before_min_margin": 0,
+      "after_min_margin": 11
+    }
+  ],
+  "total_before_clipped": 6640,
+  "total_after_clipped": 0
+}

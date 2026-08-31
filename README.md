@@ -5,11 +5,12 @@ opened from a plain link without signing in.
 
 | File | What it is |
 |---|---|
-| `latest.png` | Current review — all nine form transitions, ten-form gallery, close-ups, layer views, endpoints |
-| `latest.gif` | Current animation — Normal → SSJ1 at 12 fps |
-| `index.html` | Self-contained player: transition selector, frame stepping, nine GIFs |
-| `manifest.json` | Date, branch, SHAs, frozen-body digest, test results, per-transition lightning |
-| `forms/` | Per-sheet PNGs, nine transition GIFs and frame-stepping strips |
+| `latest.png` | Current review — ten-form gallery, close-ups, edge margins, overflow table, endpoints |
+| `latest.gif` | Current animation — SSJ3 → SSJ4 at 12 fps |
+| `index.html` | Self-contained player: transition selector, frame stepping, nine GIFs, all sheets |
+| `manifest.json` | Date, SHAs, canvas correction, per-transition overflow, references, test results |
+| `forms/` | Per-sheet PNGs, nine transition GIFs and stepping strips, `overflow.json` |
+| `forms-rejected-f98f452/` | The rejected form composition, kept as BEFORE evidence |
 | `transformation/` | The body-only cinematic review |
 | `before/` | The preserved `bf3eb1e` result |
 | `poses/` | The multi-angle pose review |

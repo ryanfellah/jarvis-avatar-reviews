@@ -1,34 +1,236 @@
 {
   "date": "2026-08-30",
-  "review": "nine form transitions composed on the frozen 25-frame body cinematic",
+  "review": "nine form transitions, rebuilt on the production coordinate system",
+  "supersedes": {
+    "commit": "f98f452",
+    "status": "REJECTED",
+    "kept_as": "forms-rejected-f98f452/ (BEFORE evidence)",
+    "defects": [
+      "hair clipped flat across the canvas top",
+      "auras clipped on top and sides",
+      "nose and mouth missing in most forms",
+      "partial face overlays erased the cinematic face",
+      "hairlines and eye placement misregistered",
+      "SSJ4 still wore the jersey; no chest, fur or tail",
+      "frame 24 compared against idles this pass had just made"
+    ]
+  },
   "source_branch": "feature/avatar-v3-old-model-pose-fix",
-  "source_sha": "c06d8f6bf334e13e1953fa771c3cbe5d3ebf68fd",
-  "candidate_sha": "c06d8f6bf334e13e1953fa771c3cbe5d3ebf68fd",
+  "source_sha": "f98f452f336bcbabd058275551e888f41f0bbc95",
   "body_cinematic": {
     "tag": "cinematic-body-approved",
-    "frozen_commit": "79b1029fe87e01dd4e668780e4acc33ae2e09bfb",
-    "frames": 25,
-    "digest_of_digests": "cd2e5a3fadc7d10c48f04ebc0508e5e3f49c0c91c77b6cf3f75c1bbf017f8522",
-    "rule": "approved and byte-locked; forms compose on top, never over"
+    "frozen": "pose timing, joint locations, movement and badge animation",
+    "not_frozen": "the final RGBA composite; form layers compose over it"
+  },
+  "canvas": {
+    "union": [
+      144,
+      176
+    ],
+    "production": [
+      128,
+      160
+    ],
+    "pad": 8,
+    "body_in_production": [
+      13,
+      67
+    ],
+    "note": "no pixel art resized or resampled; the canvas grew, the art did not"
+  },
+  "head_offsets": {
+    "0": [
+      0,
+      -2
+    ],
+    "1": [
+      0,
+      -2
+    ],
+    "2": [
+      0,
+      -4
+    ],
+    "3": [
+      0,
+      -4
+    ],
+    "4": [
+      -6,
+      -2
+    ],
+    "5": [
+      0,
+      2
+    ],
+    "8": [
+      0,
+      2
+    ],
+    "9": [
+      0,
+      2
+    ],
+    "10": [
+      0,
+      2
+    ],
+    "11": [
+      0,
+      2
+    ],
+    "12": [
+      0,
+      2
+    ],
+    "13": [
+      0,
+      2
+    ],
+    "14": [
+      0,
+      2
+    ],
+    "15": [
+      0,
+      2
+    ],
+    "16": [
+      0,
+      2
+    ],
+    "17": [
+      0,
+      2
+    ],
+    "18": [
+      0,
+      2
+    ],
+    "19": [
+      0,
+      2
+    ],
+    "20": [
+      0,
+      2
+    ],
+    "21": [
+      0,
+      2
+    ],
+    "22": [
+      0,
+      2
+    ],
+    "23": [
+      0,
+      2
+    ],
+    "24": [
+      0,
+      2
+    ]
+  },
+  "overflow": {
+    "before_canvas": [
+      104,
+      92
+    ],
+    "after_canvas": [
+      144,
+      176
+    ],
+    "total_before_clipped": 6640,
+    "total_after_clipped": 0,
+    "per_transition": [
+      {
+        "name": "blueEvolved__to__ultraInstinctSign",
+        "before_clipped": 482,
+        "after_clipped": 0,
+        "before_min_margin": 0,
+        "after_min_margin": 13
+      },
+      {
+        "name": "blue__to__blueEvolved",
+        "before_clipped": 878,
+        "after_clipped": 0,
+        "before_min_margin": 0,
+        "after_min_margin": 12
+      },
+      {
+        "name": "god__to__blue",
+        "before_clipped": 716,
+        "after_clipped": 0,
+        "before_min_margin": 0,
+        "after_min_margin": 15
+      },
+      {
+        "name": "normal__to__superSaiyan",
+        "before_clipped": 633,
+        "after_clipped": 0,
+        "before_min_margin": 0,
+        "after_min_margin": 15
+      },
+      {
+        "name": "superSaiyan2__to__superSaiyan3",
+        "before_clipped": 974,
+        "after_clipped": 0,
+        "before_min_margin": 0,
+        "after_min_margin": 8
+      },
+      {
+        "name": "superSaiyan3__to__superSaiyan4",
+        "before_clipped": 949,
+        "after_clipped": 0,
+        "before_min_margin": 0,
+        "after_min_margin": 8
+      },
+      {
+        "name": "superSaiyan4__to__god",
+        "before_clipped": 646,
+        "after_clipped": 0,
+        "before_min_margin": 0,
+        "after_min_margin": 10
+      },
+      {
+        "name": "superSaiyan__to__superSaiyan2",
+        "before_clipped": 715,
+        "after_clipped": 0,
+        "before_min_margin": 0,
+        "after_min_margin": 15
+      },
+      {
+        "name": "ultraInstinctSign__to__masteredUltraInstinct",
+        "before_clipped": 647,
+        "after_clipped": 0,
+        "before_min_margin": 0,
+        "after_min_margin": 11
+      }
+    ]
+  },
+  "references": {
+    "hair_and_aura": "approved-charging-loop-ten-forms + avatar_v2 form locks",
+    "destination_idles": "saiyan_clips.destination_frame (historical)",
+    "ssj4_body": "avatar_v2.saiyan4 chest, fur and tail"
   },
   "pixellab_generations_used": 6,
-  "pixellab_generation_budget": 12,
-  "pixellab_called_for_this_animation": false,
+  "pixellab_called_this_pass": false,
   "tests": {
-    "forms": {
-      "passed": 17,
-      "total": 17,
-      "suite": "pixellab-feasibility/tests/test_forms.py"
+    "forms_rebuild": {
+      "passed": 22,
+      "total": 22,
+      "suite": "tests/test_forms2.py"
     },
     "cinematic": {
       "passed": 26,
       "total": 26,
-      "suite": "pixellab-feasibility/tests/test_cinematic.py"
+      "suite": "tests/test_cinematic.py"
     },
     "system": {
       "passed": 67,
       "total": 67,
-      "suite": "pixellab-feasibility/tests/test_system.py"
+      "suite": "tests/test_system.py"
     }
   },
   "transitions": [
@@ -36,183 +238,76 @@
       "name": "normal__to__superSaiyan",
       "source": "normal",
       "destination": "superSaiyan",
-      "lightning_px": 0,
-      "frame24_is_destination_idle": true
+      "frame24_is_historical_destination": true,
+      "clipped": 0
     },
     {
       "name": "superSaiyan__to__superSaiyan2",
       "source": "superSaiyan",
       "destination": "superSaiyan2",
-      "lightning_px": 135,
-      "frame24_is_destination_idle": true
+      "frame24_is_historical_destination": true,
+      "clipped": 0
     },
     {
       "name": "superSaiyan2__to__superSaiyan3",
       "source": "superSaiyan2",
       "destination": "superSaiyan3",
-      "lightning_px": 172,
-      "frame24_is_destination_idle": true
+      "frame24_is_historical_destination": true,
+      "clipped": 0
     },
     {
       "name": "superSaiyan3__to__superSaiyan4",
       "source": "superSaiyan3",
       "destination": "superSaiyan4",
-      "lightning_px": 91,
-      "frame24_is_destination_idle": true
+      "frame24_is_historical_destination": true,
+      "clipped": 0
     },
     {
       "name": "superSaiyan4__to__god",
       "source": "superSaiyan4",
       "destination": "god",
-      "lightning_px": 0,
-      "frame24_is_destination_idle": true
+      "frame24_is_historical_destination": true,
+      "clipped": 0
     },
     {
       "name": "god__to__blue",
       "source": "god",
       "destination": "blue",
-      "lightning_px": 135,
-      "frame24_is_destination_idle": true
+      "frame24_is_historical_destination": true,
+      "clipped": 0
     },
     {
       "name": "blue__to__blueEvolved",
       "source": "blue",
       "destination": "blueEvolved",
-      "lightning_px": 91,
-      "frame24_is_destination_idle": true
+      "frame24_is_historical_destination": true,
+      "clipped": 0
     },
     {
       "name": "blueEvolved__to__ultraInstinctSign",
       "source": "blueEvolved",
       "destination": "ultraInstinctSign",
-      "lightning_px": 0,
-      "frame24_is_destination_idle": true
+      "frame24_is_historical_destination": true,
+      "clipped": 0
     },
     {
       "name": "ultraInstinctSign__to__masteredUltraInstinct",
       "source": "ultraInstinctSign",
       "destination": "masteredUltraInstinct",
-      "lightning_px": 0,
-      "frame24_is_destination_idle": true
+      "frame24_is_historical_destination": true,
+      "clipped": 0
     }
-  ],
-  "canvas": [
-    104,
-    92
   ],
   "fps": 12,
   "frames": 25,
-  "head_offsets": {
-    "0": [
-      -4,
-      -71
-    ],
-    "1": [
-      -4,
-      -71
-    ],
-    "2": [
-      -4,
-      -73
-    ],
-    "3": [
-      -4,
-      -73
-    ],
-    "4": [
-      -4,
-      -71
-    ],
-    "5": [
-      -4,
-      -67
-    ],
-    "6": [
-      -4,
-      -67
-    ],
-    "7": [
-      -4,
-      -67
-    ],
-    "8": [
-      -4,
-      -67
-    ],
-    "9": [
-      -4,
-      -67
-    ],
-    "10": [
-      -4,
-      -67
-    ],
-    "11": [
-      -4,
-      -67
-    ],
-    "12": [
-      -4,
-      -67
-    ],
-    "13": [
-      -4,
-      -67
-    ],
-    "14": [
-      -4,
-      -67
-    ],
-    "15": [
-      -4,
-      -67
-    ],
-    "16": [
-      -4,
-      -67
-    ],
-    "17": [
-      -4,
-      -67
-    ],
-    "18": [
-      -4,
-      -67
-    ],
-    "19": [
-      -4,
-      -67
-    ],
-    "20": [
-      -4,
-      -67
-    ],
-    "21": [
-      -4,
-      -67
-    ],
-    "22": [
-      -4,
-      -67
-    ],
-    "23": [
-      -4,
-      -67
-    ],
-    "24": [
-      -4,
-      -67
-    ]
-  },
-  "gif_fps_actual": 12.5,
-  "known_limitation": "the form auras are authored for a 128x160 production canvas; the cinematic canvas is frozen at 104x92, so up to 19% of an aura is clipped by the frame edge. Bounded and tested, not hidden.",
   "files": {
-    "latest.png": "contact sheet of all nine transitions, gallery, close-ups, layer views, endpoints",
-    "latest.gif": "Normal to SSJ1 at 12 fps",
-    "index.html": "self-contained player: transition selector, frame stepping, nine GIFs",
-    "forms/": "per-sheet PNGs and the nine transition GIFs and stepping strips",
-    "before/": "the preserved bf3eb1e result",
-    "transformation/": "the body-only cinematic review",
+    "latest.png": "gallery, close-ups, edge margins, overflow table, endpoints",
+    "latest.gif": "SSJ3 to SSJ4 at 12 fps",
+    "index.html": "selector, frame stepping, nine GIFs, all sheets",
+    "forms/": "per-sheet PNGs, nine GIFs and stepping strips, overflow.json",
+    "forms-rejected-f98f452/": "the rejected composition, kept as BEFORE evidence",
+    "transformation/": "the body-only cinematic",
+    "before/": "the bf3eb1e result",
     "poses/": "the multi-angle pose review"
   }
 }
