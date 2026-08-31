@@ -1,48 +1,36 @@
 {
   "date": "2026-08-30",
-  "status": "GATE 1 REPUBLISHED - hair ownership corrected, awaiting visual approval",
-  "the_bug": {
-    "symptom": "Normal's brown curls visible under the transformed hair at the forehead and roots, worst at frames 13 and 21",
-    "root_cause": "the hairline and fringe curls were classified into the BROW slot, not a hair slot. The brow slot is drawn unchanged for every form, so Normal hair came back underneath every destination hairstyle.",
-    "evidence": "brow_near spanned rows 12-26 while the eye top was row 29 - a fifteen-row 'eyebrow' reaching seventeen rows above the eye",
-    "fix": "the brow is bounded to a five-row band immediately above the eye; everything above it is hair again",
-    "not_a_fitting_problem": true
-  },
-  "ownership_rule": "tracked by provenance - the coordinate sets each layer owns - never by colour. The brow ramp and the Normal hair ramp literally share the shades (16,10,5) and (32,20,11), so a colour test cannot separate them.",
-  "verification": {
-    "normal_hair_layer_pixels_drawn": {
-      "8": 0,
-      "12": 0,
-      "13": 0,
-      "18": 0,
-      "21": 0,
-      "24": 0
-    },
-    "frame_0_draws_normal_hair_px": 380
-  },
+  "status": "HAIR HANDOFF APPLIED TO ALL NINE - awaiting inspection before the arm repair",
+  "rule": "at each handoff the complete source hairstyle stops being rendered and the destination hairstyle takes its place: one hair owner per pixel, never two hairstyles at once, nothing enlarged or thickened to hide the source",
+  "ownership": "provenance only. SSJ1, SSJ2 and SSJ3 share the gold ramp, so colour cannot distinguish them; the brow and Normal-hair ramps also share shades.",
+  "two_further_duplicate_hair_sources_found_and_removed": [
+    "the aura layer from saiyan_clips._compose bundles the form's REAR HAIR with the glow, at offset (0,0) - the unfitted position - putting a second misaligned copy of the hairstyle behind the fitted one. The aura is now built from its own flame, streak and particle components and carries no hair.",
+    "saiyan_clips.destination_frame bundles rear hair the same way, which is why frame 24 still showed residue after the first fix. It is stripped by provenance at that frame's own phase."
+  ],
+  "transitions": [
+    "normal to superSaiyan",
+    "superSaiyan to superSaiyan2",
+    "superSaiyan2 to superSaiyan3",
+    "superSaiyan3 to superSaiyan4",
+    "superSaiyan4 to god",
+    "god to blue",
+    "blue to blueEvolved",
+    "blueEvolved to ultraInstinctSign",
+    "ultraInstinctSign to masteredUltraInstinct"
+  ],
   "kept_unchanged": [
-    "the newer hairstyle designs",
-    "the animation and choreography",
-    "frame timing and poses",
+    "every newer hairstyle design",
+    "the animation, timing and poses",
     "the per-frame skull anchoring",
     "the SSJ4 correction"
   ],
-  "gate_scope": {
-    "frames": [
-      0,
-      5,
-      8,
-      12,
-      13,
-      18,
-      21,
-      24
-    ],
-    "transition": "normal to superSaiyan"
-  },
   "source_branch": "feature/avatar-v3-old-model-pose-fix",
-  "source_sha": "9a49a0b52ff9c01cb68b4d1a98c1f152bb737103",
+  "source_sha": "405af704d5ec98225ba78b9d02f6217f321b692e",
   "tests": {
+    "hair_all_nine": {
+      "passed": 7,
+      "total": 7
+    },
     "hair_ownership": {
       "passed": 7,
       "total": 7
@@ -61,9 +49,9 @@
     }
   },
   "files": {
-    "latest.png": "forehead/root 8x prior vs corrected, plus owned layers per frame",
-    "latest.gif": "Normal to SSJ1 corrected",
-    "index.html": "previews plus the sheet",
-    "gate-1/": "the sheet and both looping previews"
+    "latest.png": "hair-only handoff sheet, all nine, native and 8x",
+    "latest.gif": "SSJ2 to SSJ3",
+    "index.html": "nine loops plus the handoff sheet",
+    "handoff/": "the sheet and all nine looping previews"
   }
 }
