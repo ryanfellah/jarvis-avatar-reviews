@@ -1,4 +1,4 @@
-<title>Mastered UI Hairline Final Fix</title>
+<title>Mastered UI Head Sync Fix</title>
 <style>
 :root{color-scheme:dark light;--bg:#0f0f14;--panel:#1a1a21;--line:#2c2c36;
  --ink:#eef0f6;--dim:#9aa0ad;--gold:#e8b544;--accent:#a9d6ff}
@@ -18,31 +18,44 @@ section{margin-top:52px;padding-top:26px;border-top:1px solid var(--line)}
 .row{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start}
 figure{margin:0;background:var(--panel);border:1px solid var(--line);
  border-radius:10px;padding:10px}
-figcaption{color:var(--dim);font-size:11.5px;margin-top:8px;max-width:46ch}
+figcaption{color:var(--dim);font-size:11.5px;margin-top:8px;max-width:48ch}
 img{image-rendering:pixelated;display:block;border-radius:4px;max-width:100%;height:auto}
+.scroll{overflow-x:auto;padding-bottom:6px}
+.scroll figure{display:inline-block}
+.scroll img{max-width:none}
 .lead{max-width:74ch;color:var(--dim);margin:22px 0 0}
 </style>
-<h1>Current Review — Mastered UI Hairline Final Fix</h1>
-<p class="sha">Commit <code>c7e86d8</code></p>
-<p class="lead">Mastered now uses Sign's hair build unchanged — same hairline, same
-silhouette — recoloured to silver rather than flat white. The eyebrows are silver too,
-and the serious brow angle is kept. Nothing else was touched.</p>
+<h1>Current Review — Mastered UI Head Sync Fix</h1>
+<p class="sha">Commit <code>d47327f</code></p>
+<p class="lead">Mastered's head now follows Sign's trajectory frame for frame, anchored
+on the face rather than on the hair. Hair, face, ears and jaw move as one assembly, and
+the transformation's last frame is byte-identical to idle frame 0 — no pop at the
+handoff. Hair build, hairline, silver tone, silver brows and the aura are unchanged.</p>
 
 <section>
-<h2>Hairline and eyebrows</h2>
-<p class="sub">Sign &middot; Mastered &mdash; 15&times;</p>
-<div class="row"><figure><img src="v4/seq/detail/hairline_brows_15x.png" width="680"
-alt="hairline and brow comparison">
-<figcaption>Same hair build and the same hairline on both — Mastered's is recoloured,
-not redrawn. Hairline offsets match Sign frame for frame across the loop
-(15,15,15,15,14,14,14,15). Eyebrows are silver; the serious angle is Mastered's own.
-</figcaption></figure></div>
+<h2>Head, neck and shoulders — all 17 transformation frames</h2>
+<p class="sub">12&times; &mdash; hair, forehead, eyes, ears, jaw, neck and shoulders</p>
+<div class="row scroll"><figure><img src="v4/seq/headsync/head_strip_12x.png"
+alt="head strip"><figcaption>Sign phase, white engulf, shell break, Mastered reveal,
+settling. The head stays attached to the neck throughout.</figcaption></figure></div>
+</section>
+
+<section>
+<h2>Onion skin — consecutive frames</h2>
+<p class="sub">14&times; &mdash; previous frame dimmed beneath the current one, frames 12&ndash;16</p>
+<div class="row scroll"><figure><img src="v4/seq/headsync/onion_head_14x.png"
+alt="onion skin"><figcaption>These are the settling frames, where the mismatch was
+worst. Hair and face move together rather than sliding against one another.</figcaption>
+</figure></div>
+</section>
+
+<section>
+<h2>UI Sign &rarr; Mastered UI</h2>
 <div class="row">
-<figure><img src="v4/seq/detail/mastered_canonical_5x.png" width="300" alt="Mastered canonical">
-<figcaption>Canonical form</figcaption></figure>
-<figure><img src="v4/seq/detail/mastered_edge_9x.png" width="440" alt="Mastered edge">
-<figcaption>9&times; at mid-loop &mdash; energy still sits directly against the
-silhouette, no dark gap</figcaption></figure>
+<figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_composite.gif"
+width="256" alt="transformation"><figcaption>Normal speed &mdash; 17 frames</figcaption></figure>
+<figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_composite_slow.gif"
+width="256" alt="transformation slow"><figcaption>Slow</figcaption></figure>
 </div>
 </section>
 
@@ -50,30 +63,10 @@ silhouette, no dark gap</figcaption></figure>
 <h2>Mastered Ultra Instinct — idle</h2>
 <div class="row">
 <figure><img src="v4/seq/mastered_ui_idle/mastered_ui_idle_composite.gif" width="256"
-alt="Mastered idle"><figcaption>Normal speed</figcaption></figure>
+alt="idle"><figcaption>Normal speed</figcaption></figure>
 <figure><img src="v4/seq/mastered_ui_idle/mastered_ui_idle_composite_slow.gif" width="256"
-alt="Mastered idle slow"><figcaption>Slow</figcaption></figure>
+alt="idle slow"><figcaption>Slow</figcaption></figure>
 <figure><img src="v4/seq/mastered_ui_idle/mastered_ui_idle_body.gif" width="256"
-alt="Mastered body only"><figcaption>Body only</figcaption></figure>
+alt="body only"><figcaption>Body only</figcaption></figure>
 </div>
-<h3>Stills</h3>
-<div class="row">
-<figure><img src="v4/seq/detail/mastered_still_0_4x.png" width="290" alt="still 0">
-<figcaption>Frame 00</figcaption></figure>
-<figure><img src="v4/seq/detail/mastered_still_4_4x.png" width="290" alt="still 4">
-<figcaption>Frame 04 &mdash; mid-loop</figcaption></figure>
-</div>
-</section>
-
-<section>
-<h2>UI Sign &rarr; Mastered UI — transformation</h2>
-<div class="row">
-<figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_composite.gif"
-width="256" alt="transformation"><figcaption>Normal speed &mdash; 17 frames</figcaption></figure>
-<figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_composite_slow.gif"
-width="256" alt="transformation slow"><figcaption>Slow</figcaption></figure>
-</div>
-<div class="row scroll"><figure>
-<img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_strip.png" alt="strip">
-<figcaption>All 17 frames</figcaption></figure></div>
 </section>
