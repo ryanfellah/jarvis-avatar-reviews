@@ -1,54 +1,118 @@
-<title>SSJ3 Lightning Final</title>
+<title>SSJ4, God &amp; Blue</title>
 <style>
 :root{color-scheme:dark light;--bg:#101014;--panel:#1a1a21;--line:#2c2c36;
- --ink:#eef0f6;--dim:#9aa0ad;--gold:#e8b544;--arc:#8fd0ff}
+ --ink:#eef0f6;--dim:#9aa0ad;--gold:#e8b544;--accent:#8fd0ff}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);margin:0;padding:44px 30px 90px;
  font:14px/1.65 ui-sans-serif,system-ui,-apple-system,sans-serif}
 h1{color:var(--gold);font-size:30px;line-height:1.2;margin:0 0 8px;
  letter-spacing:-.015em;text-wrap:balance}
-h2{font-size:19px;color:var(--gold);margin:0 0 4px;letter-spacing:-.01em}
-.sub{color:var(--arc);font-size:12.5px;margin:0 0 14px}
+h2{font-size:20px;color:var(--gold);margin:0 0 4px;letter-spacing:-.01em}
+h3{font-size:12px;color:var(--dim);margin:28px 0 10px;text-transform:uppercase;
+ letter-spacing:.11em;font-weight:600}
+.sub{color:var(--accent);font-size:12.5px;margin:0 0 16px}
 .sha{color:var(--dim);font-size:13px;margin:0 0 4px;font-variant-numeric:tabular-nums}
 code{background:var(--panel);border:1px solid var(--line);border-radius:4px;
  padding:1px 6px;font-size:12.5px}
-section{margin-top:52px;padding-top:26px;border-top:1px solid var(--line)}
+section{margin-top:56px;padding-top:28px;border-top:1px solid var(--line)}
 .row{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start}
 figure{margin:0;background:var(--panel);border:1px solid var(--line);
  border-radius:10px;padding:10px}
-figcaption{color:var(--dim);font-size:11.5px;margin-top:8px}
+figcaption{color:var(--dim);font-size:11.5px;margin-top:8px;
+ font-variant-numeric:tabular-nums}
 img{image-rendering:pixelated;display:block;border-radius:4px;max-width:100%;height:auto}
+.scroll{overflow-x:auto;padding-bottom:6px}
+.scroll figure{display:inline-block}
+.scroll img{max-width:none}
 .lead{max-width:72ch;color:var(--dim);margin:22px 0 0}
 </style>
-<h1>Current Review — SSJ3 Lightning Final Polish</h1>
-<p class="sha">Commit <code>007ea20</code></p>
-<p class="lead">The stroke is about a fifth slimmer, and arc sizes now range from
-small pops to occasional long discharges rather than all being one size. Every frame
-carries a different mix. SSJ2 is unchanged.</p>
-
+<h1>Current Review — SSJ4, SSJ God &amp; SSJ Blue</h1>
+<p class="sha">Commit <code>e232830</code></p>
+<p class="lead">Three new forms in chain order: SSJ3 &rarr; SSJ4 &rarr; God &rarr; Blue.
+Every frame is a complete authored sprite, and every handoff is byte-identical to the
+canonical form either side of it.</p>
 <section>
-<h2>SSJ3 Charging Idle</h2>
-<p class="sub">Slimmer stroke, varied arc sizes, still body-hugging static</p>
+<h2>1. SSJ4</h2>
+<p class="sub">Crimson mane, magenta fur, tail, orange trousers</p>
 <div class="row">
-<figure><img src="v4/seq/ssj3_idle/ssj3_idle_composite.gif" width="256" alt="SSJ3 idle">
-<figcaption>Normal speed</figcaption></figure>
-<figure><img src="v4/seq/ssj3_idle/ssj3_idle_composite_slow.gif" width="256" alt="SSJ3 idle slow">
-<figcaption>Slow</figcaption></figure>
+<figure><img src="v4/seq/canonical/ssj4_canonical_5x.png" width="300" alt="ssj4 canonical">
+<figcaption>Canonical form</figcaption></figure>
+<figure><img src="v4/seq/ssj4_idle/ssj4_idle_composite.gif" width="256" alt="ssj4_idle">
+<figcaption>Idle &mdash; normal speed</figcaption></figure>
+<figure><img src="v4/seq/ssj4_idle/ssj4_idle_composite_slow.gif" width="256" alt="ssj4_idle slow">
+<figcaption>Idle &mdash; slow</figcaption></figure>
+<figure><img src="v4/seq/ssj4_idle/ssj4_idle_body.gif" width="256" alt="ssj4_idle body">
+<figcaption>Idle &mdash; body only</figcaption></figure>
 </div>
-</section>
-
-<section>
-<h2>SSJ2 &rarr; SSJ3</h2>
+<h3>SSJ3 &rarr; SSJ4 &mdash; 17 frames</h3>
 <div class="row">
-<figure><img src="v4/seq/ssj2_to_ssj3/ssj2_to_ssj3_composite.gif" width="256" alt="SSJ2 to SSJ3">
+<figure><img src="v4/seq/ssj3_to_ssj4/ssj3_to_ssj4_composite.gif" width="256" alt="ssj3_to_ssj4">
 <figcaption>Normal speed</figcaption></figure>
-<figure><img src="v4/seq/ssj2_to_ssj3/ssj2_to_ssj3_composite_slow.gif" width="256" alt="SSJ2 to SSJ3 slow">
+<figure><img src="v4/seq/ssj3_to_ssj4/ssj3_to_ssj4_composite_slow.gif" width="256" alt="ssj3_to_ssj4 slow">
 <figcaption>Slow</figcaption></figure>
+<figure><img src="v4/seq/ssj3_to_ssj4/ssj3_to_ssj4_body.gif" width="256" alt="ssj3_to_ssj4 body">
+<figcaption>Body only</figcaption></figure>
 </div>
-</section>
-
-<section>
-<h2>All eight SSJ3 frames</h2>
-<p class="sub">Each frame carries a different mix of arc sizes</p>
-<div class="row"><figure><img src="v4/seq/closeups/ssj3_still_0_5x.png" width="300" alt="SSJ3 frame 0"><figcaption>Frame 00</figcaption></figure><figure><img src="v4/seq/closeups/ssj3_still_1_5x.png" width="300" alt="SSJ3 frame 1"><figcaption>Frame 01</figcaption></figure><figure><img src="v4/seq/closeups/ssj3_still_2_5x.png" width="300" alt="SSJ3 frame 2"><figcaption>Frame 02</figcaption></figure><figure><img src="v4/seq/closeups/ssj3_still_3_5x.png" width="300" alt="SSJ3 frame 3"><figcaption>Frame 03</figcaption></figure><figure><img src="v4/seq/closeups/ssj3_still_4_5x.png" width="300" alt="SSJ3 frame 4"><figcaption>Frame 04</figcaption></figure><figure><img src="v4/seq/closeups/ssj3_still_5_5x.png" width="300" alt="SSJ3 frame 5"><figcaption>Frame 05</figcaption></figure><figure><img src="v4/seq/closeups/ssj3_still_6_5x.png" width="300" alt="SSJ3 frame 6"><figcaption>Frame 06</figcaption></figure><figure><img src="v4/seq/closeups/ssj3_still_7_5x.png" width="300" alt="SSJ3 frame 7"><figcaption>Frame 07</figcaption></figure></div>
+<div class="row scroll"><figure><img src="v4/seq/ssj3_to_ssj4/ssj3_to_ssj4_strip.png" alt="ssj3_to_ssj4 strip">
+<figcaption>All 17 transformation frames</figcaption></figure></div>
+<h3>Idle frames, native resolution</h3>
+<div class="row"><figure><img src="v4/seq/ssj4_idle/ssj4_idle_f00.png" width="128" height="192" alt="ssj4_idle 0"><figcaption>00</figcaption></figure><figure><img src="v4/seq/ssj4_idle/ssj4_idle_f01.png" width="128" height="192" alt="ssj4_idle 1"><figcaption>01</figcaption></figure><figure><img src="v4/seq/ssj4_idle/ssj4_idle_f02.png" width="128" height="192" alt="ssj4_idle 2"><figcaption>02</figcaption></figure><figure><img src="v4/seq/ssj4_idle/ssj4_idle_f03.png" width="128" height="192" alt="ssj4_idle 3"><figcaption>03</figcaption></figure><figure><img src="v4/seq/ssj4_idle/ssj4_idle_f04.png" width="128" height="192" alt="ssj4_idle 4"><figcaption>04</figcaption></figure><figure><img src="v4/seq/ssj4_idle/ssj4_idle_f05.png" width="128" height="192" alt="ssj4_idle 5"><figcaption>05</figcaption></figure><figure><img src="v4/seq/ssj4_idle/ssj4_idle_f06.png" width="128" height="192" alt="ssj4_idle 6"><figcaption>06</figcaption></figure><figure><img src="v4/seq/ssj4_idle/ssj4_idle_f07.png" width="128" height="192" alt="ssj4_idle 7"><figcaption>07</figcaption></figure></div>
+<h3>Transformation frames, native resolution</h3>
+<div class="row"><figure><img src="v4/seq/ssj3_to_ssj4/ssj3_to_ssj4_f00.png" width="128" height="192" alt="ssj3_to_ssj4 0"><figcaption>00</figcaption></figure><figure><img src="v4/seq/ssj3_to_ssj4/ssj3_to_ssj4_f01.png" width="128" height="192" alt="ssj3_to_ssj4 1"><figcaption>01</figcaption></figure><figure><img src="v4/seq/ssj3_to_ssj4/ssj3_to_ssj4_f02.png" width="128" height="192" alt="ssj3_to_ssj4 2"><figcaption>02</figcaption></figure><figure><img src="v4/seq/ssj3_to_ssj4/ssj3_to_ssj4_f03.png" width="128" height="192" alt="ssj3_to_ssj4 3"><figcaption>03</figcaption></figure><figure><img src="v4/seq/ssj3_to_ssj4/ssj3_to_ssj4_f04.png" width="128" height="192" alt="ssj3_to_ssj4 4"><figcaption>04</figcaption></figure><figure><img src="v4/seq/ssj3_to_ssj4/ssj3_to_ssj4_f05.png" width="128" height="192" alt="ssj3_to_ssj4 5"><figcaption>05</figcaption></figure><figure><img src="v4/seq/ssj3_to_ssj4/ssj3_to_ssj4_f06.png" width="128" height="192" alt="ssj3_to_ssj4 6"><figcaption>06</figcaption></figure><figure><img src="v4/seq/ssj3_to_ssj4/ssj3_to_ssj4_f07.png" width="128" height="192" alt="ssj3_to_ssj4 7"><figcaption>07</figcaption></figure><figure><img src="v4/seq/ssj3_to_ssj4/ssj3_to_ssj4_f08.png" width="128" height="192" alt="ssj3_to_ssj4 8"><figcaption>08</figcaption></figure><figure><img src="v4/seq/ssj3_to_ssj4/ssj3_to_ssj4_f09.png" width="128" height="192" alt="ssj3_to_ssj4 9"><figcaption>09</figcaption></figure><figure><img src="v4/seq/ssj3_to_ssj4/ssj3_to_ssj4_f10.png" width="128" height="192" alt="ssj3_to_ssj4 10"><figcaption>10</figcaption></figure><figure><img src="v4/seq/ssj3_to_ssj4/ssj3_to_ssj4_f11.png" width="128" height="192" alt="ssj3_to_ssj4 11"><figcaption>11</figcaption></figure><figure><img src="v4/seq/ssj3_to_ssj4/ssj3_to_ssj4_f12.png" width="128" height="192" alt="ssj3_to_ssj4 12"><figcaption>12</figcaption></figure><figure><img src="v4/seq/ssj3_to_ssj4/ssj3_to_ssj4_f13.png" width="128" height="192" alt="ssj3_to_ssj4 13"><figcaption>13</figcaption></figure><figure><img src="v4/seq/ssj3_to_ssj4/ssj3_to_ssj4_f14.png" width="128" height="192" alt="ssj3_to_ssj4 14"><figcaption>14</figcaption></figure><figure><img src="v4/seq/ssj3_to_ssj4/ssj3_to_ssj4_f15.png" width="128" height="192" alt="ssj3_to_ssj4 15"><figcaption>15</figcaption></figure><figure><img src="v4/seq/ssj3_to_ssj4/ssj3_to_ssj4_f16.png" width="128" height="192" alt="ssj3_to_ssj4 16"><figcaption>16</figcaption></figure></div>
+</section><section>
+<h2>2. SSJ God</h2>
+<p class="sub">Red hair and eyes, fiery red-orange-gold aura</p>
+<div class="row">
+<figure><img src="v4/seq/canonical/god_canonical_5x.png" width="300" alt="god canonical">
+<figcaption>Canonical form</figcaption></figure>
+<figure><img src="v4/seq/god_idle/god_idle_composite.gif" width="256" alt="god_idle">
+<figcaption>Idle &mdash; normal speed</figcaption></figure>
+<figure><img src="v4/seq/god_idle/god_idle_composite_slow.gif" width="256" alt="god_idle slow">
+<figcaption>Idle &mdash; slow</figcaption></figure>
+<figure><img src="v4/seq/god_idle/god_idle_body.gif" width="256" alt="god_idle body">
+<figcaption>Idle &mdash; body only</figcaption></figure>
+</div>
+<h3>SSJ4 &rarr; God &mdash; 17 frames</h3>
+<div class="row">
+<figure><img src="v4/seq/ssj4_to_god/ssj4_to_god_composite.gif" width="256" alt="ssj4_to_god">
+<figcaption>Normal speed</figcaption></figure>
+<figure><img src="v4/seq/ssj4_to_god/ssj4_to_god_composite_slow.gif" width="256" alt="ssj4_to_god slow">
+<figcaption>Slow</figcaption></figure>
+<figure><img src="v4/seq/ssj4_to_god/ssj4_to_god_body.gif" width="256" alt="ssj4_to_god body">
+<figcaption>Body only</figcaption></figure>
+</div>
+<div class="row scroll"><figure><img src="v4/seq/ssj4_to_god/ssj4_to_god_strip.png" alt="ssj4_to_god strip">
+<figcaption>All 17 transformation frames</figcaption></figure></div>
+<h3>Idle frames, native resolution</h3>
+<div class="row"><figure><img src="v4/seq/god_idle/god_idle_f00.png" width="128" height="192" alt="god_idle 0"><figcaption>00</figcaption></figure><figure><img src="v4/seq/god_idle/god_idle_f01.png" width="128" height="192" alt="god_idle 1"><figcaption>01</figcaption></figure><figure><img src="v4/seq/god_idle/god_idle_f02.png" width="128" height="192" alt="god_idle 2"><figcaption>02</figcaption></figure><figure><img src="v4/seq/god_idle/god_idle_f03.png" width="128" height="192" alt="god_idle 3"><figcaption>03</figcaption></figure><figure><img src="v4/seq/god_idle/god_idle_f04.png" width="128" height="192" alt="god_idle 4"><figcaption>04</figcaption></figure><figure><img src="v4/seq/god_idle/god_idle_f05.png" width="128" height="192" alt="god_idle 5"><figcaption>05</figcaption></figure><figure><img src="v4/seq/god_idle/god_idle_f06.png" width="128" height="192" alt="god_idle 6"><figcaption>06</figcaption></figure><figure><img src="v4/seq/god_idle/god_idle_f07.png" width="128" height="192" alt="god_idle 7"><figcaption>07</figcaption></figure></div>
+<h3>Transformation frames, native resolution</h3>
+<div class="row"><figure><img src="v4/seq/ssj4_to_god/ssj4_to_god_f00.png" width="128" height="192" alt="ssj4_to_god 0"><figcaption>00</figcaption></figure><figure><img src="v4/seq/ssj4_to_god/ssj4_to_god_f01.png" width="128" height="192" alt="ssj4_to_god 1"><figcaption>01</figcaption></figure><figure><img src="v4/seq/ssj4_to_god/ssj4_to_god_f02.png" width="128" height="192" alt="ssj4_to_god 2"><figcaption>02</figcaption></figure><figure><img src="v4/seq/ssj4_to_god/ssj4_to_god_f03.png" width="128" height="192" alt="ssj4_to_god 3"><figcaption>03</figcaption></figure><figure><img src="v4/seq/ssj4_to_god/ssj4_to_god_f04.png" width="128" height="192" alt="ssj4_to_god 4"><figcaption>04</figcaption></figure><figure><img src="v4/seq/ssj4_to_god/ssj4_to_god_f05.png" width="128" height="192" alt="ssj4_to_god 5"><figcaption>05</figcaption></figure><figure><img src="v4/seq/ssj4_to_god/ssj4_to_god_f06.png" width="128" height="192" alt="ssj4_to_god 6"><figcaption>06</figcaption></figure><figure><img src="v4/seq/ssj4_to_god/ssj4_to_god_f07.png" width="128" height="192" alt="ssj4_to_god 7"><figcaption>07</figcaption></figure><figure><img src="v4/seq/ssj4_to_god/ssj4_to_god_f08.png" width="128" height="192" alt="ssj4_to_god 8"><figcaption>08</figcaption></figure><figure><img src="v4/seq/ssj4_to_god/ssj4_to_god_f09.png" width="128" height="192" alt="ssj4_to_god 9"><figcaption>09</figcaption></figure><figure><img src="v4/seq/ssj4_to_god/ssj4_to_god_f10.png" width="128" height="192" alt="ssj4_to_god 10"><figcaption>10</figcaption></figure><figure><img src="v4/seq/ssj4_to_god/ssj4_to_god_f11.png" width="128" height="192" alt="ssj4_to_god 11"><figcaption>11</figcaption></figure><figure><img src="v4/seq/ssj4_to_god/ssj4_to_god_f12.png" width="128" height="192" alt="ssj4_to_god 12"><figcaption>12</figcaption></figure><figure><img src="v4/seq/ssj4_to_god/ssj4_to_god_f13.png" width="128" height="192" alt="ssj4_to_god 13"><figcaption>13</figcaption></figure><figure><img src="v4/seq/ssj4_to_god/ssj4_to_god_f14.png" width="128" height="192" alt="ssj4_to_god 14"><figcaption>14</figcaption></figure><figure><img src="v4/seq/ssj4_to_god/ssj4_to_god_f15.png" width="128" height="192" alt="ssj4_to_god 15"><figcaption>15</figcaption></figure><figure><img src="v4/seq/ssj4_to_god/ssj4_to_god_f16.png" width="128" height="192" alt="ssj4_to_god 16"><figcaption>16</figcaption></figure></div>
+</section><section>
+<h2>3. SSJ Blue</h2>
+<p class="sub">Cyan Super Saiyan hair, deep blue to cyan aura</p>
+<div class="row">
+<figure><img src="v4/seq/canonical/blue_canonical_5x.png" width="300" alt="blue canonical">
+<figcaption>Canonical form</figcaption></figure>
+<figure><img src="v4/seq/blue_idle/blue_idle_composite.gif" width="256" alt="blue_idle">
+<figcaption>Idle &mdash; normal speed</figcaption></figure>
+<figure><img src="v4/seq/blue_idle/blue_idle_composite_slow.gif" width="256" alt="blue_idle slow">
+<figcaption>Idle &mdash; slow</figcaption></figure>
+<figure><img src="v4/seq/blue_idle/blue_idle_body.gif" width="256" alt="blue_idle body">
+<figcaption>Idle &mdash; body only</figcaption></figure>
+</div>
+<h3>God &rarr; Blue &mdash; 17 frames</h3>
+<div class="row">
+<figure><img src="v4/seq/god_to_blue/god_to_blue_composite.gif" width="256" alt="god_to_blue">
+<figcaption>Normal speed</figcaption></figure>
+<figure><img src="v4/seq/god_to_blue/god_to_blue_composite_slow.gif" width="256" alt="god_to_blue slow">
+<figcaption>Slow</figcaption></figure>
+<figure><img src="v4/seq/god_to_blue/god_to_blue_body.gif" width="256" alt="god_to_blue body">
+<figcaption>Body only</figcaption></figure>
+</div>
+<div class="row scroll"><figure><img src="v4/seq/god_to_blue/god_to_blue_strip.png" alt="god_to_blue strip">
+<figcaption>All 17 transformation frames</figcaption></figure></div>
+<h3>Idle frames, native resolution</h3>
+<div class="row"><figure><img src="v4/seq/blue_idle/blue_idle_f00.png" width="128" height="192" alt="blue_idle 0"><figcaption>00</figcaption></figure><figure><img src="v4/seq/blue_idle/blue_idle_f01.png" width="128" height="192" alt="blue_idle 1"><figcaption>01</figcaption></figure><figure><img src="v4/seq/blue_idle/blue_idle_f02.png" width="128" height="192" alt="blue_idle 2"><figcaption>02</figcaption></figure><figure><img src="v4/seq/blue_idle/blue_idle_f03.png" width="128" height="192" alt="blue_idle 3"><figcaption>03</figcaption></figure><figure><img src="v4/seq/blue_idle/blue_idle_f04.png" width="128" height="192" alt="blue_idle 4"><figcaption>04</figcaption></figure><figure><img src="v4/seq/blue_idle/blue_idle_f05.png" width="128" height="192" alt="blue_idle 5"><figcaption>05</figcaption></figure><figure><img src="v4/seq/blue_idle/blue_idle_f06.png" width="128" height="192" alt="blue_idle 6"><figcaption>06</figcaption></figure><figure><img src="v4/seq/blue_idle/blue_idle_f07.png" width="128" height="192" alt="blue_idle 7"><figcaption>07</figcaption></figure></div>
+<h3>Transformation frames, native resolution</h3>
+<div class="row"><figure><img src="v4/seq/god_to_blue/god_to_blue_f00.png" width="128" height="192" alt="god_to_blue 0"><figcaption>00</figcaption></figure><figure><img src="v4/seq/god_to_blue/god_to_blue_f01.png" width="128" height="192" alt="god_to_blue 1"><figcaption>01</figcaption></figure><figure><img src="v4/seq/god_to_blue/god_to_blue_f02.png" width="128" height="192" alt="god_to_blue 2"><figcaption>02</figcaption></figure><figure><img src="v4/seq/god_to_blue/god_to_blue_f03.png" width="128" height="192" alt="god_to_blue 3"><figcaption>03</figcaption></figure><figure><img src="v4/seq/god_to_blue/god_to_blue_f04.png" width="128" height="192" alt="god_to_blue 4"><figcaption>04</figcaption></figure><figure><img src="v4/seq/god_to_blue/god_to_blue_f05.png" width="128" height="192" alt="god_to_blue 5"><figcaption>05</figcaption></figure><figure><img src="v4/seq/god_to_blue/god_to_blue_f06.png" width="128" height="192" alt="god_to_blue 6"><figcaption>06</figcaption></figure><figure><img src="v4/seq/god_to_blue/god_to_blue_f07.png" width="128" height="192" alt="god_to_blue 7"><figcaption>07</figcaption></figure><figure><img src="v4/seq/god_to_blue/god_to_blue_f08.png" width="128" height="192" alt="god_to_blue 8"><figcaption>08</figcaption></figure><figure><img src="v4/seq/god_to_blue/god_to_blue_f09.png" width="128" height="192" alt="god_to_blue 9"><figcaption>09</figcaption></figure><figure><img src="v4/seq/god_to_blue/god_to_blue_f10.png" width="128" height="192" alt="god_to_blue 10"><figcaption>10</figcaption></figure><figure><img src="v4/seq/god_to_blue/god_to_blue_f11.png" width="128" height="192" alt="god_to_blue 11"><figcaption>11</figcaption></figure><figure><img src="v4/seq/god_to_blue/god_to_blue_f12.png" width="128" height="192" alt="god_to_blue 12"><figcaption>12</figcaption></figure><figure><img src="v4/seq/god_to_blue/god_to_blue_f13.png" width="128" height="192" alt="god_to_blue 13"><figcaption>13</figcaption></figure><figure><img src="v4/seq/god_to_blue/god_to_blue_f14.png" width="128" height="192" alt="god_to_blue 14"><figcaption>14</figcaption></figure><figure><img src="v4/seq/god_to_blue/god_to_blue_f15.png" width="128" height="192" alt="god_to_blue 15"><figcaption>15</figcaption></figure><figure><img src="v4/seq/god_to_blue/god_to_blue_f16.png" width="128" height="192" alt="god_to_blue 16"><figcaption>16</figcaption></figure></div>
 </section>
