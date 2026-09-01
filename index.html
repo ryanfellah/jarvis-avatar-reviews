@@ -1,11 +1,11 @@
-<title>Final Polish — Blue Evolved, UI Sign &amp; Mastered UI</title>
+<title>Ultra Instinct Aura Final Polish</title>
 <style>
 :root{color-scheme:dark light;--bg:#0f0f14;--panel:#1a1a21;--line:#2c2c36;
- --ink:#eef0f6;--dim:#9aa0ad;--gold:#e8b544;--accent:#a9b6ff}
+ --ink:#eef0f6;--dim:#9aa0ad;--gold:#e8b544;--accent:#a9d6ff}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);margin:0;padding:44px 30px 90px;
  font:14px/1.65 ui-sans-serif,system-ui,-apple-system,sans-serif}
-h1{color:var(--gold);font-size:28px;line-height:1.28;margin:0 0 8px;
+h1{color:var(--gold);font-size:29px;line-height:1.25;margin:0 0 8px;
  letter-spacing:-.015em;text-wrap:balance}
 h2{font-size:20px;color:var(--gold);margin:0 0 4px;letter-spacing:-.01em}
 h3{font-size:12px;color:var(--dim);margin:28px 0 10px;text-transform:uppercase;
@@ -18,65 +18,33 @@ section{margin-top:56px;padding-top:28px;border-top:1px solid var(--line)}
 .row{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start}
 figure{margin:0;background:var(--panel);border:1px solid var(--line);
  border-radius:10px;padding:10px}
-figcaption{color:var(--dim);font-size:11.5px;margin-top:8px;
- font-variant-numeric:tabular-nums}
+figcaption{color:var(--dim);font-size:11.5px;margin-top:8px;max-width:34ch}
 img{image-rendering:pixelated;display:block;border-radius:4px;max-width:100%;height:auto}
-.scroll{overflow-x:auto;padding-bottom:6px}
-.scroll figure{display:inline-block}
-.scroll img{max-width:none}
 .lead{max-width:74ch;color:var(--dim);margin:22px 0 0}
 </style>
-<h1>Current Review — Final Polish: SSJ Blue Evolved, Ultra Instinct Sign &amp; Mastered Ultra Instinct</h1>
-<p class="sha">Commit <code>95ae565</code></p>
-<p class="lead">Blue Evolved's hair now uses reference A's own four colours in the
-reference's own proportions. Both Ultra Instinct forms face forward and their auras
-reach the body with no black border. Mastered runs Sign's animation and carries a
-harder brow.</p>
+<h1>Current Review — Ultra Instinct Aura Final Polish</h1>
+<p class="sha">Commit <code>5fd0113</code></p>
+<p class="lead">The aura is now an opaque field radiating from the body: a white rim
+directly against the silhouette, cyan through the body of the field, a violet fringe
+breaking apart outward. No looping ribbons and no dark ring. Body sprites are
+unchanged.</p>
 <section>
-<h2>Face check — Sign and Mastered</h2>
-<p class="sub">Both forward-facing with both eyes visible; Mastered's brows angle down harder</p>
-<div class="row scroll"><figure><img src="v4/seq/canonical/ui_faces_12x.png" alt="UI faces at 12x">
-<figcaption>UI Sign &middot; Mastered UI &mdash; 12&times;</figcaption></figure></div>
-</section><section>
-<h2>1. SSJ Blue Evolved</h2>
-<p class="sub">Hair matched one-to-one to the reference royal navy; forehead vein; white-edged aura</p>
+<h2>1. Ultra Instinct Sign</h2>
+<p class="sub">Restrained radiant field: white rim, cyan body, violet fringe</p>
 <div class="row">
-<figure><img src="v4/seq/canonical/blue_evolved_canonical_5x.png" width="300" alt="blue_evolved canonical">
-<figcaption>Canonical form</figcaption></figure>
-<figure><img src="v4/seq/blue_evolved_idle/blue_evolved_idle_composite.gif" width="256" alt="blue_evolved_idle">
-<figcaption>Idle &mdash; normal speed</figcaption></figure>
-<figure><img src="v4/seq/blue_evolved_idle/blue_evolved_idle_composite_slow.gif" width="256" alt="blue_evolved_idle slow">
-<figcaption>Idle &mdash; slow</figcaption></figure>
-<figure><img src="v4/seq/blue_evolved_idle/blue_evolved_idle_body.gif" width="256" alt="blue_evolved_idle body">
-<figcaption>Idle &mdash; body only</figcaption></figure>
+<figure><img src="v4/seq/aura/ui_sign_composite_5x.png" width="330" alt="ui_sign composite">
+<figcaption>Composite still</figcaption></figure>
+<figure><img src="v4/seq/aura/ui_sign_edge_11x.png" width="330" alt="ui_sign silhouette edge">
+<figcaption>Silhouette edge, 11&times; &mdash; energy meets the body with no dark gap</figcaption></figure>
 </div>
-<h3>Blue &rarr; Blue Evolved &mdash; 17 frames</h3>
+<h3>Idle</h3>
 <div class="row">
-<figure><img src="v4/seq/blue_to_blue_evolved/blue_to_blue_evolved_composite.gif" width="256" alt="blue_to_blue_evolved">
-<figcaption>Normal speed</figcaption></figure>
-<figure><img src="v4/seq/blue_to_blue_evolved/blue_to_blue_evolved_composite_slow.gif" width="256" alt="blue_to_blue_evolved slow">
-<figcaption>Slow</figcaption></figure>
-<figure><img src="v4/seq/blue_to_blue_evolved/blue_to_blue_evolved_body.gif" width="256" alt="blue_to_blue_evolved body">
-<figcaption>Body only</figcaption></figure>
-</div>
-<div class="row scroll"><figure><img src="v4/seq/blue_to_blue_evolved/blue_to_blue_evolved_strip.png" alt="blue_to_blue_evolved strip">
-<figcaption>All 17 transformation frames</figcaption></figure></div>
-<h3>Idle frames, native resolution</h3>
-<div class="row"><figure><img src="v4/seq/blue_evolved_idle/blue_evolved_idle_f00.png" width="128" height="192" alt="blue_evolved_idle 0"><figcaption>00</figcaption></figure><figure><img src="v4/seq/blue_evolved_idle/blue_evolved_idle_f01.png" width="128" height="192" alt="blue_evolved_idle 1"><figcaption>01</figcaption></figure><figure><img src="v4/seq/blue_evolved_idle/blue_evolved_idle_f02.png" width="128" height="192" alt="blue_evolved_idle 2"><figcaption>02</figcaption></figure><figure><img src="v4/seq/blue_evolved_idle/blue_evolved_idle_f03.png" width="128" height="192" alt="blue_evolved_idle 3"><figcaption>03</figcaption></figure><figure><img src="v4/seq/blue_evolved_idle/blue_evolved_idle_f04.png" width="128" height="192" alt="blue_evolved_idle 4"><figcaption>04</figcaption></figure><figure><img src="v4/seq/blue_evolved_idle/blue_evolved_idle_f05.png" width="128" height="192" alt="blue_evolved_idle 5"><figcaption>05</figcaption></figure><figure><img src="v4/seq/blue_evolved_idle/blue_evolved_idle_f06.png" width="128" height="192" alt="blue_evolved_idle 6"><figcaption>06</figcaption></figure><figure><img src="v4/seq/blue_evolved_idle/blue_evolved_idle_f07.png" width="128" height="192" alt="blue_evolved_idle 7"><figcaption>07</figcaption></figure></div>
-<h3>Transformation frames, native resolution</h3>
-<div class="row"><figure><img src="v4/seq/blue_to_blue_evolved/blue_to_blue_evolved_f00.png" width="128" height="192" alt="blue_to_blue_evolved 0"><figcaption>00</figcaption></figure><figure><img src="v4/seq/blue_to_blue_evolved/blue_to_blue_evolved_f01.png" width="128" height="192" alt="blue_to_blue_evolved 1"><figcaption>01</figcaption></figure><figure><img src="v4/seq/blue_to_blue_evolved/blue_to_blue_evolved_f02.png" width="128" height="192" alt="blue_to_blue_evolved 2"><figcaption>02</figcaption></figure><figure><img src="v4/seq/blue_to_blue_evolved/blue_to_blue_evolved_f03.png" width="128" height="192" alt="blue_to_blue_evolved 3"><figcaption>03</figcaption></figure><figure><img src="v4/seq/blue_to_blue_evolved/blue_to_blue_evolved_f04.png" width="128" height="192" alt="blue_to_blue_evolved 4"><figcaption>04</figcaption></figure><figure><img src="v4/seq/blue_to_blue_evolved/blue_to_blue_evolved_f05.png" width="128" height="192" alt="blue_to_blue_evolved 5"><figcaption>05</figcaption></figure><figure><img src="v4/seq/blue_to_blue_evolved/blue_to_blue_evolved_f06.png" width="128" height="192" alt="blue_to_blue_evolved 6"><figcaption>06</figcaption></figure><figure><img src="v4/seq/blue_to_blue_evolved/blue_to_blue_evolved_f07.png" width="128" height="192" alt="blue_to_blue_evolved 7"><figcaption>07</figcaption></figure><figure><img src="v4/seq/blue_to_blue_evolved/blue_to_blue_evolved_f08.png" width="128" height="192" alt="blue_to_blue_evolved 8"><figcaption>08</figcaption></figure><figure><img src="v4/seq/blue_to_blue_evolved/blue_to_blue_evolved_f09.png" width="128" height="192" alt="blue_to_blue_evolved 9"><figcaption>09</figcaption></figure><figure><img src="v4/seq/blue_to_blue_evolved/blue_to_blue_evolved_f10.png" width="128" height="192" alt="blue_to_blue_evolved 10"><figcaption>10</figcaption></figure><figure><img src="v4/seq/blue_to_blue_evolved/blue_to_blue_evolved_f11.png" width="128" height="192" alt="blue_to_blue_evolved 11"><figcaption>11</figcaption></figure><figure><img src="v4/seq/blue_to_blue_evolved/blue_to_blue_evolved_f12.png" width="128" height="192" alt="blue_to_blue_evolved 12"><figcaption>12</figcaption></figure><figure><img src="v4/seq/blue_to_blue_evolved/blue_to_blue_evolved_f13.png" width="128" height="192" alt="blue_to_blue_evolved 13"><figcaption>13</figcaption></figure><figure><img src="v4/seq/blue_to_blue_evolved/blue_to_blue_evolved_f14.png" width="128" height="192" alt="blue_to_blue_evolved 14"><figcaption>14</figcaption></figure><figure><img src="v4/seq/blue_to_blue_evolved/blue_to_blue_evolved_f15.png" width="128" height="192" alt="blue_to_blue_evolved 15"><figcaption>15</figcaption></figure><figure><img src="v4/seq/blue_to_blue_evolved/blue_to_blue_evolved_f16.png" width="128" height="192" alt="blue_to_blue_evolved 16"><figcaption>16</figcaption></figure></div>
-</section><section>
-<h2>2. Ultra Instinct Sign</h2>
-<p class="sub">Ryan's own hair in black, calm and forward-facing, radiant body-emitting aura</p>
-<div class="row">
-<figure><img src="v4/seq/canonical/ui_sign_canonical_5x.png" width="300" alt="ui_sign canonical">
-<figcaption>Canonical form</figcaption></figure>
 <figure><img src="v4/seq/ui_sign_idle/ui_sign_idle_composite.gif" width="256" alt="ui_sign_idle">
-<figcaption>Idle &mdash; normal speed</figcaption></figure>
+<figcaption>Normal speed</figcaption></figure>
 <figure><img src="v4/seq/ui_sign_idle/ui_sign_idle_composite_slow.gif" width="256" alt="ui_sign_idle slow">
-<figcaption>Idle &mdash; slow</figcaption></figure>
-<figure><img src="v4/seq/ui_sign_idle/ui_sign_idle_body.gif" width="256" alt="ui_sign_idle body">
-<figcaption>Idle &mdash; body only</figcaption></figure>
+<figcaption>Slow</figcaption></figure>
+<figure><img src="v4/seq/aura/ui_sign_aura_only.gif" width="256" alt="ui_sign aura only">
+<figcaption>Aura only</figcaption></figure>
 </div>
 <h3>Blue Evolved &rarr; UI Sign &mdash; 17 frames</h3>
 <div class="row">
@@ -84,27 +52,24 @@ harder brow.</p>
 <figcaption>Normal speed</figcaption></figure>
 <figure><img src="v4/seq/blue_evolved_to_ui_sign/blue_evolved_to_ui_sign_composite_slow.gif" width="256" alt="blue_evolved_to_ui_sign slow">
 <figcaption>Slow</figcaption></figure>
-<figure><img src="v4/seq/blue_evolved_to_ui_sign/blue_evolved_to_ui_sign_body.gif" width="256" alt="blue_evolved_to_ui_sign body">
-<figcaption>Body only</figcaption></figure>
 </div>
-<div class="row scroll"><figure><img src="v4/seq/blue_evolved_to_ui_sign/blue_evolved_to_ui_sign_strip.png" alt="blue_evolved_to_ui_sign strip">
-<figcaption>All 17 transformation frames</figcaption></figure></div>
-<h3>Idle frames, native resolution</h3>
-<div class="row"><figure><img src="v4/seq/ui_sign_idle/ui_sign_idle_f00.png" width="128" height="192" alt="ui_sign_idle 0"><figcaption>00</figcaption></figure><figure><img src="v4/seq/ui_sign_idle/ui_sign_idle_f01.png" width="128" height="192" alt="ui_sign_idle 1"><figcaption>01</figcaption></figure><figure><img src="v4/seq/ui_sign_idle/ui_sign_idle_f02.png" width="128" height="192" alt="ui_sign_idle 2"><figcaption>02</figcaption></figure><figure><img src="v4/seq/ui_sign_idle/ui_sign_idle_f03.png" width="128" height="192" alt="ui_sign_idle 3"><figcaption>03</figcaption></figure><figure><img src="v4/seq/ui_sign_idle/ui_sign_idle_f04.png" width="128" height="192" alt="ui_sign_idle 4"><figcaption>04</figcaption></figure><figure><img src="v4/seq/ui_sign_idle/ui_sign_idle_f05.png" width="128" height="192" alt="ui_sign_idle 5"><figcaption>05</figcaption></figure><figure><img src="v4/seq/ui_sign_idle/ui_sign_idle_f06.png" width="128" height="192" alt="ui_sign_idle 6"><figcaption>06</figcaption></figure><figure><img src="v4/seq/ui_sign_idle/ui_sign_idle_f07.png" width="128" height="192" alt="ui_sign_idle 7"><figcaption>07</figcaption></figure></div>
-<h3>Transformation frames, native resolution</h3>
-<div class="row"><figure><img src="v4/seq/blue_evolved_to_ui_sign/blue_evolved_to_ui_sign_f00.png" width="128" height="192" alt="blue_evolved_to_ui_sign 0"><figcaption>00</figcaption></figure><figure><img src="v4/seq/blue_evolved_to_ui_sign/blue_evolved_to_ui_sign_f01.png" width="128" height="192" alt="blue_evolved_to_ui_sign 1"><figcaption>01</figcaption></figure><figure><img src="v4/seq/blue_evolved_to_ui_sign/blue_evolved_to_ui_sign_f02.png" width="128" height="192" alt="blue_evolved_to_ui_sign 2"><figcaption>02</figcaption></figure><figure><img src="v4/seq/blue_evolved_to_ui_sign/blue_evolved_to_ui_sign_f03.png" width="128" height="192" alt="blue_evolved_to_ui_sign 3"><figcaption>03</figcaption></figure><figure><img src="v4/seq/blue_evolved_to_ui_sign/blue_evolved_to_ui_sign_f04.png" width="128" height="192" alt="blue_evolved_to_ui_sign 4"><figcaption>04</figcaption></figure><figure><img src="v4/seq/blue_evolved_to_ui_sign/blue_evolved_to_ui_sign_f05.png" width="128" height="192" alt="blue_evolved_to_ui_sign 5"><figcaption>05</figcaption></figure><figure><img src="v4/seq/blue_evolved_to_ui_sign/blue_evolved_to_ui_sign_f06.png" width="128" height="192" alt="blue_evolved_to_ui_sign 6"><figcaption>06</figcaption></figure><figure><img src="v4/seq/blue_evolved_to_ui_sign/blue_evolved_to_ui_sign_f07.png" width="128" height="192" alt="blue_evolved_to_ui_sign 7"><figcaption>07</figcaption></figure><figure><img src="v4/seq/blue_evolved_to_ui_sign/blue_evolved_to_ui_sign_f08.png" width="128" height="192" alt="blue_evolved_to_ui_sign 8"><figcaption>08</figcaption></figure><figure><img src="v4/seq/blue_evolved_to_ui_sign/blue_evolved_to_ui_sign_f09.png" width="128" height="192" alt="blue_evolved_to_ui_sign 9"><figcaption>09</figcaption></figure><figure><img src="v4/seq/blue_evolved_to_ui_sign/blue_evolved_to_ui_sign_f10.png" width="128" height="192" alt="blue_evolved_to_ui_sign 10"><figcaption>10</figcaption></figure><figure><img src="v4/seq/blue_evolved_to_ui_sign/blue_evolved_to_ui_sign_f11.png" width="128" height="192" alt="blue_evolved_to_ui_sign 11"><figcaption>11</figcaption></figure><figure><img src="v4/seq/blue_evolved_to_ui_sign/blue_evolved_to_ui_sign_f12.png" width="128" height="192" alt="blue_evolved_to_ui_sign 12"><figcaption>12</figcaption></figure><figure><img src="v4/seq/blue_evolved_to_ui_sign/blue_evolved_to_ui_sign_f13.png" width="128" height="192" alt="blue_evolved_to_ui_sign 13"><figcaption>13</figcaption></figure><figure><img src="v4/seq/blue_evolved_to_ui_sign/blue_evolved_to_ui_sign_f14.png" width="128" height="192" alt="blue_evolved_to_ui_sign 14"><figcaption>14</figcaption></figure><figure><img src="v4/seq/blue_evolved_to_ui_sign/blue_evolved_to_ui_sign_f15.png" width="128" height="192" alt="blue_evolved_to_ui_sign 15"><figcaption>15</figcaption></figure><figure><img src="v4/seq/blue_evolved_to_ui_sign/blue_evolved_to_ui_sign_f16.png" width="128" height="192" alt="blue_evolved_to_ui_sign 16"><figcaption>16</figcaption></figure></div>
 </section><section>
-<h2>3. Mastered Ultra Instinct</h2>
-<p class="sub">Ryan's own hair in silver-white, serious brow, Sign's animation, larger aura</p>
+<h2>2. Mastered Ultra Instinct</h2>
+<p class="sub">Same field, larger and denser &mdash; stronger, not wilder</p>
 <div class="row">
-<figure><img src="v4/seq/canonical/mastered_ui_canonical_5x.png" width="300" alt="mastered_ui canonical">
-<figcaption>Canonical form</figcaption></figure>
+<figure><img src="v4/seq/aura/mastered_ui_composite_5x.png" width="330" alt="mastered_ui composite">
+<figcaption>Composite still</figcaption></figure>
+<figure><img src="v4/seq/aura/mastered_ui_edge_11x.png" width="330" alt="mastered_ui silhouette edge">
+<figcaption>Silhouette edge, 11&times; &mdash; energy meets the body with no dark gap</figcaption></figure>
+</div>
+<h3>Idle</h3>
+<div class="row">
 <figure><img src="v4/seq/mastered_ui_idle/mastered_ui_idle_composite.gif" width="256" alt="mastered_ui_idle">
-<figcaption>Idle &mdash; normal speed</figcaption></figure>
+<figcaption>Normal speed</figcaption></figure>
 <figure><img src="v4/seq/mastered_ui_idle/mastered_ui_idle_composite_slow.gif" width="256" alt="mastered_ui_idle slow">
-<figcaption>Idle &mdash; slow</figcaption></figure>
-<figure><img src="v4/seq/mastered_ui_idle/mastered_ui_idle_body.gif" width="256" alt="mastered_ui_idle body">
-<figcaption>Idle &mdash; body only</figcaption></figure>
+<figcaption>Slow</figcaption></figure>
+<figure><img src="v4/seq/aura/mastered_ui_aura_only.gif" width="256" alt="mastered_ui aura only">
+<figcaption>Aura only</figcaption></figure>
 </div>
 <h3>UI Sign &rarr; Mastered UI &mdash; 17 frames</h3>
 <div class="row">
@@ -112,13 +77,5 @@ harder brow.</p>
 <figcaption>Normal speed</figcaption></figure>
 <figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_composite_slow.gif" width="256" alt="ui_sign_to_mastered_ui slow">
 <figcaption>Slow</figcaption></figure>
-<figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_body.gif" width="256" alt="ui_sign_to_mastered_ui body">
-<figcaption>Body only</figcaption></figure>
 </div>
-<div class="row scroll"><figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_strip.png" alt="ui_sign_to_mastered_ui strip">
-<figcaption>All 17 transformation frames</figcaption></figure></div>
-<h3>Idle frames, native resolution</h3>
-<div class="row"><figure><img src="v4/seq/mastered_ui_idle/mastered_ui_idle_f00.png" width="128" height="192" alt="mastered_ui_idle 0"><figcaption>00</figcaption></figure><figure><img src="v4/seq/mastered_ui_idle/mastered_ui_idle_f01.png" width="128" height="192" alt="mastered_ui_idle 1"><figcaption>01</figcaption></figure><figure><img src="v4/seq/mastered_ui_idle/mastered_ui_idle_f02.png" width="128" height="192" alt="mastered_ui_idle 2"><figcaption>02</figcaption></figure><figure><img src="v4/seq/mastered_ui_idle/mastered_ui_idle_f03.png" width="128" height="192" alt="mastered_ui_idle 3"><figcaption>03</figcaption></figure><figure><img src="v4/seq/mastered_ui_idle/mastered_ui_idle_f04.png" width="128" height="192" alt="mastered_ui_idle 4"><figcaption>04</figcaption></figure><figure><img src="v4/seq/mastered_ui_idle/mastered_ui_idle_f05.png" width="128" height="192" alt="mastered_ui_idle 5"><figcaption>05</figcaption></figure><figure><img src="v4/seq/mastered_ui_idle/mastered_ui_idle_f06.png" width="128" height="192" alt="mastered_ui_idle 6"><figcaption>06</figcaption></figure><figure><img src="v4/seq/mastered_ui_idle/mastered_ui_idle_f07.png" width="128" height="192" alt="mastered_ui_idle 7"><figcaption>07</figcaption></figure></div>
-<h3>Transformation frames, native resolution</h3>
-<div class="row"><figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_f00.png" width="128" height="192" alt="ui_sign_to_mastered_ui 0"><figcaption>00</figcaption></figure><figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_f01.png" width="128" height="192" alt="ui_sign_to_mastered_ui 1"><figcaption>01</figcaption></figure><figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_f02.png" width="128" height="192" alt="ui_sign_to_mastered_ui 2"><figcaption>02</figcaption></figure><figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_f03.png" width="128" height="192" alt="ui_sign_to_mastered_ui 3"><figcaption>03</figcaption></figure><figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_f04.png" width="128" height="192" alt="ui_sign_to_mastered_ui 4"><figcaption>04</figcaption></figure><figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_f05.png" width="128" height="192" alt="ui_sign_to_mastered_ui 5"><figcaption>05</figcaption></figure><figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_f06.png" width="128" height="192" alt="ui_sign_to_mastered_ui 6"><figcaption>06</figcaption></figure><figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_f07.png" width="128" height="192" alt="ui_sign_to_mastered_ui 7"><figcaption>07</figcaption></figure><figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_f08.png" width="128" height="192" alt="ui_sign_to_mastered_ui 8"><figcaption>08</figcaption></figure><figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_f09.png" width="128" height="192" alt="ui_sign_to_mastered_ui 9"><figcaption>09</figcaption></figure><figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_f10.png" width="128" height="192" alt="ui_sign_to_mastered_ui 10"><figcaption>10</figcaption></figure><figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_f11.png" width="128" height="192" alt="ui_sign_to_mastered_ui 11"><figcaption>11</figcaption></figure><figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_f12.png" width="128" height="192" alt="ui_sign_to_mastered_ui 12"><figcaption>12</figcaption></figure><figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_f13.png" width="128" height="192" alt="ui_sign_to_mastered_ui 13"><figcaption>13</figcaption></figure><figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_f14.png" width="128" height="192" alt="ui_sign_to_mastered_ui 14"><figcaption>14</figcaption></figure><figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_f15.png" width="128" height="192" alt="ui_sign_to_mastered_ui 15"><figcaption>15</figcaption></figure><figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_f16.png" width="128" height="192" alt="ui_sign_to_mastered_ui 16"><figcaption>16</figcaption></figure></div>
 </section>
