@@ -1,4 +1,4 @@
-<title>Mastered UI Head Sync Fix</title>
+<title>Mastered Transformation Head Sync</title>
 <style>
 :root{color-scheme:dark light;--bg:#0f0f14;--panel:#1a1a21;--line:#2c2c36;
  --ink:#eef0f6;--dim:#9aa0ad;--gold:#e8b544;--accent:#a9d6ff}
@@ -8,8 +8,6 @@ body{background:var(--bg);color:var(--ink);margin:0;padding:44px 30px 90px;
 h1{color:var(--gold);font-size:29px;line-height:1.25;margin:0 0 8px;
  letter-spacing:-.015em;text-wrap:balance}
 h2{font-size:20px;color:var(--gold);margin:0 0 4px;letter-spacing:-.01em}
-h3{font-size:12px;color:var(--dim);margin:28px 0 10px;text-transform:uppercase;
- letter-spacing:.11em;font-weight:600}
 .sub{color:var(--accent);font-size:12.5px;margin:0 0 16px}
 .sha{color:var(--dim);font-size:13px;margin:0 0 4px;font-variant-numeric:tabular-nums}
 code{background:var(--panel);border:1px solid var(--line);border-radius:4px;
@@ -25,48 +23,39 @@ img{image-rendering:pixelated;display:block;border-radius:4px;max-width:100%;hei
 .scroll img{max-width:none}
 .lead{max-width:74ch;color:var(--dim);margin:22px 0 0}
 </style>
-<h1>Current Review — Mastered UI Head Sync Fix</h1>
-<p class="sha">Commit <code>d47327f</code></p>
-<p class="lead">Mastered's head now follows Sign's trajectory frame for frame, anchored
-on the face rather than on the hair. Hair, face, ears and jaw move as one assembly, and
-the transformation's last frame is byte-identical to idle frame 0 — no pop at the
-handoff. Hair build, hairline, silver tone, silver brows and the aura are unchanged.</p>
+<h1>Current Review — Mastered Transformation Head Sync</h1>
+<p class="sha">Commit <code>3642ada</code></p>
+<p class="lead">Frame 13 was jumping the whole head two pixels up and back: the shell
+revealed the canonical pose while the settling frames began at a different one. The
+shell now forms over the pose the lead ends on and breaks off the pose the settling
+begins on, so the head is continuous across the effect. The idle is untouched.</p>
 
 <section>
-<h2>Head, neck and shoulders — all 17 transformation frames</h2>
-<p class="sub">12&times; &mdash; hair, forehead, eyes, ears, jaw, neck and shoulders</p>
-<div class="row scroll"><figure><img src="v4/seq/headsync/head_strip_12x.png"
-alt="head strip"><figcaption>Sign phase, white engulf, shell break, Mastered reveal,
-settling. The head stays attached to the neck throughout.</figcaption></figure></div>
+<h2>Head, neck and shoulders — all 17 frames</h2>
+<p class="sub">13&times; &mdash; hair, forehead, eyes, ears, jaw, neck, collar, shoulders</p>
+<div class="row scroll"><figure><img src="v4/seq/diag/head_strip_13x.png" alt="head strip">
+<figcaption>Frames 10&ndash;13 now share one jaw and collar geometry; where they do
+change, jaw and collar move together, which is the body breathing rather than the head
+coming loose.</figcaption></figure></div>
 </section>
 
 <section>
-<h2>Onion skin — consecutive frames</h2>
-<p class="sub">14&times; &mdash; previous frame dimmed beneath the current one, frames 12&ndash;16</p>
-<div class="row scroll"><figure><img src="v4/seq/headsync/onion_head_14x.png"
-alt="onion skin"><figcaption>These are the settling frames, where the mismatch was
-worst. Hair and face move together rather than sliding against one another.</figcaption>
-</figure></div>
-</section>
-
-<section>
-<h2>UI Sign &rarr; Mastered UI</h2>
+<h2>UI Sign &rarr; Mastered Ultra Instinct</h2>
 <div class="row">
 <figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_composite.gif"
-width="256" alt="transformation"><figcaption>Normal speed &mdash; 17 frames</figcaption></figure>
-<figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_composite_slow.gif"
-width="256" alt="transformation slow"><figcaption>Slow</figcaption></figure>
+width="256" alt="normal speed"><figcaption>Normal speed</figcaption></figure>
+<figure><img src="v4/seq/diag/ui_sign_to_mastered_ui_2fps.gif" width="256"
+alt="2 fps"><figcaption>2 fps diagnostic</figcaption></figure>
+<figure><img src="v4/seq/diag/ui_sign_to_mastered_ui_1fps.gif" width="256"
+alt="1 fps"><figcaption>1 fps diagnostic &mdash; every frame held a full second</figcaption></figure>
 </div>
 </section>
 
 <section>
-<h2>Mastered Ultra Instinct — idle</h2>
+<h2>Mastered idle — unchanged</h2>
+<p class="sub">Byte-identical to the approved version; shown only as confirmation</p>
 <div class="row">
-<figure><img src="v4/seq/mastered_ui_idle/mastered_ui_idle_composite.gif" width="256"
+<figure><img src="v4/seq/mastered_ui_idle/mastered_ui_idle_composite.gif" width="220"
 alt="idle"><figcaption>Normal speed</figcaption></figure>
-<figure><img src="v4/seq/mastered_ui_idle/mastered_ui_idle_composite_slow.gif" width="256"
-alt="idle slow"><figcaption>Slow</figcaption></figure>
-<figure><img src="v4/seq/mastered_ui_idle/mastered_ui_idle_body.gif" width="256"
-alt="body only"><figcaption>Body only</figcaption></figure>
 </div>
 </section>
