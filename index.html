@@ -1,4 +1,4 @@
-<title>Mastered Transformation Head Sync</title>
+<title>Workout Complete Celebration</title>
 <style>
 :root{color-scheme:dark light;--bg:#0f0f14;--panel:#1a1a21;--line:#2c2c36;
  --ink:#eef0f6;--dim:#9aa0ad;--gold:#e8b544;--accent:#a9d6ff}
@@ -22,40 +22,82 @@ img{image-rendering:pixelated;display:block;border-radius:4px;max-width:100%;hei
 .scroll figure{display:inline-block}
 .scroll img{max-width:none}
 .lead{max-width:74ch;color:var(--dim);margin:22px 0 0}
+ul{max-width:74ch;color:var(--dim);padding-left:20px}
+li{margin:6px 0}
 </style>
-<h1>Current Review — Mastered Transformation Head Sync</h1>
-<p class="sha">Commit <code>3642ada</code></p>
-<p class="lead">Frame 13 was jumping the whole head two pixels up and back: the shell
-revealed the canonical pose while the settling frames began at a different one. The
-shell now forms over the pose the lead ends on and breaks off the pose the settling
-begins on, so the head is continuous across the effect. The idle is untouched.</p>
+
+<h1>Current Review — Workout Complete Celebration</h1>
+<p class="sha">Normal Ryan &middot; 8 complete frames &middot; 12&nbsp;fps &middot; one-shot</p>
+<p class="lead">The saved-workout screen used to show Ryan cheering. After the V4
+migration it showed him standing, because the V4 catalogue was ten idles and the nine
+transformations between them and had no celebration in it. This is that missing clip:
+he raises one fist to shoulder height and holds it. It plays once and stays on the last
+frame, because the screen it sits on says <em>Workout saved</em> and a fist that goes up
+and comes down again reads as a tic rather than a result.</p>
 
 <section>
-<h2>Head, neck and shoulders — all 17 frames</h2>
-<p class="sub">13&times; &mdash; hair, forehead, eyes, ears, jaw, neck, collar, shoulders</p>
-<div class="row scroll"><figure><img src="v4/seq/diag/head_strip_13x.png" alt="head strip">
-<figcaption>Frames 10&ndash;13 now share one jaw and collar geometry; where they do
-change, jaw and collar move together, which is the body breathing rather than the head
-coming loose.</figcaption></figure></div>
-</section>
-
-<section>
-<h2>UI Sign &rarr; Mastered Ultra Instinct</h2>
+<h2>Normal speed</h2>
+<p class="sub">12<p class="sub">12&nbsp;fps as authored, with the raised fist held &mdash; which is what the screen shows most of the time</p>nbsp;fps as authored <p class="sub">12&nbsp;fps as authored, with the raised fist held &mdash; which is what the screen shows most of the time</p>mdash; the GIF runs at 12.5, because GIF stores delays in hundredths of a second and 12<p class="sub">12&nbsp;fps as authored, with the raised fist held &mdash; which is what the screen shows most of the time</p>nbsp;fps is not representable; the app plays the real rate</p>
 <div class="row">
-<figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_composite.gif"
-width="256" alt="normal speed"><figcaption>Normal speed</figcaption></figure>
-<figure><img src="v4/seq/diag/ui_sign_to_mastered_ui_2fps.gif" width="256"
-alt="2 fps"><figcaption>2 fps diagnostic</figcaption></figure>
-<figure><img src="v4/seq/diag/ui_sign_to_mastered_ui_1fps.gif" width="256"
-alt="1 fps"><figcaption>1 fps diagnostic &mdash; every frame held a full second</figcaption></figure>
+<figure><img src="v4/celebrate/celebrate.gif" alt="celebration at normal speed">
+<figcaption>Neutral, gather, the fist forms at the waist, rises, and holds at shoulder
+height, clear of his face.</figcaption></figure>
 </div>
 </section>
 
 <section>
-<h2>Mastered idle — unchanged</h2>
-<p class="sub">Byte-identical to the approved version; shown only as confirmation</p>
+<h2>Slow</h2>
+<p class="sub">Every frame held long enough to read on its own</p>
 <div class="row">
-<figure><img src="v4/seq/mastered_ui_idle/mastered_ui_idle_composite.gif" width="220"
-alt="idle"><figcaption>Normal speed</figcaption></figure>
+<figure><img src="v4/celebrate/celebrate-slow.gif" alt="celebration slowed down">
+<figcaption>Both feet stay planted and the legs never move; the floor is locked at the
+model sheet's baseline row in all eight frames.</figcaption></figure>
 </div>
+</section>
+
+<section>
+<h2>Frame strip</h2>
+<p class="sub">All 8 frames in order</p>
+<div class="row scroll"><figure><img src="v4/celebrate/strip.png" alt="all eight frames">
+<figcaption>Every frame is a complete authored sprite. Nothing is translated, warped,
+patched or assembled &mdash; the runtime only advances an index.</figcaption></figure></div>
+</section>
+
+<section>
+<h2>Individual frames</h2>
+<p class="sub">Each one has to hold as a still</p>
+<div class="row">
+<figure><img src="v4/celebrate/f0.png" alt="frame 0"><figcaption>0 &mdash; neutral, the canonical standing body unchanged</figcaption></figure>
+<figure><img src="v4/celebrate/f1.png" alt="frame 1"><figcaption>1 &mdash; settle, the chest begins to lift</figcaption></figure>
+<figure><img src="v4/celebrate/f2.png" alt="frame 2"><figcaption>2 &mdash; the hand closes at the waist</figcaption></figure>
+<figure><img src="v4/celebrate/f3.png" alt="frame 3"><figcaption>3 &mdash; the fist leaves his side</figcaption></figure>
+<figure><img src="v4/celebrate/f4.png" alt="frame 4"><figcaption>4 &mdash; rising, elbow bending</figcaption></figure>
+<figure><img src="v4/celebrate/f5.png" alt="frame 5"><figcaption>5 &mdash; near shoulder height</figcaption></figure>
+<figure><img src="v4/celebrate/f6.png" alt="frame 6"><figcaption>6 &mdash; at height</figcaption></figure>
+<figure><img src="v4/celebrate/f7.png" alt="frame 7"><figcaption>7 &mdash; the authored victory pose, held</figcaption></figure>
+</div>
+</section>
+
+<section>
+<h2>How it was made, and what was rejected on the way</h2>
+<p class="sub">Three rolls were thrown away before this one</p>
+<ul>
+<li><strong>Pinning the loop closed made the generator invent the peak</strong>, and it
+drifted badly: a pained grimace on one frame, an open gasping mouth on another, the fist
+unclenching into a flat paddle on a third, and the jersey's short sleeves dissolving into
+bare shoulders from frame 4 on.</li>
+<li><strong>The fix was to author the endpoint first.</strong> The raised-fist pose was
+drawn as a single still and checked by hand, then the clip was generated as an
+interpolation between two known-good frames rather than an open-ended motion. The last
+frame lands within 2 pixels of 5191 on that authored pose.</li>
+<li><strong>A silhouette clamp was removed.</strong> It is the right tool for an idle,
+where anything outside the standing outline is a stray. Here it deleted 65 to 183 pixels
+a frame &mdash; the raised fist itself.</li>
+<li><strong>One frame was dropped.</strong> The generator drew a blink, cleanly, as two
+lash lines. Good art, but a blink in the middle of a fist raise reads as losing the
+moment. Removing it leaves the eight frames here and costs no motion.</li>
+<li><strong>No aura.</strong> Normal is the one form with none authored, and this screen
+celebrates as Normal because it holds a workout summary and cannot know which rung the
+week earned.</li>
+</ul>
 </section>

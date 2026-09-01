@@ -1,57 +1,13 @@
 {
-  "date": "2026-08-30",
-  "status": "HAIR HANDOFF APPLIED TO ALL NINE - awaiting inspection before the arm repair",
-  "rule": "at each handoff the complete source hairstyle stops being rendered and the destination hairstyle takes its place: one hair owner per pixel, never two hairstyles at once, nothing enlarged or thickened to hide the source",
-  "ownership": "provenance only. SSJ1, SSJ2 and SSJ3 share the gold ramp, so colour cannot distinguish them; the brow and Normal-hair ramps also share shades.",
-  "two_further_duplicate_hair_sources_found_and_removed": [
-    "the aura layer from saiyan_clips._compose bundles the form's REAR HAIR with the glow, at offset (0,0) - the unfitted position - putting a second misaligned copy of the hairstyle behind the fitted one. The aura is now built from its own flame, streak and particle components and carries no hair.",
-    "saiyan_clips.destination_frame bundles rear hair the same way, which is why frame 24 still showed residue after the first fix. It is stripped by provenance at that frame's own phase."
-  ],
-  "transitions": [
-    "normal to superSaiyan",
-    "superSaiyan to superSaiyan2",
-    "superSaiyan2 to superSaiyan3",
-    "superSaiyan3 to superSaiyan4",
-    "superSaiyan4 to god",
-    "god to blue",
-    "blue to blueEvolved",
-    "blueEvolved to ultraInstinctSign",
-    "ultraInstinctSign to masteredUltraInstinct"
-  ],
-  "kept_unchanged": [
-    "every newer hairstyle design",
-    "the animation, timing and poses",
-    "the per-frame skull anchoring",
-    "the SSJ4 correction"
-  ],
-  "source_branch": "feature/avatar-v3-old-model-pose-fix",
-  "source_sha": "405af704d5ec98225ba78b9d02f6217f321b692e",
-  "tests": {
-    "hair_all_nine": {
-      "passed": 7,
-      "total": 7
-    },
-    "hair_ownership": {
-      "passed": 7,
-      "total": 7
-    },
-    "slot_ownership": {
-      "passed": 20,
-      "total": 20
-    },
-    "cinematic": {
-      "passed": 26,
-      "total": 26
-    },
-    "system": {
-      "passed": 67,
-      "total": 67
-    }
-  },
-  "files": {
-    "latest.png": "hair-only handoff sheet, all nine, native and 8x",
-    "latest.gif": "SSJ2 to SSJ3",
-    "index.html": "nine loops plus the handoff sheet",
-    "handoff/": "the sheet and all nine looping previews"
-  }
+  "date": "2026-09-01",
+  "candidate": "workout-complete celebration, Normal Ryan",
+  "status": "AWAITING VISUAL REVIEW - integrated on feature/avatar-v4-pixellab-complete",
+  "frames": 8,
+  "fps": 12,
+  "loops": false,
+  "form": "normal",
+  "aura": "none - Normal is the one form with no authored aura",
+  "architecture": "complete-cel-frames: every visible frame is a finished full-body sprite; the runtime only advances a frame index",
+  "method": "the raised-fist endpoint was authored as a still and checked by hand, then the clip was generated as an interpolation between two known-good frames",
+  "screen": "WorkoutSummaryView completion row - replaces the static V4 idle that the migration left there"
 }
