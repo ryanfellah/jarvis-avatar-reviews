@@ -1,4 +1,4 @@
-<title>UI Final Edge + Hair Fix</title>
+<title>Mastered UI Hairline Final Fix</title>
 <style>
 :root{color-scheme:dark light;--bg:#0f0f14;--panel:#1a1a21;--line:#2c2c36;
  --ink:#eef0f6;--dim:#9aa0ad;--gold:#e8b544;--accent:#a9d6ff}
@@ -14,82 +14,66 @@ h3{font-size:12px;color:var(--dim);margin:28px 0 10px;text-transform:uppercase;
 .sha{color:var(--dim);font-size:13px;margin:0 0 4px;font-variant-numeric:tabular-nums}
 code{background:var(--panel);border:1px solid var(--line);border-radius:4px;
  padding:1px 6px;font-size:12.5px}
-section{margin-top:56px;padding-top:28px;border-top:1px solid var(--line)}
+section{margin-top:52px;padding-top:26px;border-top:1px solid var(--line)}
 .row{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start}
 figure{margin:0;background:var(--panel);border:1px solid var(--line);
  border-radius:10px;padding:10px}
-figcaption{color:var(--dim);font-size:11.5px;margin-top:8px;max-width:44ch}
+figcaption{color:var(--dim);font-size:11.5px;margin-top:8px;max-width:46ch}
 img{image-rendering:pixelated;display:block;border-radius:4px;max-width:100%;height:auto}
 .lead{max-width:74ch;color:var(--dim);margin:22px 0 0}
 </style>
-<h1>Current Review — UI Final Edge + Hair Fix</h1>
-<p class="sha">Commit <code>29b9295</code></p>
-<p class="lead">The aura is now built against each animation frame's own silhouette, so
-the dark ring no longer appears once the body moves — 0 dark pixels on every frame of
-every UI sequence. Mastered's hair is fully white/silver with no black fill.</p>
+<h1>Current Review — Mastered UI Hairline Final Fix</h1>
+<p class="sha">Commit <code>c7e86d8</code></p>
+<p class="lead">Mastered now uses Sign's hair build unchanged — same hairline, same
+silhouette — recoloured to silver rather than flat white. The eyebrows are silver too,
+and the serious brow angle is kept. Nothing else was touched.</p>
+
 <section>
-<h2>Hair check</h2>
-<p class="sub">Sign black &middot; Mastered fully white/silver &mdash; 13&times;</p>
-<div class="row"><figure><img src="v4/seq/detail/hair_13x.png" width="620" alt="hair comparison">
-<figcaption>Only the outer contour stays dark on Mastered &mdash; that is the sprite's
-line art, shared with the rest of the character. No black hair fill remains.</figcaption>
-</figure></div>
-</section><section>
-<h2>1. Ultra Instinct Sign</h2>
-<p class="sub">Black hair, calm and forward-facing</p>
+<h2>Hairline and eyebrows</h2>
+<p class="sub">Sign &middot; Mastered &mdash; 15&times;</p>
+<div class="row"><figure><img src="v4/seq/detail/hairline_brows_15x.png" width="680"
+alt="hairline and brow comparison">
+<figcaption>Same hair build and the same hairline on both — Mastered's is recoloured,
+not redrawn. Hairline offsets match Sign frame for frame across the loop
+(15,15,15,15,14,14,14,15). Eyebrows are silver; the serious angle is Mastered's own.
+</figcaption></figure></div>
 <div class="row">
-<figure><img src="v4/seq/detail/ui_sign_edge_9x.png" width="500" alt="ui_sign edge">
-<figcaption>9&times; at mid-loop, where the dark ring used to be worst &mdash; energy
-sits directly against the silhouette</figcaption></figure>
+<figure><img src="v4/seq/detail/mastered_canonical_5x.png" width="300" alt="Mastered canonical">
+<figcaption>Canonical form</figcaption></figure>
+<figure><img src="v4/seq/detail/mastered_edge_9x.png" width="440" alt="Mastered edge">
+<figcaption>9&times; at mid-loop &mdash; energy still sits directly against the
+silhouette, no dark gap</figcaption></figure>
 </div>
-<h3>Idle</h3>
+</section>
+
+<section>
+<h2>Mastered Ultra Instinct — idle</h2>
 <div class="row">
-<figure><img src="v4/seq/ui_sign_idle/ui_sign_idle_composite.gif" width="256" alt="ui_sign_idle">
-<figcaption>Normal speed</figcaption></figure>
-<figure><img src="v4/seq/ui_sign_idle/ui_sign_idle_composite_slow.gif" width="256" alt="ui_sign_idle slow">
-<figcaption>Slow</figcaption></figure>
-</div>
-<h3>Blue Evolved &rarr; UI Sign &mdash; 17 frames</h3>
-<div class="row">
-<figure><img src="v4/seq/blue_evolved_to_ui_sign/blue_evolved_to_ui_sign_composite.gif" width="256" alt="blue_evolved_to_ui_sign">
-<figcaption>Normal speed</figcaption></figure>
-<figure><img src="v4/seq/blue_evolved_to_ui_sign/blue_evolved_to_ui_sign_composite_slow.gif" width="256" alt="blue_evolved_to_ui_sign slow">
-<figcaption>Slow</figcaption></figure>
-</div>
-<h3>Stills</h3>
-<div class="row">
-<figure><img src="v4/seq/detail/ui_sign_still_0_4x.png" width="290" alt="ui_sign still 0">
-<figcaption>Frame 00</figcaption></figure>
-<figure><img src="v4/seq/detail/ui_sign_still_4_4x.png" width="290" alt="ui_sign still 4">
-<figcaption>Frame 04 &mdash; mid-loop</figcaption></figure>
-</div>
-</section><section>
-<h2>2. Mastered Ultra Instinct</h2>
-<p class="sub">Hair now fully white/silver; Sign's animation, serious brow</p>
-<div class="row">
-<figure><img src="v4/seq/detail/mastered_ui_edge_9x.png" width="500" alt="mastered_ui edge">
-<figcaption>9&times; at mid-loop, where the dark ring used to be worst &mdash; energy
-sits directly against the silhouette</figcaption></figure>
-</div>
-<h3>Idle</h3>
-<div class="row">
-<figure><img src="v4/seq/mastered_ui_idle/mastered_ui_idle_composite.gif" width="256" alt="mastered_ui_idle">
-<figcaption>Normal speed</figcaption></figure>
-<figure><img src="v4/seq/mastered_ui_idle/mastered_ui_idle_composite_slow.gif" width="256" alt="mastered_ui_idle slow">
-<figcaption>Slow</figcaption></figure>
-</div>
-<h3>UI Sign &rarr; Mastered UI &mdash; 17 frames</h3>
-<div class="row">
-<figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_composite.gif" width="256" alt="ui_sign_to_mastered_ui">
-<figcaption>Normal speed</figcaption></figure>
-<figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_composite_slow.gif" width="256" alt="ui_sign_to_mastered_ui slow">
-<figcaption>Slow</figcaption></figure>
+<figure><img src="v4/seq/mastered_ui_idle/mastered_ui_idle_composite.gif" width="256"
+alt="Mastered idle"><figcaption>Normal speed</figcaption></figure>
+<figure><img src="v4/seq/mastered_ui_idle/mastered_ui_idle_composite_slow.gif" width="256"
+alt="Mastered idle slow"><figcaption>Slow</figcaption></figure>
+<figure><img src="v4/seq/mastered_ui_idle/mastered_ui_idle_body.gif" width="256"
+alt="Mastered body only"><figcaption>Body only</figcaption></figure>
 </div>
 <h3>Stills</h3>
 <div class="row">
-<figure><img src="v4/seq/detail/mastered_ui_still_0_4x.png" width="290" alt="mastered_ui still 0">
+<figure><img src="v4/seq/detail/mastered_still_0_4x.png" width="290" alt="still 0">
 <figcaption>Frame 00</figcaption></figure>
-<figure><img src="v4/seq/detail/mastered_ui_still_4_4x.png" width="290" alt="mastered_ui still 4">
+<figure><img src="v4/seq/detail/mastered_still_4_4x.png" width="290" alt="still 4">
 <figcaption>Frame 04 &mdash; mid-loop</figcaption></figure>
 </div>
+</section>
+
+<section>
+<h2>UI Sign &rarr; Mastered UI — transformation</h2>
+<div class="row">
+<figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_composite.gif"
+width="256" alt="transformation"><figcaption>Normal speed &mdash; 17 frames</figcaption></figure>
+<figure><img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_composite_slow.gif"
+width="256" alt="transformation slow"><figcaption>Slow</figcaption></figure>
+</div>
+<div class="row scroll"><figure>
+<img src="v4/seq/ui_sign_to_mastered_ui/ui_sign_to_mastered_ui_strip.png" alt="strip">
+<figcaption>All 17 frames</figcaption></figure></div>
 </section>
